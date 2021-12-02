@@ -11,7 +11,7 @@ in world, music, users will be able to:
 - globe design
 - what if a user wants to search a new song?
 
-# wireframe [link]
+# wireframe
 v0:<br>
 <img width="829" alt="Screenshot 2021-12-02 at 17 39 15" src="https://user-images.githubusercontent.com/17345270/144514525-17103aae-895f-4dfb-a420-12d09a819316.png">
 
