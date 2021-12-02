@@ -9,6 +9,7 @@ In World, Music, users will be able to:
 - finding tracks via soundcloud API on a page
 - autofill? what if the track doesn't exist on soundcloud - what if a location isn't appended!!
 - globe design
+- what if a user wants to search a new song?
 
 # WIREFRAME
 v0:
