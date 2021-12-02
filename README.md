@@ -10,6 +10,7 @@ in world, music, users will be able to:
 - autofill? what if the track doesn't exist on SoundCloud - what if a location isn't appended!!
 - globe design
 - what if a user wants to search a new song?
+- what if there's "no" related track, need some buffer, whatever that means
 
 # wireframe
 v0:<br>
@@ -24,6 +25,6 @@ v0:<br>
 FRI, 3 DEC : gah, does the API work<br>
 SAT, 4 DEC : eek, hopefully the API works<br>
 SUN, 5 DEC : can I render a sphere with three.js, make it a globe, carve out countries<br>
-MON, 6 DEC : i have a globe, let's map a track to a country<br>
+MON, 6 DEC : i have a globe, let's map a track to a country, let's link a related track<br>
 TUE, 7 DEC : let's put it all together, draw lines linking tracks on the globe<br>
 WED, 8 DEC : let's clean it up, and make it pretty
