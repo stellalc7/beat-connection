@@ -29,3 +29,8 @@ SUN, 5 DEC : can I render a sphere with three.js, make it a globe, carve out cou
 MON, 6 DEC : i have a globe, let's map a track to a country, let's link a related track<br>
 TUE, 7 DEC : let's put it all together, draw lines linking tracks on the globe<br>
 WED, 8 DEC : let's clean it up, and make it pretty
+
+# sources
+https://globe.gl/<br>
+https://threejs.org/<br>
+https://developers.soundcloud.com/docs/api/explorer/open-api#/tracks/get_tracks__track_id__related
