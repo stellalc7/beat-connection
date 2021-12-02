@@ -20,9 +20,9 @@ v0:
 - The globe will be rendered and designed with three.js
 
 # TIMELINE
-FRI, 3 DEC : omg does the API work
-SAT, 4 DEC : hopefully the API works
-SUN, 5 DEC : can I render a sphere with three.js, carve out countries
-MON, 6 DEC : i have a globe, let's map a track to a country
-TUE, 7 DEC : let's put it all together, draw flight lines / link tracks on the globe
+FRI, 3 DEC : omg does the API work<br>
+SAT, 4 DEC : hopefully the API works<br>
+SUN, 5 DEC : can I render a sphere with three.js, carve out countries<br>
+MON, 6 DEC : i have a globe, let's map a track to a country<br>
+TUE, 7 DEC : let's put it all together, draw flight lines / link tracks on the globe<br>
 WED, 8 DEC : let's clean it up, and make it pretty
