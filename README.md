@@ -10,7 +10,7 @@ in world, music, users will be able to:
 - autofill? what if the track doesn't exist on SoundCloud - what if a location isn't appended!!
 - globe design
 - what if a user wants to search a new song?
-- what if there's "no" related track, need some buffer, whatever that means
+- what if a related track doesn't exist?
 
 # wireframe
 v0:<br>
