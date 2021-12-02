@@ -6,8 +6,8 @@ In World, Music, users will be able to:
 - lines will be drawn connecting track to track around the world; a gradient will be used to denote the user's prior "location"
 
 # research
-- finding tracks via soundcloud API on a page
-- autofill? what if the track doesn't exist on soundcloud - what if a location isn't appended!!
+- finding tracks via SoundCloud API on a page
+- autofill? what if the track doesn't exist on SoundCloud - what if a location isn't appended!!
 - globe design
 - what if a user wants to search a new song?
 
