@@ -2,8 +2,8 @@
 In World, Music, users will be able to:
 - enter an track they enjoy listening to
 - a related/similar track will be found somewhere around the world, and mapped on an interactive globe
-- a user will be able to click on the country, and find a link to that artist's SoundCloud (tentative) page
-- lines will be drawn connecting artist to artist around the world, think: flight tracks - a gradient will be used to know the prior location
+- a user will be able to click on the country, and find a link to that artist's SoundCloud (tentative) page - of if I figure out the SoundCloud SDK, the user will be able to play the track directly on-site
+- lines will be drawn connecting track to track around the world; a gradient will be used to denote the user's prior "location"
 
 # research
 - finding tracks via soundcloud API on a page
