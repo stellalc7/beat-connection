@@ -20,6 +20,7 @@ v0:<br>
 # technologies
 - related tracks will be found via the SoundCloud API
 - the globe will be rendered and designed with three.js
+- i believe the track connection lines need d3.js (bezier curves?), time permitting
 
 # timeline
 FRI, 3 DEC : gah, does the API work<br>
