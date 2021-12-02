@@ -12,7 +12,7 @@ In World, Music, users will be able to:
 - what if a user wants to search a new song?
 
 # WIREFRAME
-v0:
+v0:<br>
 <img width="829" alt="Screenshot 2021-12-02 at 17 39 15" src="https://user-images.githubusercontent.com/17345270/144514525-17103aae-895f-4dfb-a420-12d09a819316.png">
 
 
@@ -21,9 +21,9 @@ v0:
 - The globe will be rendered and designed with three.js
 
 # TIMELINE
-FRI, 3 DEC : omg does the API work<br>
-SAT, 4 DEC : hopefully the API works<br>
-SUN, 5 DEC : can I render a sphere with three.js, carve out countries<br>
+FRI, 3 DEC : gah, does the API work<br>
+SAT, 4 DEC : eek, hopefully the API works<br>
+SUN, 5 DEC : can I render a sphere with three.js, make it a globe, carve out countries<br>
 MON, 6 DEC : i have a globe, let's map a track to a country<br>
-TUE, 7 DEC : let's put it all together, draw flight lines / link tracks on the globe<br>
+TUE, 7 DEC : let's put it all together, draw lines linking tracks on the globe<br>
 WED, 8 DEC : let's clean it up, and make it pretty
