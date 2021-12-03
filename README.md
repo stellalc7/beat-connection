@@ -26,7 +26,7 @@ FRI, 3 DEC : does the api work? enter a track, find a related track/location, fi
 SAT, 4 DEC : can I render a sphere with three.js, let's make it an earth<br>
 SUN, 5 DEC : are there boundaries for countries? how does this work with track locations<br>
 MON, 6 DEC : map a track to a country, and link a related track<br>
-TUE, 7 DEC : put it all together, draw lines linking tracks on the globe<br>
+TUE, 7 DEC : put it all together, draw lines linking tracks on the globe, local conditions<br>
 WED, 8 DEC : finish things - maybe i have time for extra stuff
 
 ## sources
