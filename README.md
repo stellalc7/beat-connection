@@ -5,7 +5,7 @@ in world, music, you will be able to:
 - you can click on the lil dot or something denoting the city or maybe it'll be for the entire country, and find a link to that artist's SoundCloud (tentative) page - or if I figure out the soundcloud sdk, you will be able to play the track on-site
 - lines will be drawn connecting track to track around the world; a gradient will be used to denote your prior "location"
 
-## research / existential crises
+## research
 - finding related track and its "location" - as in where the artist is from - via SoundCloud API on a page
 - what if there are multiple uploads for the same track, can i find a reliable one?
 - autofill? what if the track doesn't exist on soundcloud - what if a location isn't appended!!
@@ -19,6 +19,7 @@ v0 test .. i did not draw this globe, thank you globe.gl:<br>
 
 ## technologies
 - a track, and its related tracks (and "location" - not yet defined what this means exactly - will depend on what's technically possible / most consonant) will be found via the soundcloud api
+- music api may be mixcloud (need to research rate limits, see what works)
 - the globe will be rendered and designed with three.js
 - i believe the track connection lines require d3.js (bezier curves?), time permitting
 
