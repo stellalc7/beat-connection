@@ -1,0 +1,40 @@
+{
+  "name": "world-music",
+  "version": "1.0.0",
+  "description": "in world, music, you will be able to: - enter a track that you enjoy listening to - a related/similar track will be found somewhere around the world, and mapped on an interactive globe - you can click on the lil dot or something denoting the city or maybe it'll be for the entire country, and find a link to that artist's SoundCloud (tentative) page - or if I figure out the soundcloud sdk, you will be able to play the track on-site - lines will be drawn connecting track to track around the world; a gradient will be used to denote your prior \"location\"",
+  "main": "index.js",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stellalc7/world-music.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stellalc7/world-music/issues"
+  },
+  "homepage": "https://github.com/stellalc7/world-music#readme",
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-loader": "^8.2.3",
+    "core-js": "^3.19.2",
+    "css-loader": "^6.5.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mini-css-extract-plugin": "^2.4.5",
+    "node-fetch": "^3.1.0",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.44.0",
+    "sass-loader": "^12.3.0",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
