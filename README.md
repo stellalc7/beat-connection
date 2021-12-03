@@ -20,7 +20,7 @@ v0, imagining things .. i did not draw this globe .. thank you globe.gl:<br>
 ## technologies
 - related tracks will be found via the SoundCloud API
 - the globe will be rendered and designed with three.js
-- i believe the track connection lines need d3.js (bezier curves?), time permitting
+- i believe the track connection lines require d3.js (bezier curves?), time permitting
 
 ## timeline
 FRI, 3 DEC : does the API work? enter a track, find a related track/location, find another (in a new location). test pot'l issues above. set up skeleton to quasi integrate three.js<br>
