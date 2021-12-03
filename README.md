@@ -8,7 +8,7 @@ in world, music, you will be able to:
 ## research / existential crises
 - finding related track and its "location" - as in where the artist is from - via SoundCloud API on a page
 - what if there are multiple uploads for the same track, can i find a reliable one?
-- autofill? what if the track doesn't exist on soundcloud - what if a location isn't appended!! huh????????????
+- autofill? what if the track doesn't exist on soundcloud - what if a location isn't appended!!
 - globe design
 - what if a user wants to search a new song?
 - what if a related track doesn't exist?
