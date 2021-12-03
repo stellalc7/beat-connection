@@ -13,8 +13,9 @@ in world, music, users will be able to:
 - what if a related track doesn't exist?
 
 ## wireframe
-v0 (i did not draw this globe - thank you globe.gl):<br>
-<img width="829" alt="Screenshot 2021-12-02 at 17 39 15" src="https://user-images.githubusercontent.com/17345270/144514525-17103aae-895f-4dfb-a420-12d09a819316.png">
+v0 (i did not draw this globe - thank you globe.gl - quasi high fidelity):<br>
+<img width="771" alt="Screenshot 2021-12-02 at 22 16 47" src="https://user-images.githubusercontent.com/17345270/144539122-81781c31-01ee-4231-9f02-bd3178c27710.png">
+
 
 ## technologies
 - related tracks will be found via the SoundCloud API
@@ -22,12 +23,12 @@ v0 (i did not draw this globe - thank you globe.gl):<br>
 - i believe the track connection lines need d3.js (bezier curves?), time permitting
 
 ## timeline
-FRI, 3 DEC : gah, does the API work<br>
-SAT, 4 DEC : eek, hopefully the API works<br>
-SUN, 5 DEC : can I render a sphere with three.js, make it a globe, carve out countries<br>
-MON, 6 DEC : i have a globe, let's map a track to a country, let's link a related track<br>
-TUE, 7 DEC : let's put it all together, draw lines linking tracks on the globe<br>
-WED, 8 DEC : let's clean it up, and make it pretty
+FRI, 3 DEC : does the API work? enter a track, find a related track/location, find another (in a new location). test pot'l issues above. set up skeleton to quasi integrate three.js<br>
+SAT, 4 DEC : can I render a sphere with three.js, let's make it an earth<br>
+SUN, 5 DEC : are there boundaries for countries? how does this work with track locations<br>
+MON, 6 DEC : map a track to a country, and link a related track<br>
+TUE, 7 DEC : put it all together, draw lines linking tracks on the globe<br>
+WED, 8 DEC : finish things up - maybe i have time for extra stuff
 
 ## sources
 https://globe.gl/<br>
