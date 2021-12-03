@@ -1,4 +1,4 @@
-## world-music
+## world, music
 in world, music, you will be able to:
 - enter a track that you enjoy listening to
 - a related/similar track will be found somewhere around the world, and mapped on an interactive globe
