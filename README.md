@@ -7,13 +7,13 @@ In World, Music, you will be able to:
 - if I figure out the SoundCloud SDK, you will be able to play the track on-site
 - lines will be drawn connecting track to track around the world; a gradient will be used to denote your prior "location"
 
-## Research
+<!--## Research
 - finding related track and its "location" - as in where the artist is from?
 - what if there are multiple uploads for the same track, can i find a reliable one?
 - autofill? what if the track doesn't exist on soundcloud - what if a location isn't appended?
 - globe design
 - what if a user wants to search a new song?
-- what if a related track doesn't exist?
+- what if a related track doesn't exist?-->
 
 ## Wireframe
 v0 test .. globe via globe.gl:<br>
@@ -25,7 +25,7 @@ v0 test .. globe via globe.gl:<br>
 - d3.js (bezier curves)
 
 ## Timeline
-FRI, 3 DEC : does the api work? enter a track, find a related track/location, find another (in a new location). test pot'l issues above. set up skeleton to quasi integrate three.js<br>
+FRI, 3 DEC : does the api work? enter a track, find a related track/location, find another (in a new location). set up skeleton to quasi integrate three.js<br>
 SAT, 4 DEC : can I render a sphere with three.js, let's make it an earth<br>
 SUN, 5 DEC : are there boundaries for countries? how does this work with track locations<br>
 MON, 6 DEC : map a track to a country, and link a related track<br>
