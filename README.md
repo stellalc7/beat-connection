@@ -5,7 +5,7 @@ In World, Music, you will be able to:
 - you can click on a point denoting the location the song is associated with, and find a link to that artist's SoundCloud (tentative) page
 - (^ that will be replaced with an animation / moving the globe along a bezier curve to the next track/location)
 - if I figure out the SoundCloud SDK, you will be able to play the track on-site
-- lines will be drawn connecting track to track around the world; a gradient will be used to denote your prior "curve"
+- curves will be drawn connecting track to track around the world; a gradient will be used to denote your prior "curve"
 
 <!--## Research
 - finding related track and its "location" - as in where the artist is from?
