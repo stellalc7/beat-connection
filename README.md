@@ -13,7 +13,7 @@ in world, music, users will be able to:
 - what if a related track doesn't exist?
 
 ## wireframe
-v0 (i did not draw this globe - thank you globe.gl - quasi high fidelity):<br>
+v0, imagining things .. i did not draw this globe .. thank you globe.gl:<br>
 <img width="771" alt="Screenshot 2021-12-02 at 22 16 47" src="https://user-images.githubusercontent.com/17345270/144539122-81781c31-01ee-4231-9f02-bd3178c27710.png">
 
 
