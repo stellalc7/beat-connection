@@ -2,7 +2,7 @@
 in world, music, you will be able to:
 - enter a track that you enjoy listening to
 - a related/similar track will be found somewhere around the world, and mapped on an interactive globe
-- you can click on the country, and find a link to that artist's SoundCloud (tentative) page - or if I figure out the SoundCloud SDK, you will be able to play the track on-site
+- you can click on the lil dot or something denoting the city or maybe it'll be for the entire country, and find a link to that artist's SoundCloud (tentative) page - or if I figure out the SoundCloud SDK, you will be able to play the track on-site
 - lines will be drawn connecting track to track around the world; a gradient will be used to denote your prior "location"
 
 ## research
