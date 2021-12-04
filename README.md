@@ -4,7 +4,7 @@ In World, Music, you will be able to hopefully:
 - a related/similar artist will be found somewhere around the world, and mapped on an interactive globe
 - you can click on a point denoting the location the artist is associated with, and find a link to that artist's Spotify page
 - (^ that will be replaced with an animation / moving the globe along a bezier curve to the next track/location)
-- curves will be drawn connecting track to track around the world; a gradient will be used to denote your prior "curve"
+- curves will be drawn connecting artist to (related) artist around the world; a gradient will be used to denote your prior "curve"
 - one day, ideally, you will be able to preview tracks on-site
 
 ## Wireframe
