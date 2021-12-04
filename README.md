@@ -27,7 +27,7 @@ v0 test .. globe via globe.gl:<br>
 ## Timeline
 FRI, 3 DEC : spotify api. set up skeleton to quasi integrate three.js<br>
 SAT, 4 DEC : artist "location" - assume ISO code, get country's capital, convert to lat/lon<br>
-SUN, 5 DEC : render a earth with three.js, map track lat/lon
+SUN, 5 DEC : render a earth with three.js, map artist's location lat/lon <br>
 MON, 6 DEC : continue what's undone<br>
 TUE, 7 DEC : bezier curves - interactive/animation thing along the bezier curve to land on the next artist/location<br>
 WED, 8 DEC : local conditions, fix artist location data
@@ -35,4 +35,6 @@ WED, 8 DEC : local conditions, fix artist location data
 ## Sources
 https://globe.gl/<br>
 https://threejs.org/<br>
-https://developers.soundcloud.com/docs/api/explorer/open-api#/tracks/get_tracks__track_id__related
+https://gist.github.com/tadast/8827699<br>
+https://developer.spotify.com/console/get-artist-related-artists/<br>
+https://developer.spotify.com/documentation/general/guides/track-relinking-guide/
