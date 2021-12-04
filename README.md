@@ -6,6 +6,7 @@ In World, Music, you will be able to hopefully:
 - (^ that will be replaced with an animation / moving the globe along a bezier curve to the next track/location)
 - curves will be drawn connecting artist to (related) artist around the world; a gradient will be used to denote your prior "curve"
 - one day, ideally, you will be able to preview tracks on-site
+- (artists' true location data will need to be adjusted in the future - Spotify removed these data a few years ago, so the site is using the `market` metric as a placeholder, just to get functionalities running)
 
 ## Wireframe
 v0 test .. globe via globe.gl:<br>
@@ -14,12 +15,12 @@ v0 test .. globe via globe.gl:<br>
 ## Technologies
 - Spotify API
 - three.js
-- d3.js (bezier curves)
+- globe.gl (earth, bezier curves)
 
 ## Timeline
 FRI, 3 DEC : spotify api. set up skeleton to quasi integrate three.js<br>
 SAT, 4 DEC : artist "location" - assume ISO code, get country's capital, convert to lat/lon<br>
-SUN, 5 DEC : render a earth with three.js, map artist's location lat/lon <br>
+SUN, 5 DEC : render a earth with three.js / globe.gl, map artist's location lat/lon <br>
 MON, 6 DEC : continue what's undone<br>
 TUE, 7 DEC : bezier curves - interactive/animation thing along the bezier curve to land on the next artist/location<br>
 WED, 8 DEC : local conditions, fix artist location data - probably need another api
