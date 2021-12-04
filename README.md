@@ -15,12 +15,12 @@ v0 test .. globe via globe.gl:<br>
 ## Technologies
 - Spotify API
 - three.js
-- d3.js (bezier curves)
+- globe.gl (earth, bezier curves)
 
 ## Timeline
 FRI, 3 DEC : spotify api. set up skeleton to quasi integrate three.js<br>
 SAT, 4 DEC : artist "location" - assume ISO code, get country's capital, convert to lat/lon<br>
-SUN, 5 DEC : render a earth with three.js, map artist's location lat/lon <br>
+SUN, 5 DEC : render a earth with three.js / globe.gl, map artist's location lat/lon <br>
 MON, 6 DEC : continue what's undone<br>
 TUE, 7 DEC : bezier curves - interactive/animation thing along the bezier curve to land on the next artist/location<br>
 WED, 8 DEC : local conditions, fix artist location data - probably need another api
