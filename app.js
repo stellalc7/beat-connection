@@ -20,5 +20,5 @@ const PORT = process.env.PORT || 8000;
 // start up a server listening at PORT; on success, log a message
 app.listen(PORT, () => {
   console.log(`Listening at localhost:${PORT}`);
-  console.log(process.env.API_KEY === "banana");
+//   console.log(process.env.API_KEY === "banana");
 });
