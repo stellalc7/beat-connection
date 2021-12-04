@@ -6,7 +6,7 @@ In World, Music, you will be able to hopefully:
 - (^ that will be replaced with an animation / moving the globe along a bezier curve to the next track/location)
 - curves will be drawn connecting artist to (related) artist around the world; a gradient will be used to denote your prior "curve"
 - one day, ideally, you will be able to preview tracks on-site
-- all of this might be adjusted depending on what's possible
+- (artists' true location data will need to be adjusted in the future - Spotify removed these data a few years ago, so the site is using `market` data as a placeholder)
 
 ## Wireframe
 v0 test .. globe via globe.gl:<br>
