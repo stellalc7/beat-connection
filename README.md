@@ -22,7 +22,7 @@ SAT, 4 DEC : artist "location" - assume ISO code, get country's capital, convert
 SUN, 5 DEC : render a earth with three.js, map artist's location lat/lon <br>
 MON, 6 DEC : continue what's undone<br>
 TUE, 7 DEC : bezier curves - interactive/animation thing along the bezier curve to land on the next artist/location<br>
-WED, 8 DEC : local conditions, fix artist location data
+WED, 8 DEC : local conditions, fix artist location data - probably need another api
 
 ## Sources
 https://globe.gl/<br>
