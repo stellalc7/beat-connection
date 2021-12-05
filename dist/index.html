@@ -11,15 +11,16 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css" />
     <link rel="stylesheet" href="../src/index.scss" />
+    <script src="./main.js"></script>
     <script src="//unpkg.com/globe.gl"></script>
 
     <title>WORLD, MUSIC</title>
 </head>
 
 <body>
-    <form id="search-artist" action="/" method="GET">
-        <input type="text" placeholder="ARTIST NAME" value="">
-        <input type="submit" value="SEARCH">
+    <form id="search-artist" action="/api" method="GET">
+        <input class="search-name" type="text" placeholder="ARTIST NAME" value="">
+        <input class="search-btn" type="submit" value="SEARCH">
     </form>
 
     <div id="globeViz"></div>
@@ -46,7 +47,6 @@
 
     <!-- fetch('../datasets/ne_110m_admin_0_countries.geojson')
     ${d.ADMIN} (${d.ISO_A2}) -->
-    <script src="./dist/main.js"></script>
 </body>
 
 </html>

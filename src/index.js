@@ -1,8 +1,5 @@
 const searchArtist = document.getElementById('search-artist')
 
-// delete later
-require('dotenv').config();
-
 document.addEventListener("DOMContentLoaded", () => {
     const body = document.body
     const h2 = document.createElement('h2')
@@ -20,6 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // create a button
 });
 
+const getArtist = (query) => {
+  fetch(`/api?artistName=${encodeURIComponent(query)}`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    })
+}
+
 
 // search-artist form - artist name from user input
 searchArtist.addEventListener('submit', function(e) {
@@ -31,18 +36,8 @@ searchArtist.addEventListener('submit', function(e) {
     // getArtist(artist);
 })
 
-
-const searchArtist = (query = 'curry') => {
-  fetch(`/api?searchTerm=${encodeURIComponent(query)}`)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-    })
-}
-
 /* 
 Before Refactor:
-
 const searchArtist = (query = 'curry') => { 
   fetch(`https://www.themealdb.com/api/json/v1/${apiKey}/search.php?s=${query}`)
     .then(res => res.json())

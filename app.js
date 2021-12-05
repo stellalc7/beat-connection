@@ -41,21 +41,24 @@ const authVars = {
 // `GET /cors` requests trigger this callback (like controller action)
 // `request` object contains request's query string, wildcard params, etc
 // `response` object has `send` method for sending our server response
-app.get('/cors', (request, response) => {
-  console.log(`Fetching: ${request.query.url}`);
+// app.get('/cors', (request, response) => {
+//   console.log(`Fetching: ${request.query.url}`);
 
-  fetch(request.query.url) // AJAX request to URL provided in query string
-    .then(apiResponse => apiResponse.json()) // parse response as JSON
-    .then(data => response.send(data)) // send parsed data to frontend
-    .catch(error => response.send(error));
-});
+//   fetch(request.query.url) // AJAX request to URL provided in query string
+//     .then(apiResponse => apiResponse.json()) // parse response as JSON
+//     .then(data => response.send(data)) // send parsed data to frontend
+//     .catch(error => response.send(error));
+// });
 
 
-app.get('/api', (request, response) => {
-  const urlStart = 'https://www.themealdb.com/api/json/v1';
-  const apiKey = process.env.API_KEY; // from .env (dev) or Heroku
-  const searchTerm = request.query.searchTerm; // from query string
-  const url = `${urlStart}/${apiKey}/search.php?s=${searchTerm}`;
+app.post('/api', (authVars, request, response, body) => {
+  // get artist ID from user input => then get 1 related artist later
+  const urlStart = 'https://api.spotify.com/v1/search';
+  // const apiKey = process.env.API_KEY; // from .env (dev) or Heroku
+  var token = body.access_token; // spotify auth token
+  const artistName = request.query.artistName; // from query string
+  const url = `${urlStart}/${artistName}&type=artist`;
+  // does searchTerm auto convert space to %20
 
   console.log(`Fetching: ${url}`);
 
@@ -66,14 +69,14 @@ app.get('/api', (request, response) => {
 });
 
 
-// const getArtist = (artist = "julia rakel") => {
+// const getArtist = (artist) => {
 //   request.post(authVars, artist, function(error, response, body) {
 //   if (!error && response.statusCode === 200) {
 
 //     // access token needed for artist ID => related artist
 //     var token = body.access_token;
 //     var options = {
-//       url: 'https://api.spotify.com/v1/search/julia%20rakel&type=artist',
+//       url: 'https://api.spotify.com/v1/search/ julia%20rakel &type=artist',
 //       headers: {
 //         'Authorization': 'Bearer ' + token
 //       },
@@ -84,5 +87,4 @@ app.get('/api', (request, response) => {
 //     });
 //   }
 // })};
-
 // module.exports = getArtist;
