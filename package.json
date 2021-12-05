@@ -29,6 +29,7 @@
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
+    "axios": "^0.24.0",
     "babel-loader": "^8.2.3",
     "core-js": "^3.19.2",
     "css-loader": "^6.5.1",
@@ -38,6 +39,8 @@
     "mini-css-extract-plugin": "^2.4.5",
     "node-fetch": "^3.1.0",
     "regenerator-runtime": "^0.13.9",
+    "request": "^2.88.2",
+    "require": "^2.4.20",
     "sass": "^1.44.0",
     "sass-loader": "^12.3.0",
     "three": "^0.135.0",

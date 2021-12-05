@@ -1,6 +1,9 @@
-.body {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 30px;
-    background-color: black;
-    color: white;
+$font-stack: IBM Plex Mono, monospace;
+$primary-color: rgb(229, 255, 0);
+$background-color: black;
+
+body {
+  font: 30px $font-stack;
+  color: $primary-color;
+  background-color: $background-color;
 }
