@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         (document.getElementById('globeViz'))
 });
 
+// get data from backend, which is getting data from Spotify API
 const getArtist = (query) => {
   fetch(`/api?artistName=${encodeURIComponent(query)}`)
     .then(res => res.json())

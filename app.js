@@ -2,6 +2,7 @@ const express = require('express'); // web framework
 const fetch = require('node-fetch'); // for making AJAX requests
 const path = require('path'); // do i need to change this
 var request = require('request'); //
+
 // put environmental variables defined in .env file on process.env
 require('dotenv').config(); 
 const app = express();
