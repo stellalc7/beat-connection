@@ -11,7 +11,7 @@ In World, Music, you will be able to hopefully:
 ## Wireframe
 v0 test .. globe via globe.gl:<br>
 <!-- <img width="771" alt="Screenshot 2021-12-02 at 22 16 47" src="https://user-images.githubusercontent.com/17345270/144539122-81781c31-01ee-4231-9f02-bd3178c27710.png"> -->
-<video width="600">https://user-images.githubusercontent.com/17345270/144752833-9184a017-32a1-43cb-8e53-a02e75781a5e.mov</video>
+<p width="500px">https://user-images.githubusercontent.com/17345270/144752833-9184a017-32a1-43cb-8e53-a02e75781a5e.mov</p>
 
 
 
