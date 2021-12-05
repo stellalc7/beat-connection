@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const body = document.body
     const h2 = document.createElement('h2')
-    h2.innerText = "WORLD, MUSIC"
+    h2.innerText = "WORLD, \n MUSIC"
     body.append(h2)
     // body.append(searchArtist)
 

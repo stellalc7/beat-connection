@@ -3,6 +3,10 @@ $primary-color: rgb(255, 199, 243);
 $secondary-color:rgb(200, 255, 0);
 $background-color: black;
 
+* {
+  margin: 0;
+}
+
 body {
   font: 22px $font-stack;
   color: $primary-color;
@@ -10,7 +14,7 @@ body {
 }
 
 input {
-  background: black;
+  background: transparent;
   color: white;
   height: 40px;
   border: solid 2px $secondary-color;
@@ -19,7 +23,7 @@ input {
 }
 
 .search-name {
-  width: 300px;
+  width: 250px;
   text-align: left;
   padding: 0 15px;
 }
@@ -27,4 +31,16 @@ input {
 .search-btn {
   width: 120px;
   text-align: center;
+}
+
+h2 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+form {
+  position: absolute;
+  top: 30px;
+  right: 20px;
 }
