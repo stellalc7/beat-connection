@@ -51,7 +51,7 @@ const authVars = {
 // });
 
 
-app.post('/api', (authVars, request, response, body) => {
+app.get('/api', (authVars, request, response, body) => {
   // get artist ID from user input => then get 1 related artist later
   const urlStart = 'https://api.spotify.com/v1/search';
   // const apiKey = process.env.API_KEY; // from .env (dev) or Heroku

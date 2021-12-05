@@ -13,17 +13,16 @@
     <link rel="stylesheet" href="../src/index.scss" />
     <script src="./main.js"></script>
     <script src="//unpkg.com/globe.gl"></script>
-
     <title>WORLD, MUSIC</title>
 </head>
 
 <body>
+    <div id="globeViz"></div>
     <form id="search-artist" action="/api" method="GET">
-        <input class="search-name" type="text" placeholder="ARTIST NAME" value="">
+        <input class="search-name" type="text" placeholder="ARTIST NAME" value="" autofocus>
         <input class="search-btn" type="submit" value="SEARCH">
     </form>
 
-    <div id="globeViz"></div>
     <!-- <script>
         // Gen random data
         const N = 20;

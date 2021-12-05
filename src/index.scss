@@ -1,5 +1,5 @@
 $font-stack: IBM Plex Mono, monospace;
-$primary-color: rgb(255, 0, 128);
+$primary-color: rgb(255, 199, 243);
 $secondary-color:rgb(200, 255, 0);
 $background-color: black;
 
@@ -15,14 +15,16 @@ input {
   height: 40px;
   border: solid 2px $secondary-color;
   font: 17px $font-stack;
-  text-align: center;
   border-radius: 30px;
 }
 
 .search-name {
   width: 300px;
+  text-align: left;
+  padding: 0 15px;
 }
 
 .search-btn {
   width: 120px;
+  text-align: center;
 }
