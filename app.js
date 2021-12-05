@@ -2,10 +2,8 @@ const express = require('express'); // web framework
 const fetch = require('node-fetch'); // for making AJAX requests
 const path = require('path'); // do i need to change this
 var request = require('request'); //
-
-var client_id = '5f54c2557fd24e00820a6401cf913dff';
-var client_secret = '646f17419ce74ed2bcdfa7bdf836a606'; // Your secret
-
+// put environmental variables defined in .env file on process.env
+require('dotenv').config(); 
 const app = express();
 
 // serve files / assets from the dist folder
@@ -25,11 +23,14 @@ app.listen(PORT, () => {
 });
 
 
+// var client_id = '5f54c2557fd24e00820a6401cf913dff';
+// var client_secret = '646f17419ce74ed2bcdfa7bdf836a606';
 // get auth token ONCE - input for auth token with credentials
 const authVars = {
   url: 'https://accounts.spotify.com/api/token',
   headers: {
-    'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+    // 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+    'Authorization': 'Basic ' + (new Buffer(process.env.CLIENT_ID + ':' + process.env.CLIENT_SECRET).toString('base64'))
   },
   form: {
     grant_type: 'client_credentials'
@@ -58,7 +59,6 @@ app.get('/api', (authVars, request, response, body) => {
   var token = body.access_token; // spotify auth token
   const artistName = request.query.artistName; // from query string
   const url = `${urlStart}/${artistName}&type=artist`;
-  // does searchTerm auto convert space to %20
 
   console.log(`Fetching: ${url}`);
 
