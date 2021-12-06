@@ -10,7 +10,8 @@ In Beat Connection, you will be able to hopefully:
 
 ## Wireframe
 v0 test .. globe via globe.gl:<br>
-<img width="858" alt="Screenshot 2021-12-05 at 22 31 23" src="https://user-images.githubusercontent.com/17345270/144782810-35d20468-1bf5-4bb4-ab55-ccc4c581e05f.png">
+<img width="1319" alt="Screenshot 2021-12-05 at 23 12 14" src="https://user-images.githubusercontent.com/17345270/144786053-d65fd2a0-570f-42e2-a8f4-23f3f89bce6d.png">
+
 
 ## Technologies
 - Spotify API
