@@ -8,25 +8,27 @@ document.addEventListener("DOMContentLoaded", () => {
     body.append(description);
 
     // Gen random data
-    const N = 5;
+    const N = 10;
     const arcsData = [...Array(N).keys()].map(() => ({
       startLat: (Math.random() - 0.5) * 180,
       startLng: (Math.random() - 0.5) * 360,
       endLat: (Math.random() - 0.5) * 180,
       endLng: (Math.random() - 0.5) * 360,
-      color: [['red', 'pink', 'white'][Math.round(Math.random() * 3)], ['red', 'pink', 'white'][Math.round(Math.random() * 3)]]
+      color: [['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)], ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)]]
     }));
 
     Globe()
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      // .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
       .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
       .arcsData(arcsData)
       .arcColor('color')
       // .arcDashLength(() => Math.random())
       .arcDashGap(() => Math.random())
       .backgroundColor('black')
-      .width(window.innerWidth)
-      .height(window.innerHeight)
+      // .width(window.innerWidth)
+      // .height(window.innerHeight)
+      .atmosphereColor('pink')
 
       .arcDashAnimateTime(() => Math.random() * 4000 + 500)
       (document.getElementById('globeViz'))
