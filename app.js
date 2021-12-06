@@ -2,7 +2,6 @@ const express = require('express'); // web framework
 const fetch = require('node-fetch'); // for making AJAX requests
 const path = require('path'); // do i need to change this
 var request = require('request'); //
-// import fetch from 'node-fetch';
 
 // put environmental variables defined in .env file on process.env
 require('dotenv').config(); 
@@ -28,7 +27,6 @@ const authVars = {
   json: true
 };
 
-
 app.get('/api', (req, resp, body) => {
   // request.post(authVars, async function(error, response, body) {
     request.post(authVars, function(error, response, body) {
@@ -36,30 +34,28 @@ app.get('/api', (req, resp, body) => {
       var token = body.access_token;
 
       // get artist ID from user input
-      const urlStart = 'https://api.spotify.com/v1/search?q=';
+      const urlStart = 'https://api.spotify.com/v1/search';
       const artistName = req.query.artistName;                    // from query string
       const url = `${urlStart}?q=${artistName}&type=artist`;
       console.log(`Fetching: ${url}`);
 
-      // const data = await fetch(url, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
+      // const artistID = await fetch(url, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
       fetch(url, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
         .then(apiResponse => apiResponse.json())
         // get apiResponse.id
         .then(data => resp.send(data))
         .catch(error => resp.send(error));
 
-
-      // now get the Related Artist, from the origina artist ID
-      // const urlStart = 'https://api.spotify.com/v1/search?q=';
-      // const artistName = req.query.artistName; // from query string
-      // const url = `${urlStart}?q=${artistName}&type=artist`;
+      // get Related Artist, from input artist ID
+      // const urlStart = 'https://api.spotify.com/v1/artists';
+      // const artistID = artistID[0].id; // 
+      // const url = `${urlStart}/${artistID}/related-artists`;
       // console.log(`Fetching: ${url}`);
 
-      // const finalData = await fetch(url, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
+      // const relatedArtist = await fetch(url, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
       //   .then(data => resp.send(data))    // change to "related artist" to send to frontend do this later
       //   .catch(error => resp.send(error));
         
-
     // request.get(options, function(error, response, body) {
     //   console.log(body);
     // });
