@@ -22,4 +22,4 @@ Globe()
   .arcDashAnimateTime(() => Math.random() * 4000 + 500)
   (document.getElementById('globeViz'))
 
-  module.exports = Globe;
+module.exports = Globe;
