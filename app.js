@@ -20,12 +20,12 @@ const PORT = process.env.PORT || 8000;
 // start up a server listening at PORT; on success, log a message
 app.listen(PORT, () => {
   console.log(`Listening at localhost:${PORT}`);
-//   console.log(process.env.API_KEY === "banana");
 });
 
 
 // var client_id = '5f54c2557fd24e00820a6401cf913dff';
 // var client_secret = '646f17419ce74ed2bcdfa7bdf836a606';
+
 // get auth token ONCE - input for auth token with credentials
 const authVars = {
   url: 'https://accounts.spotify.com/api/token',

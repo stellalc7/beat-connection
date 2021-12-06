@@ -8,7 +8,7 @@ $background-color: black;
 }
 
 body {
-  font: 22px $font-stack;
+  font-family: $font-stack;
   color: $primary-color;
   background-color: $background-color;
 }
@@ -37,10 +37,22 @@ h2 {
   position: absolute;
   top: 20px;
   left: 20px;
+  font-size: 30px;
+  // top: 350px;
+  // left: -80px;
+  // transform: rotate(-90deg);
 }
 
 form {
   position: absolute;
   top: 30px;
   right: 20px;
+}
+
+p {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  size: 12px;
+  font-style: italic;
 }

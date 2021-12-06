@@ -1,42 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const body = document.body
-    const h2 = document.createElement('h2')
-    h2.innerText = "WORLD, \n MUSIC"
-    body.append(h2)
-    // body.append(searchArtist)
-
-    // const searchArtist = document.createElement("form");
-    // searchArtist.setAttribute("id", "search-artist");
-    // body.append(searchArtist);
-    // const artistName = document.createElement("input");
-    // artistName.setAttribute("type", "text");
-    // artistName.setAttribute("value", "")
-    // document.getElementById("search-artist").appendChild(artistName);
-    // create a button
+    const body = document.body;
+    const h2 = document.createElement('h2');
+    h2.innerText = "BEAT \n CONNECTION";
+    body.append(h2);
+    const description = document.createElement('p');
+    description.innerText = "Find similar artists to listen to around the world."
+    body.append(description);
 
     // Gen random data
-    const N = 20;
+    const N = 5;
     const arcsData = [...Array(N).keys()].map(() => ({
-        startLat: (Math.random() - 0.5) * 180,
-        startLng: (Math.random() - 0.5) * 360,
-        endLat: (Math.random() - 0.5) * 180,
-        endLng: (Math.random() - 0.5) * 360,
-        color: [['red', 'pink', 'white'][Math.round(Math.random() * 3)], ['red', 'pink', 'white'][Math.round(Math.random() * 3)]]
+      startLat: (Math.random() - 0.5) * 180,
+      startLng: (Math.random() - 0.5) * 360,
+      endLat: (Math.random() - 0.5) * 180,
+      endLng: (Math.random() - 0.5) * 360,
+      color: [['red', 'pink', 'white'][Math.round(Math.random() * 3)], ['red', 'pink', 'white'][Math.round(Math.random() * 3)]]
     }));
 
     Globe()
-        // .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
-        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
-        // .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-        .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-        .arcsData(arcsData)
-        .arcColor('color')
-        // .arcDashLength(() => Math.random())
-        .arcDashGap(() => Math.random())
-        .backgroundColor('black')
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+      .arcsData(arcsData)
+      .arcColor('color')
+      // .arcDashLength(() => Math.random())
+      .arcDashGap(() => Math.random())
+      .backgroundColor('black')
+      .width(window.innerWidth)
+      .height(window.innerHeight)
 
-        .arcDashAnimateTime(() => Math.random() * 4000 + 500)
-        (document.getElementById('globeViz'))
+      .arcDashAnimateTime(() => Math.random() * 4000 + 500)
+      (document.getElementById('globeViz'))
+      // fetch('../datasets/ne_110m_admin_0_countries.geojson')
+      // ${d.ADMIN} (${d.ISO_A2})
 });
 
 // get data from backend, which is getting data from Spotify API
