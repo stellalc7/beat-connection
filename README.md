@@ -1,5 +1,5 @@
 ## Beat Connection
-In Beat Connection (thank you LCD Soundsystem), you will be able to hopefully:
+In Beat Connection, you will be able to hopefully:
 - enter an artist that you enjoy listening to
 - a related/similar artist will be found somewhere around the world, and mapped on an interactive globe
 - you can click on a point denoting the location the artist is associated with, and find a link to that artist's Spotify page
