@@ -21,7 +21,7 @@ const myGlobe = Globe({ // rendererConfig: {
 myGlobe(globeViz)
   .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
   .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-  // .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+  .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
   .backgroundColor('black')
   .atmosphereColor('pink')
   (document.getElementById('globeViz'))
@@ -56,14 +56,14 @@ searchArtist.addEventListener('submit', function(e) {
   
   // labelsData.push({
   //   labelText: `${artist}`,
-  //   labelLat: arcsData.startLat,
-  //   labelLon:arcsData.startLon
+  //   labelLat: arcsData.startLat[arcsData.startLat.length-1],
+  //   labelLon:arcsData.startLon[arcsData.startLon-1]
   // })
 
   // labelsData.push({
   //   labelText: `${artist}`,
-  //   labelLat: arcsData.endLat,
-  //   labelLon:arcsData.endLon
+  //   labelLat: arcsData.endLat[arcsData.endLat-1],
+  //   labelLon:arcsData.endLon[arcsData.endLon-1]
   // })
 
   // console.log(arcsData)
