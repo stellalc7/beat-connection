@@ -12,15 +12,18 @@ body.append(description);
 /*   ------------------------- GLOBE -------------------------   */
 const arcsData = [];
 const labelsData = [];
-// const myGlobe = Globe();
-const myGlobe = Globe({ waitForGlobeReady: false })
+const myGlobe = Globe({ // rendererConfig: {
+                          // autoclear: false,
+                          // context: this
+                        //},
+                            waitForGlobeReady: false,
+                            animateIn: false })
 myGlobe(globeViz)
   .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
   .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+  // .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
   .backgroundColor('black')
   .atmosphereColor('pink')
-  // .arcsData(arcsData)
-  // .labelsData()
   (document.getElementById('globeViz'))
 
 
@@ -38,7 +41,7 @@ const getRelatedArtist = (query) => {
 const searchArtist = document.getElementById('search-artist');
 searchArtist.addEventListener('submit', function(e) {
   e.preventDefault();
-  const artist = searchArtist.querySelector("input[type='text']").value;
+  const artist = searchArtist.querySelector("input[type='text']").value.split(' ').join('%20');
   console.log(artist);
   getRelatedArtist(artist);
 
@@ -49,28 +52,26 @@ searchArtist.addEventListener('submit', function(e) {
     endLng: (Math.random() - 0.5) * 360,
     color: [['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)], ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)]]
   });
+  
+  // labelsData.push({
+  //   labelText: `${artist}`,
+  //   labelLat: arcsData.startLat,
+  //   labelLon:arcsData.startLon
+  // })
+
+  // labelsData.push({
+  //   labelText: `${artist}`,
+  //   labelLat: arcsData.endLat,
+  //   labelLon:arcsData.endLon
+  // })
 
   console.log(arcsData)
-
-  // Globe()
-  //   .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
-  //   .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-  //   .arcsData(arcsData)
-  //   .arcColor('color')
-  //   // .arcDashLength(() => Math.random())
-  //   .arcDashGap(() => Math.random())
-  //   .arcDashAnimateTime(() => Math.random() * 4000 + 500)
-  // (document.getElementById('globeViz'))
   
   myGlobe(globeViz)
-    // .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
-    // .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
     .arcsData(arcsData)
     .arcColor('color')
     .arcDashGap(() => Math.random())
-    // .backgroundColor('black')
-    // .atmosphereColor('pink')
-    // .labelsData()
+    .labelsData(labelsData)
     .arcDashAnimateTime(() => Math.random() * 4000 + 500)
     (document.getElementById('globeViz'))
 })
