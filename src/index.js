@@ -33,6 +33,7 @@ const getRelatedArtist = (query) => {
   fetch(`/api?artistName=${encodeURIComponent(query)}`)
     .then(res => res.json()) // maybe don't need
     .then(data => {
+      // console.log(data.artists.items[0].id);
       console.log(data);
     })
 }
@@ -42,7 +43,7 @@ const searchArtist = document.getElementById('search-artist');
 searchArtist.addEventListener('submit', function(e) {
   e.preventDefault();
   const artist = searchArtist.querySelector("input[type='text']").value.split(' ').join('%20');
-  console.log(artist);
+  // console.log(artist);
   getRelatedArtist(artist);
 
   arcsData.push({
@@ -65,13 +66,13 @@ searchArtist.addEventListener('submit', function(e) {
   //   labelLon:arcsData.endLon
   // })
 
-  console.log(arcsData)
+  // console.log(arcsData)
   
   myGlobe(globeViz)
     .arcsData(arcsData)
     .arcColor('color')
     .arcDashGap(() => Math.random())
-    .labelsData(labelsData)
+    // .labelsData(labelsData)
     .arcDashAnimateTime(() => Math.random() * 4000 + 500)
     (document.getElementById('globeViz'))
 })
