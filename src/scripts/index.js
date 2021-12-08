@@ -46,19 +46,15 @@ searchArtist.addEventListener('submit', async function(e) {
   e.preventDefault();
   const artist = searchArtist.querySelector("input[type='text']").value.split(' ').join('%20');
 
-  console.log('before rel artist');
+  // console.log('before rel artist');
   // const relatedArtist = await getRelatedArtist(artist);  
 
   const relatedArtist = await fetch(`/api?artistName=${encodeURIComponent(artist)}`)
     .then(res => res.json()) // maybe don't need
     .then(data => {
-      console.log('1 api: ' + data.artists[0].name);
+      // console.log('1 api: ' + data.artists[0].name);
       return data.artists[0].name;
     })
-  console.log('after rel artist');
-
-  /////////////// returns early - without data
-  console.log('2 eventListener: ' + relatedArtist);
 
   arcsData.push({
     startLat: (Math.random() - 0.5) * 180,
@@ -89,10 +85,10 @@ searchArtist.addEventListener('submit', async function(e) {
     .labelLat(d => d.lat)
     .labelLng(d => d.lng)
     .labelText(d => d.name)
-    .labelSize(1.75)
+    .labelSize(2)
     .labelDotRadius(0.75)
     .labelColor(() => 'pink')
-    // .onLabelHover(fn) ari's spotify page
+    // .onLabelHover(label, prevlabel)
     .arcColor('color')
     .arcDashGap(() => Math.random())
     .arcDashAnimateTime(() => Math.random() * 4000 + 500)
