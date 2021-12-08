@@ -40,7 +40,7 @@ app.get('/api', (req, resp, body) => {
       console.log(`Fetching: ${url}`);
       const getArtistID = await fetch(url, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
         .then(apiResponse => apiResponse.json())
-
+        
       // Artist ID => Related Artist
       const relatedUrlStart = 'https://api.spotify.com/v1/artists';
       const artistID = getArtistID.artists.items[0].id; // 

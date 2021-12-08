@@ -22,7 +22,7 @@ const myGlobe = Globe({ rendererConfig: {
 myGlobe(globeViz)
   .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
   .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-  // .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+  .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
   .backgroundColor('black')
   .atmosphereColor('pink')
   (document.getElementById('globeViz'))
@@ -30,18 +30,14 @@ myGlobe(globeViz)
 
 /*   ------------------------- API -------------------------   */
 // backend request
-const getRelatedArtist = (query) => {
-  let relatedArtist = null;
-  fetch(`/api?artistName=${encodeURIComponent(query)}`)
+const getRelatedArtist = async (query) => {
+  const relatedArtist = await fetch(`/api?artistName=${encodeURIComponent(query)}`)
     .then(res => res.json()) // maybe don't need
     .then(data => {
       console.log('data' + data.artists[0].name);
-      relatedArtist = data.artists[0].name;
-      // return relatedArtist;
-      // console.log(data);
-      // return relatedArtist;
+      return data.artists[0].name;
     })
-    if (relatedArtist !== null) { return relatedArtist };
+  // return relatedArtist;
 }
 
 // #search-artist form: artist name from user input
@@ -50,8 +46,10 @@ searchArtist.addEventListener('submit', function(e) {
   e.preventDefault();
   const artist = searchArtist.querySelector("input[type='text']").value.split(' ').join('%20');
   const relatedArtist = getRelatedArtist(artist);
+  
+  
 
-  console.log('2' + relatedArtist); // returns first WHY NO NO
+  console.log('2' + relatedArtist); /////////////// returns first WHY NO
 
   arcsData.push({
     startLat: (Math.random() - 0.5) * 180,
@@ -66,13 +64,13 @@ searchArtist.addEventListener('submit', function(e) {
     name: `${artist.split('%20').join(' ')}`,
     lat: arcsData[arcsData.length-1].startLat,
     lng: arcsData[arcsData.length-1].startLng
-  })
+  });
 
   labelsData.push({
     name: `${relatedArtist}`,
     lat: arcsData[arcsData.length-1].endLat,
     lng: arcsData[arcsData.length-1].endLng
-  })
+  });
   // console.log(labelsData);
   
   myGlobe(globeViz)
@@ -81,8 +79,8 @@ searchArtist.addEventListener('submit', function(e) {
     .labelLat(d => d.lat)
     .labelLng(d => d.lng)
     .labelText(d => d.name)
-    .labelSize(1.5)
-    .labelDotRadius(1)
+    .labelSize(1.75)
+    .labelDotRadius(0.75)
     .labelColor(() => 'pink')
     // .onLabelHover(fn) ari's spotify page
     .arcColor('color')
