@@ -12,10 +12,11 @@ body.append(description);
 /*   ------------------------- GLOBE -------------------------   */
 const arcsData = [];
 const labelsData = [];
-const myGlobe = Globe({ // rendererConfig: {
-                          // autoclear: false,
+const myGlobe = Globe({ rendererConfig: {
+                          autoclear: false,
+                          powerPreference: "low-power",
                           // context: this
-                        //},
+                        },
                             waitForGlobeReady: false,
                             animateIn: false })
 myGlobe(globeViz)
@@ -30,15 +31,18 @@ myGlobe(globeViz)
 /*   ------------------------- API -------------------------   */
 // backend request
 const getRelatedArtist = (query) => {
-  let relatedArtist = null;
-  fetch(`/api?artistName=${encodeURIComponent(query)}`)
+  let relatedArtist;
+  return fetch(`/api?artistName=${encodeURIComponent(query)}`)
     .then(res => res.json()) // maybe don't need
     .then(data => {
-      console.log(data.artists[0].name);
+      // console.log(data.artists[0].name);
       relatedArtist = data.artists[0].name;
+      return relatedArtist;
+      // console.log('1' + relatedArtist);
       // console.log(data);
     })
-    return relatedArtist;
+    // console.log('2' +relatedArtist);
+    // return relatedArtist;
 }
 
 // #search-artist form: artist name from user input
@@ -46,7 +50,6 @@ const searchArtist = document.getElementById('search-artist');
 searchArtist.addEventListener('submit', function(e) {
   e.preventDefault();
   const artist = searchArtist.querySelector("input[type='text']").value.split(' ').join('%20');
-  // console.log(artist);
   const relatedArtist = getRelatedArtist(artist);
 
   arcsData.push({
@@ -57,28 +60,33 @@ searchArtist.addEventListener('submit', function(e) {
     color: [['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)], ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)]]
   });
 
-  console.log(arcsData)
-  
+  console.log(arcsData);
+
   labelsData.push({
-    labelText: `${artist}`,
-    labelLat: arcsData[arcsData.length-1].startLat,
-    labelLng: arcsData[arcsData.length-1].startLng
+    name: `${artist.split('%20').join(' ')}`,
+    lat: arcsData[arcsData.length-1].startLat,
+    lng: arcsData[arcsData.length-1].startLng
   })
 
   labelsData.push({
-    labelText: `${relatedArtist}`,
-    labelLat: arcsData[arcsData.length-1].endLat,
-    labelLng: arcsData[arcsData.length-1].endLng
+    name: `${relatedArtist}`,
+    lat: arcsData[arcsData.length-1].endLat,
+    lng: arcsData[arcsData.length-1].endLng
   })
 
-  // console.log(labelsData)
+  console.log(labelsData)
   
   myGlobe(globeViz)
     .arcsData(arcsData)
-    // .labelsData(labelsData)
-    // .labelLat(labelsData.labelLat)
-    // .labelLng(labelsData.labelLng)
-    // .labelText(labelsData.labelText)
+    .labelsData(labelsData)
+    .labelLat(d => d.lat)
+    .labelLng(d => d.lng)
+    .labelText(d => d.name)
+    .labelDotRadius(2)
+    .labelColor(() => 'pink')
+    // .labelLat(labelsData.lat)
+    // .labelLng(labelsData.lng)
+    // .labelText(labelsData.name)
     .arcColor('color')
     .arcDashGap(() => Math.random())
     .arcDashAnimateTime(() => Math.random() * 4000 + 500)
