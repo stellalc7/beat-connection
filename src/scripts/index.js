@@ -13,10 +13,10 @@ body.append(description);
 const arcsData = [];
 const labelsData = [];
 const myGlobe = Globe({ rendererConfig: {
-                          autoclear: false,
-                          powerPreference: "low-power",
-                          // context: this
-                        },
+                              autoclear: false,
+                              powerPreference: "low-power",
+                              // context: this
+                            },
                             waitForGlobeReady: false,
                             animateIn: false })
 myGlobe(globeViz)
@@ -30,35 +30,46 @@ myGlobe(globeViz)
 
 /*   ------------------------- API -------------------------   */
 // backend request
-const getRelatedArtist = async (query) => {
-  const relatedArtist = await fetch(`/api?artistName=${encodeURIComponent(query)}`)
-    .then(res => res.json()) // maybe don't need
-    .then(data => {
-      console.log('data' + data.artists[0].name);
-      return data.artists[0].name;
-    })
-  // return relatedArtist;
-}
+// const getRelatedArtist = (query) => {
+//   const relatedArtist = fetch(`/api?artistName=${encodeURIComponent(query)}`)
+//     .then(res => res.json()) // maybe don't need
+//     .then(data => {
+//       console.log('1 api: ' + data.artists[0].name);
+//       return data.artists[0].name;
+//     })
+//   // return relatedArtist;
+// }
 
 // #search-artist form: artist name from user input
 const searchArtist = document.getElementById('search-artist');
-searchArtist.addEventListener('submit', function(e) {
+searchArtist.addEventListener('submit', async function(e) {
   e.preventDefault();
   const artist = searchArtist.querySelector("input[type='text']").value.split(' ').join('%20');
-  const relatedArtist = getRelatedArtist(artist);
-  
-  
 
-  console.log('2' + relatedArtist); /////////////// returns first WHY NO
+  console.log('before rel artist');
+  // const relatedArtist = await getRelatedArtist(artist);  
+
+  const relatedArtist = await fetch(`/api?artistName=${encodeURIComponent(artist)}`)
+    .then(res => res.json()) // maybe don't need
+    .then(data => {
+      console.log('1 api: ' + data.artists[0].name);
+      return data.artists[0].name;
+    })
+  console.log('after rel artist');
+
+  /////////////// returns early - without data
+  console.log('2 eventListener: ' + relatedArtist);
 
   arcsData.push({
     startLat: (Math.random() - 0.5) * 180,
     startLng: (Math.random() - 0.5) * 360,
     endLat: (Math.random() - 0.5) * 180,
     endLng: (Math.random() - 0.5) * 360,
-    color: [['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)], ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)]]
+    color: [
+      ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)],
+      ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)]
+    ]
   });
-  // console.log(arcsData);
 
   labelsData.push({
     name: `${artist.split('%20').join(' ')}`,
@@ -71,7 +82,6 @@ searchArtist.addEventListener('submit', function(e) {
     lat: arcsData[arcsData.length-1].endLat,
     lng: arcsData[arcsData.length-1].endLng
   });
-  // console.log(labelsData);
   
   myGlobe(globeViz)
     .arcsData(arcsData)
