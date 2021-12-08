@@ -37,7 +37,7 @@ app.get('/api', (req, resp, body) => {
       const urlStart = 'https://api.spotify.com/v1/search';
       const artistName = req.query.artistName;                    // from query string
       const url = `${urlStart}?q=${artistName}&type=artist`;
-      console.log(`Fetching: ${url}`);
+      // console.log(`Fetching: ${url}`);
       const getArtistID = await fetch(url, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
         .then(apiResponse => apiResponse.json())
         
@@ -45,7 +45,7 @@ app.get('/api', (req, resp, body) => {
       const relatedUrlStart = 'https://api.spotify.com/v1/artists';
       const artistID = getArtistID.artists.items[0].id; // 
       const relatedUrl = `${relatedUrlStart}/${artistID}/related-artists`;
-      console.log(`Fetching: ${relatedUrl}`);
+      // console.log(`Fetching: ${relatedUrl}`);
       const relatedArtist = await fetch(relatedUrl, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
         .then(apiResponse => apiResponse.json())
         .then(data => resp.send(data))
@@ -53,14 +53,6 @@ app.get('/api', (req, resp, body) => {
     }
   })
 });
-
-
-/*
-QUESTIONS
-1. are we grabbing auth token once, and passing the same header thru both fetches?
-2. is performance affected if i make more await api calls to grab more data from spotify? is there a more optimal way to code it?
-3. 
-*/
 
 
 // Heroku sets process.env.PORT in production; use 8000 in dev

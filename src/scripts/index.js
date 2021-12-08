@@ -49,6 +49,7 @@ searchArtist.addEventListener('submit', async function(e) {
   // console.log('before rel artist');
   // const relatedArtist = await getRelatedArtist(artist);  
 
+  // API request to backend
   const relatedArtist = await fetch(`/api?artistName=${encodeURIComponent(artist)}`)
     .then(res => res.json()) // maybe don't need
     .then(data => {
