@@ -28,7 +28,7 @@ MVP: Allow the user to enter an artist they enjoy listen to. Retrieve a related 
 - adjust user interactions depending on API possibilities / limitations
 - displaying artist data
 - mobile friendliness
-- (Tahj wonders - can we zoom in on an artist, and proportionally magnify the volume of their track playing? research for playing tracks on-site)
+- (tahj's idea - can we zoom in on an artist, and proportionally magnify the volume of their track playing? research for playing tracks on-site)
 
 <!-- ## Timeline
 FRI, 3 DEC : spotify api. set up skeleton to quasi integrate three.js<br>
