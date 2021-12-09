@@ -1,5 +1,5 @@
 ## Beat Connection
-In <a href="beatconnection.herokuapp.com" target="_blank">Beat Connection</a>, you can:
+In <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a>, you can:
 - enter an artist who you enjoy listening to
 - find similar artists to listen to around the world
 - (location data do not reflect artists' home base at this time - the site is very sorry)
