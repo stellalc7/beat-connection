@@ -2,7 +2,8 @@
 In Beat Connection, you will be able to hopefully:
 - enter an artist that you enjoy listening to
 - find similar artists to listen to around the world
-- (location data do not reflect artists' actual location at this time, the site is very sorry .. new things soon!)
+- (location data do not reflect artists' actual location at this time, the site is very sorry - but also Ariana Grande _could_ be flying over Antarctica right now? yeah, ok, probably not.)
+- new things soon!
 <!-- - a related/similar artist will be found somewhere around the world, and mapped on an interactive globe
 - you can click on a point denoting the location the artist is associated with, and find a link to that artist's Spotify page
 - (^ that will be replaced with an animation / moving the globe along a bezier curve to the next artist/location)
