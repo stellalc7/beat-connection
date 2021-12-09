@@ -13,7 +13,7 @@ In <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connectio
 
 
 ## Behold - our beat connections (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ♥︎ ♥︎ ♥︎
-MVP: Allow the user to enter an artist they enjoy listen to. Retrieve a related artist via Spotify's API. Connect artists around an interactive globe with bezier curves.<br><br>
+MVP: Allow the user to enter an artist they enjoy listening to. Retrieve a related artist via Spotify's API. Connect artists around an interactive globe with bezier curves.<br><br>
 <img width="1319" alt="Screenshot 2021-12-05 at 23 12 14" src="https://user-images.githubusercontent.com/17345270/144786053-d65fd2a0-570f-42e2-a8f4-23f3f89bce6d.png">
 
 
