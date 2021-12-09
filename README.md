@@ -28,7 +28,7 @@ MVP: retrieve related artists via Spotify's API, and connect artists around an i
 - adjust user interactions depending on API possibilities / limitations
 - displaying artist data
 - mobile friendliness
-- (Tahj's idea - can we zoom in on an artist, and proportionally magnify the volume of their track playing? research for playing tracks on-site)
+- (Tahj wonders - can we zoom in on an artist, and proportionally magnify the volume of their track playing? research for playing tracks on-site)
 
 <!-- ## Timeline
 FRI, 3 DEC : spotify api. set up skeleton to quasi integrate three.js<br>
