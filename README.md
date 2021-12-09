@@ -23,7 +23,7 @@ In Beat Connection, you can:
 
 ## Future research
 - API: access location artists are based in
-- API: related artists often are from the same region, how do I find similar artists elsewhere?
+- API: related artists often are from the same region, how do I recommend similar artists elsewhere?
 - adjust user interactions depending on API possibilities / limitations
 - displaying artist data
 - mobile friendliness
