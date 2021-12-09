@@ -21,10 +21,10 @@ In Beat Connection, you can:
 - globe.gl
 
 
-## Christmas vacation plans
-- API research: access location artists are based in
-- API research: related artists often are from the same region, how do I find similar artists elsewhere?
-- interaction design depending on API possibilities
+## Future research
+- API: access location artists are based in
+- API: related artists often are from the same region, how do I find similar artists elsewhere?
+- adjust user interactions depending on API possibilities / limitations
 - displaying artist data
 - mobile friendliness
 - (Tahj's idea - can we zoom in on an artist, and proportionally magnify the volume of their track playing? research for playing tracks on-site)
