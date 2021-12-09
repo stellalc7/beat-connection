@@ -48,4 +48,4 @@ https://developer.spotify.com/documentation/general/guides/track-relinking-guide
 
 
 ## Shout outs
-Big hugs to everyone for coding wisdom + inspiration, and making this site possible! [links?]
+Big hugs to everyone for coding wisdom + inspiration, and making this site possible.
