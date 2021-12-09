@@ -2,7 +2,7 @@
 In <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a>, you can:
 - enter an artist who you enjoy listening to
 - find similar artists to listen to around the world
-- (location data do not reflect artists' home base at this time - sorry)
+- (location data do not reflect where the artists are actually based at this time)
 - new things soon ..
 <!-- - a related/similar artist will be found somewhere around the world, and mapped on an interactive globe
 - you can click on a point denoting the location the artist is associated with, and find a link to that artist's Spotify page
