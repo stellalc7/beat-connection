@@ -30,7 +30,6 @@ WED, 8 DEC : local conditions, fix artist location data - probably need another 
 
 ## Sources
 https://globe.gl/<br>
-<!-- https://threejs.org/<br> -->
 https://gist.github.com/tadast/8827699<br>
 https://developer.spotify.com/console/get-search-item/<br>
 https://developer.spotify.com/console/get-artist-related-artists/<br>
