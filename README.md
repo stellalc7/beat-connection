@@ -23,7 +23,7 @@ MVP: Allow the user to enter an artist they enjoy listening to. Retrieve a relat
 
 
 ## Code snippet
-Artist Name from user input => Artist ID
+artist name (i.e. user input) => artist id
 ```
 const urlStart = 'https://api.spotify.com/v1/search';
 const artistName = req.query.artistName;
@@ -32,7 +32,7 @@ const getArtistID = await fetch(url, { method: 'GET', headers: { 'Authorization'
   .then(apiResponse => apiResponse.json())
 ```
   
-Artist ID => Related Artist
+artist id => related artist
 ```
 const relatedUrlStart = 'https://api.spotify.com/v1/artists';
 const artistID = getArtistID.artists.items[0].id;
@@ -51,14 +51,6 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
 - displaying artist data
 - mobile friendliness
 - (tahj's idea - can we zoom in on an artist, and proportionally magnify the volume of their track playing? research for playing tracks on-site)
-
-<!-- ## Timeline
-FRI, 3 DEC : spotify api. set up skeleton to quasi integrate three.js<br>
-SAT, 4 DEC : artist "location" - assume ISO code, get country's capital, convert to lat/lon<br>
-SUN, 5 DEC : render a earth with three.js / globe.gl, map artist's location lat/lon <br>
-MON, 6 DEC : continue what's undone<br>
-TUE, 7 DEC : bezier curves - interactive/animation thing along the bezier curve to land on the next artist/location<br>
-WED, 8 DEC : local conditions, fix artist location data - probably need another api -->
 
 
 ## Sources
