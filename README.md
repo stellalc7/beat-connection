@@ -22,6 +22,24 @@ MVP: Allow the user to enter an artist they enjoy listening to. Retrieve a relat
 - globe.gl
 
 
+## Code snippet
+Artist Name from user input => Artist ID
+```const urlStart = 'https://api.spotify.com/v1/search';
+const artistName = req.query.artistName;
+const url = `${urlStart}?q=${artistName}&type=artist`;
+const getArtistID = await fetch(url, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
+  .then(apiResponse => apiResponse.json())```
+
+Artist ID => Related Artist
+```const relatedUrlStart = 'https://api.spotify.com/v1/artists';
+const artistID = getArtistID.artists.items[0].id; // 
+const relatedUrl = `${relatedUrlStart}/${artistID}/related-artists`;
+const relatedArtist = await fetch(relatedUrl, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
+  .then(apiResponse => apiResponse.json())
+  .then(data => resp.send(data))
+  .catch(error => resp.send(error));```
+
+
 ## Future research
 - API: access location artists are based in
 - API: related artists often are from the same region, how do I recommend similar artists elsewhere?
