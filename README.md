@@ -1,5 +1,5 @@
 ## Beat Connection
-<a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a> is an experiment / data exploration. Nothing works. Why does everyone around the world only listen to Coldplay.
+<a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a> is an experiment / data exploration. Nothing works. Everyone loves Coldplay.
 <!-- - enter an artist who you enjoy listening to
 - find similar artists to listen to around the world
 - this site is undone -->
