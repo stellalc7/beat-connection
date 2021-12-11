@@ -1,8 +1,8 @@
 ## Beat Connection
 <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a> is an experiment / data exploration.
-- enter an artist who you enjoy listening to
+<!-- - enter an artist who you enjoy listening to
 - find similar artists to listen to around the world
-- this site is undone
+- this site is undone -->
 <!-- - a related/similar artist will be found somewhere around the world, and mapped on an interactive globe
 - you can click on a point denoting the location the artist is associated with, and find a link to that artist's Spotify page
 - (^ that will be replaced with an animation / moving the globe along a bezier curve to the next artist/location)
@@ -57,6 +57,7 @@ https://globe.gl/<br>
 https://gist.github.com/tadast/8827699<br>
 https://www.last.fm/api/show/geo.getTopArtists<br>
 https://www.mixcloud.com/developers/#connections-lists<br>
+https://www.mixcloud.com/developers/widget/#methods<br>
 https://developer.spotify.com/console/get-search-item/<br>
 https://developer.spotify.com/console/get-artist-related-artists/<br>
 https://developer.spotify.com/documentation/general/guides/track-relinking-guide/
