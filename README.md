@@ -1,5 +1,5 @@
 ## Beat Connection
-<a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a> is an experiment / data exploration. Nothing works.
+<a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a> is an experiment / data exploration.
 <!-- - enter an artist who you enjoy listening to
 - find similar artists to listen to around the world
 - this site is undone -->
