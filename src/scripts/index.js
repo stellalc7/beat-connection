@@ -5,9 +5,25 @@ const body = document.body;
 const h2 = document.createElement('h2');
 h2.innerText = "BEAT \n C♡NNECTI♡N";
 body.append(h2);
+
 const description = document.createElement('p');
 description.innerText = "Find similar artists to listen to around the world."
 body.append(description);
+
+// var a = document.createElement('a');
+// var gitlink = document.createTextNode("X");
+// a.appendChild(gitlink);
+// // a.title = "X";
+// a.href = "http://github.com/stellalc7";
+// body.appendChild(a);
+
+// var a = document.createElement('a');
+// var portfolio = document.createTextNode("O");
+// a.appendChild(portfolio);
+// // a.title = "O";
+// a.href = "http://heystella.io";
+// body.appendChild(a);
+
 
 /*   ------------------------- GLOBE -------------------------   */
 const arcsData = [];
@@ -22,7 +38,7 @@ const myGlobe = Globe({ rendererConfig: {
 myGlobe(globeViz)
   .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
   .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-  .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+  // .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
   .backgroundColor('black')
   .atmosphereColor('pink')
   (document.getElementById('globeViz'))

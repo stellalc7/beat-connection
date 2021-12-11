@@ -59,3 +59,10 @@ p {
   font-style: italic;
   color: rgb(223, 223, 223);
 }
+
+a {
+  color: $secondary-color;
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+}
