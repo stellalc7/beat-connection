@@ -22,7 +22,7 @@ MVP: Allow the user to enter an artist they enjoy listening to. Retrieve a relat
 - globe.gl
 
 
-## Code snippet
+<!-- ## Code snippet
 artist name (i.e. user input) => artist id
 ```
 const urlStart = 'https://api.spotify.com/v1/search';
@@ -41,25 +41,27 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
   .then(apiResponse => apiResponse.json())
   .then(data => resp.send(data))
   .catch(error => resp.send(error));
-```
+``` -->
 
 
-## Future research
+<!-- ## Future research
 - API: access location artists are based in
 - API: related artists often are from the same region, how do I recommend similar artists elsewhere?
 - adjust user interactions depending on API possibilities / limitations
 - displaying artist data
 - mobile friendliness
-- (tahj's idea - can we zoom in on an artist, and proportionally magnify the volume of their track playing? research for playing tracks on-site)
+- (tahj's idea - can we zoom in on an artist, and proportionally magnify the volume of their track playing? research for playing tracks on-site) -->
 
 
 ## Sources
 https://globe.gl/<br>
 https://gist.github.com/tadast/8827699<br>
+https://www.last.fm/api/show/geo.getTopArtists<br>
+https://www.mixcloud.com/developers/#connections-lists<br>
 https://developer.spotify.com/console/get-search-item/<br>
 https://developer.spotify.com/console/get-artist-related-artists/<br>
 https://developer.spotify.com/documentation/general/guides/track-relinking-guide/
 
 
 ## Shout outs
-Big hugs to everyone for coding wisdom + inspiration, and making this site possible.
+Big hugs to everyone who gave me coding wisdom + inspiration.
