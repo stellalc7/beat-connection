@@ -1,11 +1,11 @@
 ## Beat Connection
-<a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a> IS A VIBE - also data experimentation / exploration.
+<a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a> is data experimentation / exploration /.
 - enter an artist who you enjoy listening to
 - find similar artists to listen to around the world
 - this site is undone
 
 
-## Behold - our beat connections (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ ♥︎ ♥︎ ♥︎
+## Behold - our beat connections (っ˘з(˘⌣˘ ) ♡
 MVP: Allow the user to enter an artist they enjoy listening to. Retrieve a related artist via Spotify's API. Connect artists around an interactive globe with bezier curves.<br><br>
 <img width="1319" alt="Screenshot 2021-12-05 at 23 12 14" src="https://user-images.githubusercontent.com/17345270/144786053-d65fd2a0-570f-42e2-a8f4-23f3f89bce6d.png">
 
