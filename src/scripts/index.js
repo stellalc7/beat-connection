@@ -45,44 +45,32 @@ myGlobe(globeViz)
 
 
 /*   ------------------------- API -------------------------   */
-// backend request
-// const getRelatedArtist = (query) => {
-//   const relatedArtist = fetch(`/api?artistName=${encodeURIComponent(query)}`)
-//     .then(res => res.json()) // maybe don't need
-//     .then(data => {
-//       console.log('1 api: ' + data.artists[0].name);
-//       return data.artists[0].name;
-//     })
-//   // return relatedArtist;
-// }
-
-// #search-artist form: artist name from user input
 const searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
   const city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
+  console.log(city);
+  const urlStart = 'https://api.mixcloud.com/discover/city';
+  const url = `${urlStart}:${city}`;
 
-  // console.log('before rel artist');
-  // const relatedArtist = await getRelatedArtist(artist);  
+  console.log(`Fetching: ${url}`);
 
-  // API request to backend
-  const track = await fetch(`/api?city=${encodeURIComponent(city)}`)
-    .then(res => res.json()) // maybe don't need
-    .then(data => {
-      console.log(data);
-      // return data.artists[0].name;
-    })
+  fetch(url)
+    .then((response) => {response.json()})
+    .then((data) => {console.log(data)})
+    // .then(data => response.send(data))
+    // .catch(error => response.send(error));
 
-  arcsData.push({
-    startLat: (Math.random() - 0.5) * 180,
-    startLng: (Math.random() - 0.5) * 360,
-    endLat: (Math.random() - 0.5) * 180,
-    endLng: (Math.random() - 0.5) * 360,
-    color: [
-      ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)],
-      ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)]
-    ]
-  });
+  // arcsData.push({
+  //   startLat: (Math.random() - 0.5) * 180,
+  //   startLng: (Math.random() - 0.5) * 360,
+  //   endLat: (Math.random() - 0.5) * 180,
+  //   endLng: (Math.random() - 0.5) * 360,
+  //   color: [
+  //     ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)],
+  //     ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)]
+  //   ]
+  // });
 
   // labelsData.push({
   //   name: `${artist.split('%20').join(' ')}`,
@@ -96,18 +84,18 @@ searchCity.addEventListener('submit', async function(e) {
   //   lng: arcsData[arcsData.length-1].endLng
   // });
   
-  myGlobe(globeViz)
-    .arcsData(arcsData)
-    // .labelsData(labelsData)
-    // .labelLat(d => d.lat)
-    // .labelLng(d => d.lng)
-    // .labelText(d => d.name)
-    // .labelSize(2)
-    // .labelDotRadius(0.75)
-    // .labelColor(() => 'pink')
-    // .onLabelHover(label, prevlabel)
-    .arcColor('color')
-    .arcDashGap(() => Math.random())
-    .arcDashAnimateTime(() => Math.random() * 4000 + 500)
-    (document.getElementById('globeViz'))
+  // myGlobe(globeViz)
+  //   .arcsData(arcsData)
+  //   // .labelsData(labelsData)
+  //   // .labelLat(d => d.lat)
+  //   // .labelLng(d => d.lng)
+  //   // .labelText(d => d.name)
+  //   // .labelSize(2)
+  //   // .labelDotRadius(0.75)
+  //   // .labelColor(() => 'pink')
+  //   // .onLabelHover(label, prevlabel)
+  //   .arcColor('color')
+  //   .arcDashGap(() => Math.random())
+  //   .arcDashAnimateTime(() => Math.random() * 4000 + 500)
+  //   (document.getElementById('globeViz'))
 });
