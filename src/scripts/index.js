@@ -7,7 +7,7 @@ h2.innerText = "BEAT \n C♡NNECTI♡N";
 body.append(h2);
 
 const description = document.createElement('p');
-description.innerText = "Find similar artists to listen to around the world."
+description.innerText = "Find popular streams around the world."
 body.append(description);
 
 // var a = document.createElement('a');
@@ -27,7 +27,7 @@ body.append(description);
 
 /*   ------------------------- GLOBE -------------------------   */
 const arcsData = [];
-const labelsData = [];
+// const labelsData = [];
 const myGlobe = Globe({ rendererConfig: {
                               autoclear: false,
                               powerPreference: "low-power",
@@ -38,7 +38,7 @@ const myGlobe = Globe({ rendererConfig: {
 myGlobe(globeViz)
   .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
   .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-  // .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+  .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
   .backgroundColor('black')
   .atmosphereColor('pink')
   (document.getElementById('globeViz'))
@@ -57,20 +57,20 @@ myGlobe(globeViz)
 // }
 
 // #search-artist form: artist name from user input
-const searchArtist = document.getElementById('search-artist');
-searchArtist.addEventListener('submit', async function(e) {
+const searchCity = document.getElementById('search-city');
+searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
-  const artist = searchArtist.querySelector("input[type='text']").value.split(' ').join('%20');
+  const city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
 
   // console.log('before rel artist');
   // const relatedArtist = await getRelatedArtist(artist);  
 
   // API request to backend
-  const relatedArtist = await fetch(`/api?artistName=${encodeURIComponent(artist)}`)
+  const track = await fetch(`/api?city=${encodeURIComponent(city)}`)
     .then(res => res.json()) // maybe don't need
     .then(data => {
-      // console.log('1 api: ' + data.artists[0].name);
-      return data.artists[0].name;
+      console.log(data);
+      // return data.artists[0].name;
     })
 
   arcsData.push({
@@ -84,27 +84,27 @@ searchArtist.addEventListener('submit', async function(e) {
     ]
   });
 
-  labelsData.push({
-    name: `${artist.split('%20').join(' ')}`,
-    lat: arcsData[arcsData.length-1].startLat,
-    lng: arcsData[arcsData.length-1].startLng
-  });
+  // labelsData.push({
+  //   name: `${artist.split('%20').join(' ')}`,
+  //   lat: arcsData[arcsData.length-1].startLat,
+  //   lng: arcsData[arcsData.length-1].startLng
+  // });
 
-  labelsData.push({
-    name: `${relatedArtist}`,
-    lat: arcsData[arcsData.length-1].endLat,
-    lng: arcsData[arcsData.length-1].endLng
-  });
+  // labelsData.push({
+  //   name: `${relatedArtist}`,
+  //   lat: arcsData[arcsData.length-1].endLat,
+  //   lng: arcsData[arcsData.length-1].endLng
+  // });
   
   myGlobe(globeViz)
     .arcsData(arcsData)
-    .labelsData(labelsData)
-    .labelLat(d => d.lat)
-    .labelLng(d => d.lng)
-    .labelText(d => d.name)
-    .labelSize(2)
-    .labelDotRadius(0.75)
-    .labelColor(() => 'pink')
+    // .labelsData(labelsData)
+    // .labelLat(d => d.lat)
+    // .labelLng(d => d.lng)
+    // .labelText(d => d.name)
+    // .labelSize(2)
+    // .labelDotRadius(0.75)
+    // .labelColor(() => 'pink')
     // .onLabelHover(label, prevlabel)
     .arcColor('color')
     .arcDashGap(() => Math.random())

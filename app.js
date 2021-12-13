@@ -15,42 +15,27 @@ app.get('/', (request, response) => {
   response.sendFile(`${__dirname}/dist/index.html`);
 });
 
+// const access_token = {
+//   url: `https://www.mixcloud.com/oauth/authorize?client_id=${process.env.CLIENT_ID }&redirect_uri=${REDIRECT_URI}`
+// };
 
-const authVars = {
-  url: 'https://accounts.spotify.com/api/token',
-  headers: {
-    'Authorization': 'Basic ' + (new Buffer(process.env.CLIENT_ID  + ':' + process.env.CLIENT_SECRET).toString('base64'))
-  },
-  form: {
-    grant_type: 'client_credentials'
-  },
-  json: true
-};
-
+// https://api.mixcloud.com/discover/city:athens/
 
 app.get('/api', (req, resp, body) => {
-  request.post(authVars, async function(error, response, body) {
-    if (!error && response.statusCode === 200) {
-      var token = body.access_token;
+  console.log(`test`);
 
-      // User Input => Artist ID
-      const urlStart = 'https://api.spotify.com/v1/search';
-      const artistName = req.query.artistName;                    // from query string
-      const url = `${urlStart}?q=${artistName}&type=artist`;
-      // console.log(`Fetching: ${url}`);
-      const getArtistID = await fetch(url, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
-        .then(apiResponse => apiResponse.json())
-        
-      // Artist ID => Related Artist
-      const relatedUrlStart = 'https://api.spotify.com/v1/artists';
-      const artistID = getArtistID.artists.items[0].id; // 
-      const relatedUrl = `${relatedUrlStart}/${artistID}/related-artists`;
-      // console.log(`Fetching: ${relatedUrl}`);
-      const relatedArtist = await fetch(relatedUrl, {method: 'GET', headers: {'Authorization': 'Bearer ' + token}, json: true})
+  request.get(function(error, response, body) {
+      // User Input => 1st popular stream
+      const urlStart = 'https://api.mixcloud.com/discover/city';
+      const city = req.query.city;                    // from query string
+      const url = `${urlStart}:${city}`;
+
+      console.log(`Fetching: ${url}`);
+
+      fetch(url)
         .then(apiResponse => apiResponse.json())
         .then(data => resp.send(data))
         .catch(error => resp.send(error));
-    }
   })
 });
 
