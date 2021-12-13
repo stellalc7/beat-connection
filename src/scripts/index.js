@@ -7,8 +7,14 @@ h2.innerText = "BEAT \n C♡NNECTI♡N";
 body.append(h2);
 
 const description = document.createElement('p');
-description.innerText = "Find popular streams around the world."
+description.innerText = "Listen to popular streams around the world."
 body.append(description);
+
+// const widget = Mixcloud.PlayerWidget(document.getElementById("my-widget-iframe"));
+// body.append(widget)
+// widget.ready.then(() => {
+//     // Put code that interacts with the widget here
+//   });
 
 /*   ------------------------- GLOBE -------------------------   */
 const arcsData = [];
@@ -34,15 +40,16 @@ searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
   const city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
   console.log(city);
-  const urlStart = 'https://api.mixcloud.com/discover/city';
-  const url = `${urlStart}:${city}`;
+  // const urlStart = 'https://api.mixcloud.com/discover/city';
+  const urlStart = 'https://api.mixcloud.com/search';
+  const url = `${urlStart}/?q=${city}&type=cloudcast`;
 
   console.log(`Fetching: ${url}`);
 
   fetch(url)
     .then(response => response.json())
     .then(data => console.log(data));
-    // .catch(error => response.send(error));
+    // .catch(error => response.send(error))
 
   // arcsData.push({
   //   startLat: (Math.random() - 0.5) * 180,
