@@ -10,21 +10,6 @@ const description = document.createElement('p');
 description.innerText = "Find popular streams around the world."
 body.append(description);
 
-// var a = document.createElement('a');
-// var gitlink = document.createTextNode("X");
-// a.appendChild(gitlink);
-// // a.title = "X";
-// a.href = "http://github.com/stellalc7";
-// body.appendChild(a);
-
-// var a = document.createElement('a');
-// var portfolio = document.createTextNode("O");
-// a.appendChild(portfolio);
-// // a.title = "O";
-// a.href = "http://heystella.io";
-// body.appendChild(a);
-
-
 /*   ------------------------- GLOBE -------------------------   */
 const arcsData = [];
 // const labelsData = [];
@@ -43,7 +28,6 @@ myGlobe(globeViz)
   .atmosphereColor('pink')
   (document.getElementById('globeViz'))
 
-
 /*   ------------------------- API -------------------------   */
 const searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
@@ -56,9 +40,8 @@ searchCity.addEventListener('submit', async function(e) {
   console.log(`Fetching: ${url}`);
 
   fetch(url)
-    .then((response) => {response.json()})
-    .then((data) => {console.log(data)})
-    // .then(data => response.send(data))
+    .then(response => response.json())
+    .then(data => console.log(data));
     // .catch(error => response.send(error));
 
   // arcsData.push({
