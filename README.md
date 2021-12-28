@@ -40,6 +40,7 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
 ## Future research
 - API: access location artists are based in
 - API: related artists often are from the same region, how do I recommend similar artists elsewhere?
+- (maybe: user picks a mood / genre - array of countries - search spotify playlists - grab one song from playlist found - map track - oauth / user log in - play track on site)
 - adjust user interactions depending on API possibilities / limitations
 - displaying artist data
 - mobile friendliness
