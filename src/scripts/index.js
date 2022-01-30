@@ -12,14 +12,14 @@ body.append(h2);
 // body.append(description);
 
 var iframe = document.createElement('iframe');
-iframe.src = 'https://www.mixcloud.com/widget/iframe/?feed=https://www.mixcloud.com/mixmastermorris/mixmaster-morris-stockholm-hosoi-1';
-iframe.frameborder= "0";
-iframe.width = "100%";
-iframe.height= "60"
+// iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=/mixmastermorris/mixmaster-morris-stockholm-hosoi-1/';
+// iframe.frameborder= "0";
+// iframe.width = "100%";
 body.append(iframe);
 
+{/* <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fmixmastermorris%2Fmixmaster-morris-stockholm-hosoi-1%2F" frameborder="0" ></iframe> */}
+https://www.mixcloud.com/mixmastermorris/mixmaster-morris-stockholm-hosoi-1/
 
-// document.getElementById("p2").style.fontSize = "larger";
 
 {/* <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Faotns%2Fathens-of-the-north-vol2%2F" frameborder="0" ></iframe> */}
 
@@ -58,10 +58,12 @@ searchCity.addEventListener('submit', async function(e) {
   const url = `${urlStart}/?q=${city}&type=cloudcast`;
 
   // console.log(`Fetching: ${url}`);
-
+  let suffix; 
   fetch(url)
     .then(response => response.json())
-    .then(data => console.log(data.data[Math.floor(Math.random()*data.data.length)].url))
+    .then(data =>
+      iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
+      )
     .catch(error => console.log(error));
 
   // arcsData.push({
