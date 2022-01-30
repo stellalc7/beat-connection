@@ -1,5 +1,6 @@
 import Globe from 'globe.gl';
 
+
 /*   ------------------------- DOM ELEMENTS -------------------------   */
 const body = document.body;
 const h2 = document.createElement('h2');
@@ -10,11 +11,20 @@ const description = document.createElement('p');
 description.innerText = "Listen to popular streams around the world."
 body.append(description);
 
-// const widget = Mixcloud.PlayerWidget(document.getElementById("my-widget-iframe"));
-// body.append(widget)
-// widget.ready.then(() => {
-//     // Put code that interacts with the widget here
-//   });
+var iframe = document.createElement('iframe');
+iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Faotns%2Fathens-of-the-north-vol2%2F';
+iframe.frameborder= "0";
+iframe.width = "100%";
+iframe.height= "60";
+body.append(iframe);
+
+{/* <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Faotns%2Fathens-of-the-north-vol2%2F" frameborder="0" ></iframe> */}
+
+{/* <iframe width="100%" height="120"
+  src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fspartacus%2Fparty-time%2F&amp;hide_cover=1&amp;light=1"
+  frameborder="0">
+</iframe> */}
+
 
 /*   ------------------------- GLOBE -------------------------   */
 const arcsData = [];
@@ -34,22 +44,22 @@ myGlobe(globeViz)
   .atmosphereColor('pink')
   (document.getElementById('globeViz'))
 
+
 /*   ------------------------- API -------------------------   */
 const searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
   const city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
   console.log(city);
-  // const urlStart = 'https://api.mixcloud.com/discover/city';
   const urlStart = 'https://api.mixcloud.com/search';
   const url = `${urlStart}/?q=${city}&type=cloudcast`;
 
-  console.log(`Fetching: ${url}`);
+  // console.log(`Fetching: ${url}`);
 
   fetch(url)
     .then(response => response.json())
-    .then(data => console.log(data));
-    // .catch(error => response.send(error))
+    .then(data => console.log(data.data[Math.floor(Math.random()*data.data.length)].url))
+    .catch(error => console.log(error));
 
   // arcsData.push({
   //   startLat: (Math.random() - 0.5) * 180,
