@@ -7,16 +7,19 @@ const h2 = document.createElement('h2');
 h2.innerText = "BEAT \n C♡NNECTI♡N";
 body.append(h2);
 
-const description = document.createElement('p');
-description.innerText = "Listen to popular streams around the world."
-body.append(description);
+// const description = document.createElement('p');
+// description.innerText = "Listen to popular streams around the world."
+// body.append(description);
 
 var iframe = document.createElement('iframe');
-iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Faotns%2Fathens-of-the-north-vol2%2F';
+iframe.src = 'https://www.mixcloud.com/widget/iframe/?feed=https://www.mixcloud.com/mixmastermorris/mixmaster-morris-stockholm-hosoi-1';
 iframe.frameborder= "0";
 iframe.width = "100%";
-iframe.height= "60";
+iframe.height= "60"
 body.append(iframe);
+
+
+// document.getElementById("p2").style.fontSize = "larger";
 
 {/* <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Faotns%2Fathens-of-the-north-vol2%2F" frameborder="0" ></iframe> */}
 
