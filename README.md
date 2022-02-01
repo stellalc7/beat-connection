@@ -12,6 +12,7 @@
 Initially, I opted for the Spotify API as it sounded the most robust and reliable to allow users to input an artist they enjoy listening to. From their input, a related artist was fetched. The original goal was to discover similar artists to listen to around the world.
 artist name (i.e. user input) => artist id
 ```
+// SPOTIFY API CALL
 const urlStart = 'https://api.spotify.com/v1/search';
 const artistName = req.query.artistName;
 const url = `${urlStart}?q=${artistName}&type=artist`;
@@ -20,6 +21,7 @@ const getArtistID = await fetch(url, { method: 'GET', headers: { 'Authorization'
 ```  
 artist id => related artist
 ```
+// SPOTIFY API CALL
 const relatedUrlStart = 'https://api.spotify.com/v1/artists';
 const artistID = getArtistID.artists.items[0].id;
 const relatedUrl = `${relatedUrlStart}/${artistID}/related-artists`;
