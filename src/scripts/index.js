@@ -12,7 +12,7 @@ body.append(description);
 
 let currentLocation = document.createElement('h1');
 let localTemp = document.createElement('h3');
-let currentWx = document.createElement('h4');
+let localTime = document.createElement('h4');
 
 var iframe = document.createElement('iframe');
 
@@ -38,6 +38,13 @@ myGlobe(globeViz)
 
 
 /*   ------------------------- API -------------------------   */
+
+function getTime(timezone) {
+  var d = new Date(new Date().getTime() + (timezone * 1000));   // convert API offset to ms
+  var hh = d.getUTCHours();
+  var mm = d.getUTCMinutes();
+  return (`${hh}:${mm}`)
+}
 
 let searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
@@ -68,8 +75,8 @@ searchCity.addEventListener('submit', async function(e) {
     localTemp.innerText = `${Math.round(data.main.temp)}°, ${data.weather[0].description}`;
     body.append(localTemp);
 
-    // currentWx.innerText = data.weather[0].description;
-    // body.append(currentWx);
+    localTime.innerText = getTime(data.timezone);;
+    body.append(localTime);
 
     lons.push(data.coord.lon)
     lats.push(data.coord.lat)
