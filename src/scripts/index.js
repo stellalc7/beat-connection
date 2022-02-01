@@ -60,8 +60,8 @@ searchCity.addEventListener('submit', async function(e) {
     lons.push(coords.lon)
     lats.push(coords.lat)
 
-    console.log('lons: ' + lons);
-    console.log('lats: ' + lats);
+    // console.log('lons: ' + lons);
+    // console.log('lats: ' + lats);
     
     // rings only @ current stream loc, i.e. last lat/lon in arr
     let rData = [{
