@@ -32,7 +32,7 @@ app.get('/', (request, response) => {
 // });
 
 app.get('/api', (request, response) => {
-  console.log('test')
+  // console.log('test')
   const geoUrlStart = 'http://api.openweathermap.org/geo/1.0/direct?q';
   const apiKey = process.env.API_KEY;
   const searchTerm = request.query.searchTerm; // from query string
@@ -41,7 +41,7 @@ app.get('/api', (request, response) => {
 
   console.log(`Fetching: ${geoUrl}`);
 
-  fetch(url) // AJAX request to API
+  fetch(geoUrl) // AJAX request to API
     .then(apiResponse => apiResponse.json())
     .then(data => response.send(data))
     .catch(error => response.send(error));
