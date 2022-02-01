@@ -37,7 +37,7 @@ myGlobe(globeViz)
 const searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
-  const city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
+  let city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
   
   // const urlStart = 'https://api.mixcloud.com/search';
   // const url = `${urlStart}/?q=${city}&type=cloudcast`;
@@ -48,22 +48,13 @@ searchCity.addEventListener('submit', async function(e) {
   //     )
   //   .catch(error => console.log(error));
 
-
-    // const apiRequest = (query = 'berlin') => {
-    //   fetch(`/api?searchTerm=${encodeURIComponent(query)}`)
-    //     .then(res => res.json())
-    //     .then(data => {
-    //       console.log(data);
-    //     })
-    // }
-
-    fetch(`/api?searchTerm=${encodeURIComponent('berlin')}`)
-    // .then(res => res.json()) // maybe don't need
+    let coords = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
+    .then(res => res.json()) // maybe don't need
     .then(data => {
-      // console.log('1 api: ' + data.artists[0].name);
-      // return data.artists[0].name;
-      console.log(data)
+      return data
     })
+
+    console.log(coords)
 
   // arcsData.push({
   //   startLat: (Math.random() - 0.5) * 180,
