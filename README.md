@@ -1,8 +1,7 @@
 ## Behold - our <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connections</a> (っ˘з(˘⌣˘ ) ♡
 <i>Enter a city. Listen to popular streams around the world.</i>
 
-https://user-images.githubusercontent.com/17345270/151915430-0ba79829-2c3e-4cb3-b1df-7f2975a73ae2.mov
-
+https://user-images.githubusercontent.com/17345270/152048976-d008913f-afc0-490b-82ae-4e30046f12e7.mov
 
 ## Technologies
 - NodeJS, ExpressJS, HTML, CSS
