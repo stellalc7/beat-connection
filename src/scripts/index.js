@@ -51,10 +51,11 @@ searchCity.addEventListener('submit', async function(e) {
     let coords = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
     .then(res => res.json()) // maybe don't need
     .then(data => {
-      return data
+      return data[0];
     })
 
-    console.log(coords)
+    console.log(coords.lon)
+    console.log(coords.lat)
 
   // arcsData.push({
   //   startLat: (Math.random() - 0.5) * 180,

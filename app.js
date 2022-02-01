@@ -42,7 +42,7 @@ app.get('/api', (request, response) => {
 
   fetch(geoUrl) // AJAX request to API
     .then(apiResponse => apiResponse.json())
-    .then(data => response.send(data.first))
+    .then(data => response.send(data))
     .catch(error => response.send(error));
 });
 
