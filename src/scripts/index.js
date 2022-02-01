@@ -57,9 +57,9 @@ searchCity.addEventListener('submit', async function(e) {
       return data[0];
     })
 
+    console.log(coords)
     lons.push(coords.lon)
     lats.push(coords.lat)
-
     // console.log('lons: ' + lons);
     // console.log('lats: ' + lats);
     
