@@ -17,26 +17,11 @@ app.get('/', (request, response) => {
 });
 
 
-// app.get('/api', (req, resp, body) => {
-//   console.log('backend')
-//   request.post(function(error, response, body) {
-//     const geoUrlStart = 'http://api.openweathermap.org/geo/1.0/direct?q';
-//     let city = req.query.city;
-//     console.log(city)
-//     const geoUrl = `${geoUrlStart}=${city}&appid=${process.env.API_KEY}`;
-//     fetch(geoUrl)
-//       .then(response => response.json())
-//       .then(coords => response.send(coords))
-//       .catch(error => console.log(error))
-//   })
-// });
-
 app.get('/api', (request, response) => {
   const geoUrlStart = 'http://api.openweathermap.org/geo/1.0/direct?q';
   const apiKey = process.env.API_KEY;
-  let searchTerm = request.query.searchTerm; // from query string
-  // const url = `${urlStart}/${apiKey}/search.php?s=${searchTerm}`;
-  let geoUrl = `${geoUrlStart}=${searchTerm}&appid=${apiKey}`;
+  let searchCity = request.query.searchCity;
+  let geoUrl = `${geoUrlStart}=${searchCity}&appid=${apiKey}`;
 
   console.log(`Fetching: ${geoUrl}`);
 

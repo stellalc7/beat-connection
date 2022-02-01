@@ -34,7 +34,8 @@ myGlobe(globeViz)
 
 
 /*   ------------------------- API -------------------------   */
-const searchCity = document.getElementById('search-city');
+let lons, lats;
+let searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
   let city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
@@ -48,14 +49,14 @@ searchCity.addEventListener('submit', async function(e) {
   //     )
   //   .catch(error => console.log(error));
 
-    let coords = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
+    let coords = await fetch(`/api?searchCity=${encodeURIComponent(city)}`)
     .then(res => res.json()) // maybe don't need
     .then(data => {
       return data[0];
     })
 
-    console.log(coords.lon)
-    console.log(coords.lat)
+    lons.push(coords.lon)
+    lats.push(coords.lat)
 
   // arcsData.push({
   //   startLat: (Math.random() - 0.5) * 180,
