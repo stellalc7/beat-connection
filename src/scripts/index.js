@@ -51,7 +51,7 @@ searchCity.addEventListener('submit', async function(e) {
       )
     .catch(error => console.log(error));
 
-    let coords = await fetch(`/api?searchCity=${encodeURIComponent(city)}`)
+  let coords = await fetch(`/api?searchCity=${encodeURIComponent(city)}`)
     .then(res => res.json()) // maybe don't need
     .then(data => {
       return data[0];
