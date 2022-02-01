@@ -16,7 +16,7 @@ body.append(iframe);
 
 /*   ------------------------- GLOBE -------------------------   */
 // let arcsData = [];
-let rData = [];
+// let rData = [];
 let lons = [];
 let lats = [];
 // const labelsData = [];
@@ -70,8 +70,9 @@ searchCity.addEventListener('submit', async function(e) {
       console.log('make a dot in new location')
       console.log('make a connection')
     }
-
-    rData = [{
+    
+    // refresh rings every time - to current stream location
+    let rData = [{
       lat: lats[0],
       lng: lons[0],
       maxR: Math.random() * 20 + 3,
