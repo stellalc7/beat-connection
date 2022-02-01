@@ -7,28 +7,18 @@ h2.innerText = "BEAT \n C♡NNECTI♡N";
 body.append(h2);
 
 const description = document.createElement('p');
-description.innerText = "Find similar artists to listen to around the world."
+description.innerText = "Listen to popular streams around the world."
 body.append(description);
 
-// var a = document.createElement('a');
-// var gitlink = document.createTextNode("X");
-// a.appendChild(gitlink);
-// // a.title = "X";
-// a.href = "http://github.com/stellalc7";
-// body.appendChild(a);
-
-// var a = document.createElement('a');
-// var portfolio = document.createTextNode("O");
-// a.appendChild(portfolio);
-// // a.title = "O";
-// a.href = "http://heystella.io";
-// body.appendChild(a);
-
+var iframe = document.createElement('iframe');
+// body.append(iframe);
 
 /*   ------------------------- GLOBE -------------------------   */
-const arcsData = [];
-const labelsData = [];
-const myGlobe = Globe({ rendererConfig: {
+let arcsData = [];
+let lons = [];
+let lats = [];
+// const labelsData = [];
+let myGlobe = Globe({ rendererConfig: {
                               autoclear: false,
                               powerPreference: "low-power",
                               // context: this
@@ -45,69 +35,73 @@ myGlobe(globeViz)
 
 
 /*   ------------------------- API -------------------------   */
-// backend request
-// const getRelatedArtist = (query) => {
-//   const relatedArtist = fetch(`/api?artistName=${encodeURIComponent(query)}`)
-//     .then(res => res.json()) // maybe don't need
-//     .then(data => {
-//       console.log('1 api: ' + data.artists[0].name);
-//       return data.artists[0].name;
-//     })
-//   // return relatedArtist;
-// }
 
-// #search-artist form: artist name from user input
-const searchArtist = document.getElementById('search-artist');
-searchArtist.addEventListener('submit', async function(e) {
+let searchCity = document.getElementById('search-city');
+searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
-  const artist = searchArtist.querySelector("input[type='text']").value.split(' ').join('%20');
+  let city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
+  
+  const urlStart = 'https://api.mixcloud.com/search';
+  const url = `${urlStart}/?q=${city}&type=cloudcast`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data =>
+      iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
+      body.append(iframe)
+      )
+    .catch(error => console.log(error));
 
-  // console.log('before rel artist');
-  // const relatedArtist = await getRelatedArtist(artist);  
-
-  // API request to backend
-  const relatedArtist = await fetch(`/api?artistName=${encodeURIComponent(artist)}`)
+    let coords = await fetch(`/api?searchCity=${encodeURIComponent(city)}`)
     .then(res => res.json()) // maybe don't need
     .then(data => {
-      // console.log('1 api: ' + data.artists[0].name);
-      return data.artists[0].name;
+      return data[0];
     })
 
-  arcsData.push({
-    startLat: (Math.random() - 0.5) * 180,
-    startLng: (Math.random() - 0.5) * 360,
-    endLat: (Math.random() - 0.5) * 180,
-    endLng: (Math.random() - 0.5) * 360,
-    color: [
-      ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)],
-      ['red', 'pink', 'white', 'magenta'][Math.round(Math.random() * 3)]
-    ]
-  });
+    lons.push(coords.lon)
+    lats.push(coords.lat)
 
-  labelsData.push({
-    name: `${artist.split('%20').join(' ')}`,
-    lat: arcsData[arcsData.length-1].startLat,
-    lng: arcsData[arcsData.length-1].startLng
-  });
+    console.log('lons: ' + lons);
+    console.log('lats: ' + lats);
+    
+    // rings only @ current stream loc, i.e. last lat/lon in arr
+    let rData = [{
+      lat: lats[lats.length-1],
+      lng: lons[lats.length-1],
+      maxR: 10,
+      propagationSpeed: 2,
+      repeatPeriod: 1000
+    }]
 
-  labelsData.push({
-    name: `${relatedArtist}`,
-    lat: arcsData[arcsData.length-1].endLat,
-    lng: arcsData[arcsData.length-1].endLng
-  });
-  
-  myGlobe(globeViz)
-    .arcsData(arcsData)
-    .labelsData(labelsData)
-    .labelLat(d => d.lat)
-    .labelLng(d => d.lng)
-    .labelText(d => d.name)
-    .labelSize(2)
-    .labelDotRadius(0.75)
-    .labelColor(() => 'pink')
-    // .onLabelHover(label, prevlabel)
-    .arcColor('color')
-    .arcDashGap(() => Math.random())
-    .arcDashAnimateTime(() => Math.random() * 4000 + 500)
-    (document.getElementById('globeViz'))
+    if (lons.length === 1) {
+      myGlobe(globeViz)
+        .ringsData(rData)
+        .ringColor(() => '#00FFB6')
+        .ringMaxRadius('maxR')
+        .ringPropagationSpeed('propagationSpeed')
+        .ringRepeatPeriod('repeatPeriod')
+      (document.getElementById('globeViz'))
+    } else {
+      arcsData.push({
+        startLat: lats[lats.length-2],
+        startLng: lons[lons.length-2],
+        endLat: lats[lats.length-1],
+        endLng: lons[lons.length-1],
+        color: [
+          ['pink', 'magenta'][Math.round(Math.random())],
+          ['pink', 'magenta'][Math.round(Math.random())]
+        ]
+      });
+      // console.log(arcsData);
+      myGlobe(globeViz)
+        .ringsData(rData)
+        .ringColor(() => '#00FFB6')
+        .ringMaxRadius('maxR')
+        .ringPropagationSpeed('propagationSpeed')
+        .ringRepeatPeriod('repeatPeriod')
+        .arcsData(arcsData)
+        .arcColor('color')
+        // .arcDashGap(Math.random())
+        .arcDashAnimateTime(5000)
+      (document.getElementById('globeViz'))
+    }
 });

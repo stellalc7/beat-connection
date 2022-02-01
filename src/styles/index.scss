@@ -2,7 +2,8 @@
 
 $font-stack: IBM Plex Mono, monospace;
 $primary-color: rgb(253, 207, 243);
-$secondary-color:rgb(200, 255, 0);
+// $secondary-color:rgb(200, 255, 0);
+$secondary-color: rgb(0, 255, 182);
 $background-color: black;
 
 * {
@@ -24,7 +25,7 @@ input {
   border-radius: 30px;
 }
 
-.search-name {
+.search-city-name {
   width: 240px;
   text-align: left;
   padding: 0 15px;
@@ -53,7 +54,7 @@ form {
 
 p {
   position: absolute;
-  bottom: 30px;
+  top: 100px;
   left: 20px;
   font-size: 14px;
   font-style: italic;
@@ -63,6 +64,14 @@ p {
 a {
   color: $secondary-color;
   position: absolute;
-  bottom: 30px;
+  top: 130px;
   right: 20px;
+}
+
+iframe {
+  position: absolute;
+  bottom: 0px;
+  border: 0;
+  width: 100%;
+  height: 60px;
 }

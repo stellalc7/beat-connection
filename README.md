@@ -1,32 +1,29 @@
-## Beat Connection
-<a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a>
-- enter an artist who you enjoy listening to
-- find similar artists to listen to around the world
-- this site is undone
+## Behold - our <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connections</a> (っ˘з(˘⌣˘ ) ♡
+<i>Enter a city. Listen to popular streams around the world.</i>
 
-
-## Behold, our beat connections (っ˘з(˘⌣˘ ) ♡
-MVP: Allow the user to enter an artist they enjoy listening to. Retrieve a related artist via Spotify's API. Connect artists around an interactive globe with bezier curves.<br><br>
 <img width="1319" alt="Screenshot 2021-12-05 at 23 12 14" src="https://user-images.githubusercontent.com/17345270/144786053-d65fd2a0-570f-42e2-a8f4-23f3f89bce6d.png">
 
-
 ## Technologies
-- Spotify API
-- globe.gl
-
+- NodeJS, ExpressJS, HTML, CSS
+- <s>Spotify API</s>
+- Mixcloud API for streams
+- OpenWeatherMap API for coordinates
+- Globe.GL for connecting beats
 
 ## Code snippet
+Initially, I opted for the Spotify API as it sounded the most robust and reliable to allow users to input an artist they enjoy listening to. From their input, a related artist was fetched. The original goal was to discover similar artists to listen to around the world.
 artist name (i.e. user input) => artist id
 ```
+// SPOTIFY API CALL
 const urlStart = 'https://api.spotify.com/v1/search';
 const artistName = req.query.artistName;
 const url = `${urlStart}?q=${artistName}&type=artist`;
 const getArtistID = await fetch(url, { method: 'GET', headers: { 'Authorization': 'Bearer ' + token }, json: true })
   .then(apiResponse => apiResponse.json())
-```
-  
+```  
 artist id => related artist
 ```
+// SPOTIFY API CALL
 const relatedUrlStart = 'https://api.spotify.com/v1/artists';
 const artistID = getArtistID.artists.items[0].id;
 const relatedUrl = `${relatedUrlStart}/${artistID}/related-artists`;
@@ -35,16 +32,11 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
   .then(data => resp.send(data))
   .catch(error => resp.send(error));
 ```
+As I kept coding, I realized it was unwise of me to assume Spotify's API offered artist location data - they had made this obselete a few years ago. So, I was just fetching the first related artist, and mapping it in a Math.random() location - for proof of concept / my school presentation as we had a 1 week deadline. Then, I decided to formulate my API call to inherently search for countries with a genre type through playlists, to get 1 track from playlists, and mapping it over the country - i.e. 'Bolivian rap' - would give me a few playlists theortically, and I could map the first track in the most popular playlist. I also expected I'd have tot ake care of a lot of edge cases if I wrote my API call with this formula.
 
+So, I played with more APIs and discovered Mixcloud, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I decided to slightly modify my concept to 'streams around the world' and allow the user to input a city. I continue to use Express on the backend to fetch coordinate data via the OpenWeatherMap API with the user input, and grab a random Mixcloud stream from that city. The site now also features an iframe to listen to the streams directly on-site.
 
-<!--## Future research
-- API: access location artists are based in
-- API: related artists often are from the same region, how do I recommend similar artists elsewhere?
-- (maybe: user picks a mood / genre - array of countries - search spotify playlists - grab one song from playlist found - map track - oauth / user log in - play track on site)
-- adjust user interactions depending on API possibilities / limitations
-- displaying artist data
-- mobile friendliness
-- (tahj's idea - can we zoom in on an artist, and proportionally magnify the volume of their track playing? research for playing tracks on-site)-->
+In the future, I would like to make a site that allows users - or, well me at least - to discover similar artists around the world, so hopefully I can make a Beat Connections 2.0 that does that, with Spotify - by writing an API formula to transcend immediate streaming behavior / the algorithm.
 
 
 ## Sources

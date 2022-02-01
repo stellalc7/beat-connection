@@ -33,7 +33,12 @@ const config = {
     ],
   },
   plugins: [new MiniCssExtractPlugin()],
-  target: 'node'
+  target: 'node',
+  devServer: {
+    headers: {
+        'X-Frame-Options': 'ALLOWALL'
+    }
+}
 };
 
 module.exports = (env, argv) => {
@@ -42,6 +47,5 @@ module.exports = (env, argv) => {
   } else {
     config.devtool = 'eval-source-map';
   }
-
   return config;
 }
