@@ -2,16 +2,19 @@ import Globe from 'globe.gl';
 
 /*   ------------------------- DOM ELEMENTS -------------------------   */
 const body = document.body;
-const h2 = document.createElement('h2');
-h2.innerText = "BEAT \n C♡NNECTI♡N";
-body.append(h2);
+const title = document.createElement('h2');
+title.innerText = "BEAT \n C♡NNECTI♡N";
+body.append(title);
 
 const description = document.createElement('p');
 description.innerText = "Listen to popular streams around the world."
 body.append(description);
 
+let currentLocation = document.createElement('h1');
+let localTemp = document.createElement('h3');
+let currentWx = document.createElement('h4');
+
 var iframe = document.createElement('iframe');
-// body.append(iframe);
 
 /*   ------------------------- GLOBE -------------------------   */
 let arcsData = [];
@@ -51,17 +54,27 @@ searchCity.addEventListener('submit', async function(e) {
       )
     .catch(error => console.log(error));
 
-  let coords = await fetch(`/api?searchCity=${encodeURIComponent(city)}`)
-    .then(res => res.json()) // maybe don't need
+  let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
+    .then(res => res.json())
     .then(data => {
-      return data[0];
+      return data
     })
 
-    console.log(coords)
-    lons.push(coords.lon)
-    lats.push(coords.lat)
-    // console.log('lons: ' + lons);
-    // console.log('lats: ' + lats);
+    console.log(data)
+    // debugger
+    currentLocation.innerText = data.name;
+    body.append(currentLocation);
+
+    localTemp.innerText = `${Math.round(data.main.temp)}°, ${data.weather[0].description}`;
+    body.append(localTemp);
+
+    // currentWx.innerText = data.weather[0].description;
+    // body.append(currentWx);
+
+    lons.push(data.coord.lon)
+    lats.push(data.coord.lat)
+    console.log('lons: ' + lons);
+    console.log('lats: ' + lats);
     
     // rings only @ current stream loc, i.e. last lat/lon in arr
     let rData = [{
@@ -75,7 +88,7 @@ searchCity.addEventListener('submit', async function(e) {
     if (lons.length === 1) {
       myGlobe(globeViz)
         .ringsData(rData)
-        .ringColor(() => '#00FFB6')
+        .ringColor(() => '#00ffc8')
         .ringMaxRadius('maxR')
         .ringPropagationSpeed('propagationSpeed')
         .ringRepeatPeriod('repeatPeriod')
@@ -94,7 +107,7 @@ searchCity.addEventListener('submit', async function(e) {
       // console.log(arcsData);
       myGlobe(globeViz)
         .ringsData(rData)
-        .ringColor(() => '#00FFB6')
+        .ringColor(() => '#00ffc8')
         .ringMaxRadius('maxR')
         .ringPropagationSpeed('propagationSpeed')
         .ringRepeatPeriod('repeatPeriod')

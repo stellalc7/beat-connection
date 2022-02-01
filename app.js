@@ -16,16 +16,13 @@ app.get('/', (request, response) => {
   response.sendFile(`${__dirname}/dist/index.html`);
 });
 
-
 app.get('/api', (request, response) => {
-  const geoUrlStart = 'http://api.openweathermap.org/geo/1.0/direct?q';
   const apiKey = process.env.API_KEY;
-  let searchCity = request.query.searchCity;
-  let geoUrl = `${geoUrlStart}=${searchCity}&appid=${apiKey}`;
-
-  console.log(`Fetching: ${geoUrl}`);
-
-  fetch(geoUrl) // AJAX request to API
+  const geoUrlStart = 'https://api.openweathermap.org/data/2.5/weather?q'
+    // console.log(request)
+  let searchTerm = request.query.searchTerm;
+  let geoUrl = `${geoUrlStart}=${searchTerm}&units=metric&appid=${apiKey}`;
+  let coords = fetch(geoUrl) // AJAX request to API
     .then(apiResponse => apiResponse.json())
     .then(data => response.send(data))
     .catch(error => response.send(error));
