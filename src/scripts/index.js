@@ -1,32 +1,17 @@
 import Globe from 'globe.gl';
 
-
 /*   ------------------------- DOM ELEMENTS -------------------------   */
 const body = document.body;
 const h2 = document.createElement('h2');
 h2.innerText = "BEAT \n C♡NNECTI♡N";
 body.append(h2);
 
-// const description = document.createElement('p');
-// description.innerText = "Listen to popular streams around the world."
-// body.append(description);
+const description = document.createElement('p');
+description.innerText = "Listen to popular streams around the world."
+body.append(description);
 
 var iframe = document.createElement('iframe');
-// iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=/mixmastermorris/mixmaster-morris-stockholm-hosoi-1/';
-// iframe.frameborder= "0";
-// iframe.width = "100%";
 body.append(iframe);
-
-{/* <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fmixmastermorris%2Fmixmaster-morris-stockholm-hosoi-1%2F" frameborder="0" ></iframe> */}
-https://www.mixcloud.com/mixmastermorris/mixmaster-morris-stockholm-hosoi-1/
-
-
-{/* <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Faotns%2Fathens-of-the-north-vol2%2F" frameborder="0" ></iframe> */}
-
-{/* <iframe width="100%" height="120"
-  src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fspartacus%2Fparty-time%2F&amp;hide_cover=1&amp;light=1"
-  frameborder="0">
-</iframe> */}
 
 
 /*   ------------------------- GLOBE -------------------------   */
@@ -53,18 +38,32 @@ const searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
   const city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
-  console.log(city);
-  const urlStart = 'https://api.mixcloud.com/search';
-  const url = `${urlStart}/?q=${city}&type=cloudcast`;
+  
+  // const urlStart = 'https://api.mixcloud.com/search';
+  // const url = `${urlStart}/?q=${city}&type=cloudcast`;
+  // fetch(url)
+  //   .then(response => response.json())
+  //   .then(data =>
+  //     iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24)
+  //     )
+  //   .catch(error => console.log(error));
 
-  // console.log(`Fetching: ${url}`);
-  let suffix; 
-  fetch(url)
-    .then(response => response.json())
-    .then(data =>
-      iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
-      )
-    .catch(error => console.log(error));
+
+    // const apiRequest = (query = 'berlin') => {
+    //   fetch(`/api?searchTerm=${encodeURIComponent(query)}`)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //       console.log(data);
+    //     })
+    // }
+
+    fetch(`/api?searchTerm=${encodeURIComponent('berlin')}`)
+    // .then(res => res.json()) // maybe don't need
+    .then(data => {
+      // console.log('1 api: ' + data.artists[0].name);
+      // return data.artists[0].name;
+      console.log(data)
+    })
 
   // arcsData.push({
   //   startLat: (Math.random() - 0.5) * 180,
