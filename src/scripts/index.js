@@ -43,9 +43,14 @@ function getTime(timezone) {
   var d = new Date(new Date().getTime() + (timezone * 1000));   // convert API offset to ms
   var hh = d.getUTCHours();
   var mm = d.getUTCMinutes();
-  return (`${hh}:${mm}`)
+  if (hh < 10) {
+    return (`0${hh}:${mm}`)
+  } else {
+    return (`${hh}:${mm}`)
+  }
 }
 
+let error;
 let searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -59,6 +64,7 @@ searchCity.addEventListener('submit', async function(e) {
       iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
       body.append(iframe)
       )
+    // .catch(error => { return error });
     .catch(error => console.log(error));
 
   let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
@@ -67,21 +73,15 @@ searchCity.addEventListener('submit', async function(e) {
       return data
     })
 
-    console.log(data)
-    // debugger
     currentLocation.innerText = data.name;
     body.append(currentLocation);
-
     localTemp.innerText = `${Math.round(data.main.temp)}°, ${data.weather[0].description}`;
     body.append(localTemp);
-
     localTime.innerText = getTime(data.timezone);;
     body.append(localTime);
 
     lons.push(data.coord.lon)
     lats.push(data.coord.lat)
-    console.log('lons: ' + lons);
-    console.log('lats: ' + lats);
     
     // rings only @ current stream loc, i.e. last lat/lon in arr
     let rData = [{
