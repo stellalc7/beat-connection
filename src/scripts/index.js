@@ -30,7 +30,7 @@ let myGlobe = new Globe({ rendererConfig: {
 myGlobe(globeViz)
   .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
   .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-  // .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+  .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
   .backgroundColor('black')
   .atmosphereColor('pink')
 (document.getElementById('globeViz'))
