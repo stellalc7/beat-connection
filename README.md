@@ -7,9 +7,9 @@ Listen to popular streams around the world.
 https://user-images.githubusercontent.com/17345270/152177744-b3266537-11dd-4386-ad20-0c6132b154fc.mov
 
 ## Functionalities
-- An interactive globe connects cities user inputs with bezier curves.
+- An interactive globe connects cities (from user input) with bezier curves.
 - Current stream location propogates rings.
-- Current stream location - local time, and weather conditions.
+- Current stream location's local time, and weather conditions are available.
 - Listen to streams on-site.
 
 ## Technologies
