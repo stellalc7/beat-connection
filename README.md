@@ -19,7 +19,7 @@ https://user-images.githubusercontent.com/17345270/152177744-b3266537-11dd-4386-
 - OpenWeatherMap API for coordinates, timezone, weather
 - Globe.GL for connecting beats
 
-## Code snippet
+## Let me tell you a story
 Initially, I opted for the Spotify API as it sounded the most robust and reliable to allow users to input an artist they enjoy listening to. From their input, a related artist was fetched. The original goal was to discover similar artists to listen to around the world.
 artist name (i.e. user input) => artist id
 ```
@@ -41,10 +41,45 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
   .then(data => resp.send(data))
   .catch(error => resp.send(error));
 ```
-I realized Spotify made artist location data obselete a few years ago. So, I thought I could inherently search for countries with a genre through playlists, to get 1 track from playlists, and map the track/artist over the country - i.e. 'Bolivian rap'. This equation would probably require a lot of testing - obscure genres, coupled with specific countries, etc.
 
-I discovered the Mixcloud API, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I modified my concept to 'streams around the world' and allow users to input cities instead. I added the OpenWeatherMap API to display coordinates, local weather conditions, and local time.
+I realized Spotify removed artist location data a few years ago. So, I thought maybe I could inherently search for countries with a genre through playlists, to get 1 track from playlists, and map the track/artist over the country - i.e. 'Bolivian rap'. This equation would probably require a lot of testing - obscure genres, coupled with specific countries, etc.
 
+I discovered the Mixcloud API, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I modified my concept to 'streams around the world' and allow users to input cities instead.
+```
+searchCity.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  let city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
+  const urlStart = 'https://api.mixcloud.com/search';
+  const url = `${urlStart}/?q=${city}&type=cloudcast`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data =>
+      iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
+      body.append(iframe)
+      )
+
+  // ...
+}
+```
+I added the OpenWeatherMap API to display coordinates, local weather conditions, and local time.
+```
+// FRONTEND
+let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
+  .then(res => res.json())
+  .then(data => { return data })
+
+// BACKEND
+app.get('/api', (request, response) => {
+  const apiKey = process.env.API_KEY;
+  const geoUrlStart = 'https://api.openweathermap.org/data/2.5/weather?q'
+  let searchTerm = request.query.searchTerm;
+  let geoUrl = `${geoUrlStart}=${searchTerm}&units=metric&appid=${apiKey}`;
+  let coords = fetch(geoUrl) // AJAX request to API
+    .then(apiResponse => apiResponse.json())
+    .then(data => response.send(data))
+    .catch(error => response.send(error));
+});
+```
 
 ## Sources
 https://globe.gl/<br>
