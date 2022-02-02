@@ -4,6 +4,8 @@ Behold, our beat connections (っ˘з(˘⌣˘ ) ♡
 Listen to popular streams around the world.
 ```
 
+'...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer.' - (Gillespie, 2003).
+
 https://user-images.githubusercontent.com/17345270/152177744-b3266537-11dd-4386-ad20-0c6132b154fc.mov
 
 ## Functionalities
