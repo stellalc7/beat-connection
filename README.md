@@ -24,15 +24,14 @@ Initially, I opted for the Spotify API to fetch a related artist from an artist 
 artist name (i.e. user input) => artist id
 ```js
 // SPOTIFY API CALL
+// artist => artist id
 const urlStart = 'https://api.spotify.com/v1/search';
 const artistName = req.query.artistName;
 const url = `${urlStart}?q=${artistName}&type=artist`;
 const getArtistID = await fetch(url, { method: 'GET', headers: { 'Authorization': 'Bearer ' + token }, json: true })
   .then(apiResponse => apiResponse.json())
-```  
-artist id => related artist
-```js
-// SPOTIFY API CALL
+  
+// artist id => related artist
 const relatedUrlStart = 'https://api.spotify.com/v1/artists';
 const artistID = getArtistID.artists.items[0].id;
 const relatedUrl = `${relatedUrlStart}/${artistID}/related-artists`;
