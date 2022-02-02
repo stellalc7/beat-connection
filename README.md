@@ -4,7 +4,7 @@ Behold, our beat connections (っ˘з(˘⌣˘ ) ♡
 Listen to popular streams around the world.
 ```
 
-https://user-images.githubusercontent.com/17345270/152087651-21744388-509e-4dc2-8e9c-4aa1664a79a2.mov
+https://user-images.githubusercontent.com/17345270/152177744-b3266537-11dd-4386-ad20-0c6132b154fc.mov
 
 ## Functionalities
 - An interactive globe connects cities user inputs with bezier curves.
