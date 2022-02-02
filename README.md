@@ -25,7 +25,7 @@ https://user-images.githubusercontent.com/17345270/152177744-b3266537-11dd-4386-
 - Globe.GL for connecting beats
 
 ## Let me tell you a story
-Initially, I opted for the Spotify API as it sounded the most robust and reliable to allow users to input an artist they enjoy listening to. From their input, a related artist was fetched. The original goal was to discover similar artists to listen to around the world.
+Initially, I opted for the Spotify API to fetch a related artist from an artist a user inputs. The original goal was to discover similar artists to listen to around the world. I quickly realized this idea was not as straightforward as I had imagined.
 artist name (i.e. user input) => artist id
 ```
 // SPOTIFY API CALL
@@ -47,7 +47,7 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
   .catch(error => resp.send(error));
 ```
 
-I realized Spotify removed artist location data a few years ago. So, I thought maybe I could inherently search for countries with a genre through playlists, to get 1 track from playlists, and map the track/artist over the country - i.e. 'Bolivian rap'. This equation would probably require a lot of testing - obscure genres, coupled with specific countries, etc.
+I learned Spotify removed artist location data a few years ago. So, I thought maybe I could inherently search for countries with a genre through playlists, to get 1 track from playlists, and map the track/artist over the country - i.e. 'Bolivian rap'. This equation would probably require a lot of testing - obscure genres, coupled with specific countries, etc.
 
 I discovered the Mixcloud API, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I modified my concept to 'streams around the world' and allow users to input cities instead.
 ```
