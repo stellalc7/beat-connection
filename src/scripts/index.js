@@ -116,11 +116,11 @@ searchCity.addEventListener('submit', async function(e) {
 
     if (lons.length === 1) {
       myGlobe.ringsData(rData)
-      myGlobe.ringColor(() => '#00ffc8')
-      myGlobe.ringMaxRadius('maxR')
-      myGlobe.ringPropagationSpeed('propagationSpeed')
-      myGlobe.ringRepeatPeriod('repeatPeriod')
-      myGlobe.pointOfView({lat: lats[0], lng: lons[0], altitude: 2.5}, 3000)
+             .ringColor(() => '#00ffc8')
+             .ringMaxRadius('maxR')
+             .ringPropagationSpeed('propagationSpeed')
+             .ringRepeatPeriod('repeatPeriod')
+             .pointOfView({lat: lats[0], lng: lons[0], altitude: 2.5}, 3000)
     } else {
       arcsData.push({
         startLat: lats[lats.length-2],
@@ -133,14 +133,16 @@ searchCity.addEventListener('submit', async function(e) {
         ]
       });
       myGlobe.ringsData(rData)
-      myGlobe.ringColor(() => '#00ffc8')
-      myGlobe.ringMaxRadius('maxR')
-      myGlobe.ringPropagationSpeed('propagationSpeed')
-      myGlobe.ringRepeatPeriod('repeatPeriod')
-      myGlobe.arcsData(arcsData)
-      myGlobe.arcColor('color')
-      // myGlobe.arcDashGap(Math.random())
-      // myGlobe.arcDashAnimateTime(5000)
-      myGlobe.pointOfView({lat: lats[lats.length-1], lng: lons[lons.length-1], altitude: 2.5}, 3000)
+              .ringColor(() => '#00ffc8')
+              .ringMaxRadius('maxR')
+              .ringPropagationSpeed('propagationSpeed')
+              .ringRepeatPeriod('repeatPeriod')
+              .arcsData(arcsData)
+              .arcColor('color')
+              // myGlobe.arcDashGap(Math.random())
+              // myGlobe.arcDashAnimateTime(5000)
+              // myGlobe.arcsTransitionDuration(2000)
+              .arcStroke(1.05)
+              .pointOfView({lat: lats[lats.length-1], lng: lons[lons.length-1], altitude: 2.5}, 3000)
     }
 });
