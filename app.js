@@ -8,6 +8,9 @@ var request = require('request');
 require('dotenv').config(); 
 const app = express();
 
+var favicon = require('serve-favicon');
+app.use(favicon(__dirname + '/src/images/favicon.ico'));
+
 // serve files / assets from the dist folder
 app.use(express.static('dist')); 
 
