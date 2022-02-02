@@ -25,11 +25,23 @@ app.get('/api', (request, response) => {
     // console.log(request)
   let searchTerm = request.query.searchTerm;
   let geoUrl = `${geoUrlStart}=${searchTerm}&units=metric&appid=${apiKey}`;
-  let coords = fetch(geoUrl) // AJAX request to API
+  fetch(geoUrl) // AJAX request to API
     .then(apiResponse => apiResponse.json())
     .then(data => response.send(data))
     .catch(error => response.send(error));
 });
+
+// https://newsapi.org/
+// app.get('/news', (request, response) => {
+//   const newsApiKey = process.env.NEWS_API_KEY;
+//   const newsUrlStart = 'https://newsapi.org/v2/everything?q'
+//   let searchTerm = request.query.searchTerm;
+//   let newsUrl = `${newsUrlStart}=${searchTerm}&sortBy=popularity&apiKey=${newsApiKey}`;
+//   fetch(newsUrl) // AJAX request to API
+//     .then(apiResponse => apiResponse.json())
+//     .then(goodNews => response.send(goodNews))
+//     .catch(error => response.send(error));
+// });
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {

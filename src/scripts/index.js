@@ -42,7 +42,7 @@ myGlobe(globeViz)
   .atmosphereColor('pink')
 
   myGlobe.controls().autoRotate = true;
-  myGlobe.controls().autoRotateSpeed = 0.05;
+  myGlobe.controls().autoRotateSpeed = 0.075;
 (document.getElementById('globeViz'))
 
 
