@@ -13,13 +13,17 @@ body.append(description);
 let currentLocation = document.createElement('h1');
 let localTemp = document.createElement('h3');
 let localTime = document.createElement('h4');
-
 var iframe = document.createElement('iframe');
+
+// var locIcon = document.createElement('img');
+// locIcon.src = ''
+// body.append(locIcon);
 
 /*   ------------------------- GLOBE -------------------------   */
 let arcsData = [];
 let lons = [];
 let lats = [];
+let error;
 // const labelsData = [];
 let myGlobe = new Globe({ rendererConfig: {
                               autoclear: false,
@@ -52,12 +56,19 @@ function getTime(timezone) {
     return (`${hh}:${mm}`)
   }
 }
-
 // setTimeout(() =>
 //   getTime(timezone), 1000
 // );
 
-let error;
+// locIcon.addEventListener('click', function() {
+currentLocation.addEventListener('click', function() {
+  if (lats.length === 1) {
+    myGlobe.pointOfView({lat: lats[0], lng: lons[0], altitude: 2.5}, 3000)
+  } else {
+    myGlobe.pointOfView({lat: lats[lats.length-1], lng: lons[lons.length-1], altitude: 2.5}, 3000)
+  }
+});
+
 let searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -80,7 +91,7 @@ searchCity.addEventListener('submit', async function(e) {
       return data
     })
 
-    currentLocation.innerText = data.name;
+    currentLocation.innerText = `${data.name}`;
     body.append(currentLocation);
     localTemp.innerText = `${Math.round(data.main.temp)}°, ${data.weather[0].description}`;
     body.append(localTemp);
