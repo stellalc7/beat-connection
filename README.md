@@ -1,12 +1,13 @@
-## Behold - our <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connections</a> (っ˘з(˘⌣˘ ) ♡
+## <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a>
+Behold - our beat connections (っ˘з(˘⌣˘ ) ♡
 <i>Listen to popular streams around the world.</i>
 
 https://user-images.githubusercontent.com/17345270/152087651-21744388-509e-4dc2-8e9c-4aa1664a79a2.mov
 
 ## Functionalities
-- Interactive globe with user input cities connected with bezier curves.
-- Current location has rings propogating from it.
-- Display local time, and weather conditions.
+- An interactive globe connects cities user inputs with bezier curves.
+- Current stream location propogates rings.
+- Current stream location - local time, and weather conditions.
 - Listen to streams on-site.
 
 ## Technologies
@@ -38,11 +39,9 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
   .then(data => resp.send(data))
   .catch(error => resp.send(error));
 ```
-As I kept coding, I realized it was unwise of me to assume Spotify's API offered artist location data - they had made this obselete a few years ago. So, I was just fetching the first related artist, and mapping it in a Math.random() location - for proof of concept / my school presentation as we had a 1 week deadline. Then, I decided to formulate my API call to inherently search for countries with a genre type through playlists, to get 1 track from playlists, and mapping it over the country - i.e. 'Bolivian rap' - would give me a few playlists theortically, and I could map the first track in the most popular playlist. I also expected I'd have tot ake care of a lot of edge cases if I wrote my API call with this formula.
+I realized Spotify made made artist location data obselete a few years ago. I decided to formulate my API call to inherently search for countries with a genre type through playlists, to get 1 track from playlists, and mapping it over the country - i.e. 'Bolivian rap' - would give me a few playlists theortically, and I could map the first track in the most popular playlist. I also expected I'd have tot ake care of a lot of edge cases if I wrote my API call with this formula.
 
-So, I played with more APIs and discovered Mixcloud, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I decided to slightly modify my concept to 'streams around the world' and allow the user to input a city. I continue to use Express on the backend to fetch coordinate data via the OpenWeatherMap API with the user input, and grab a random Mixcloud stream from that city. The site now also features an iframe to listen to the streams directly on-site.
-
-In the future, I would like to make a site that allows users - or, well me at least - to discover similar artists around the world, so hopefully I can make a Beat Connections 2.0 that does that, with Spotify - by writing an API formula to transcend immediate streaming behavior / the algorithm.
+I played with more APIs and discovered Mixcloud, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I modified my concept to 'streams around the world' and allow users to input cities instead.
 
 
 ## Sources
