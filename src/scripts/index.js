@@ -32,12 +32,17 @@ let myGlobe = new Globe({ rendererConfig: {
                             },
                             waitForGlobeReady: false,
                             animateIn: true })
+
+
 myGlobe(globeViz)
   .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
   .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
   .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
   .backgroundColor('black')
   .atmosphereColor('pink')
+
+  myGlobe.controls().autoRotate = true;
+  myGlobe.controls().autoRotateSpeed = 0.05;
 (document.getElementById('globeViz'))
 
 
@@ -76,7 +81,6 @@ let searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
   let city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
-  
   const urlStart = 'https://api.mixcloud.com/search';
   const url = `${urlStart}/?q=${city}&type=cloudcast`;
   fetch(url)
