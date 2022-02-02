@@ -42,7 +42,7 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
 
 I learned Spotify removed artist location data a few years ago. So, I thought maybe I could inherently search for countries with a genre through playlists, to get 1 track from playlists, and map the track/artist over the country - i.e. 'Bolivian rap'. This equation would probably require a lot of testing - obscure genres, coupled with specific countries, etc.
 
-I discovered the Mixcloud API, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I modified my concept to 'streams around the world' and allow users to input cities instead.
+I discovered the Mixcloud API, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I modified my concept to 'streams around the world', and allow users to input cities instead.
 ```js
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -55,8 +55,6 @@ searchCity.addEventListener('submit', async function(e) {
       iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
       body.append(iframe)
       )
-
-  // ...
 }
 ```
 I added the OpenWeatherMap API to display coordinates, local weather conditions, and local time.
