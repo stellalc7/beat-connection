@@ -1,6 +1,6 @@
 ## <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a>
 ```
-Behold - our beat connections (っ˘з(˘⌣˘ ) ♡
+Behold, our beat connections (っ˘з(˘⌣˘ ) ♡
 Listen to popular streams around the world.
 ```
 
