@@ -1,13 +1,19 @@
 ## Behold - our <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connections</a> (っ˘з(˘⌣˘ ) ♡
-<i>Enter a city. Listen to popular streams around the world.</i>
+<i>Listen to popular streams around the world.</i>
 
-https://user-images.githubusercontent.com/17345270/152048976-d008913f-afc0-490b-82ae-4e30046f12e7.mov
+https://user-images.githubusercontent.com/17345270/152067520-0f1bd4c0-fe3c-40b5-b1d3-b4b7cec8ccd5.mov
+
+## Functionalities
+- Interactive globe with user input cities connected with bezier curves.
+- Current location has rings propogating from it.
+- Display the local time, and weather conditions.
+- Listen to streams on-site.
 
 ## Technologies
 - NodeJS, ExpressJS, HTML, CSS
 - <s>Spotify API</s>
 - Mixcloud API for streams
-- OpenWeatherMap API for coordinates
+- OpenWeatherMap API for coordinates, timezone, weather
 - Globe.GL for connecting beats
 
 ## Code snippet
