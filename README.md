@@ -30,13 +30,13 @@ const url = `${urlStart}?q=${artistName}&type=artist`;
 const getArtistID = await fetch(url, { method: 'GET', headers: { 'Authorization': 'Bearer ' + token }, json: true })
   .then(apiResponse => apiResponse.json())
   
-// artist id => related artist (returned to frontend)
+// artist id => related artist
 const relatedUrlStart = 'https://api.spotify.com/v1/artists';
 const artistID = getArtistID.artists.items[0].id;
 const relatedUrl = `${relatedUrlStart}/${artistID}/related-artists`;
 const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Authorization': 'Bearer ' + token }, json: true })
   .then(apiResponse => apiResponse.json())
-  .then(data => resp.send(data))
+  .then(data => resp.send(data))   // returned to frontend
   .catch(error => resp.send(error));
 ```
 
