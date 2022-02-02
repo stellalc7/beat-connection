@@ -43,8 +43,12 @@ function getTime(timezone) {
   var d = new Date(new Date().getTime() + (timezone * 1000));   // convert API offset to ms
   var hh = d.getUTCHours();
   var mm = d.getUTCMinutes();
-  if (hh < 10) {
+  if (hh < 10 && mm < 10) {
+    return (`0${hh}:0${mm}`)
+  } else if (hh < 10) {
     return (`0${hh}:${mm}`)
+  } else if (mm < 10) {
+    return (`${hh}:0${mm}`)
   } else {
     return (`${hh}:${mm}`)
   }
