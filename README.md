@@ -8,9 +8,9 @@ https://user-images.githubusercontent.com/17345270/152177744-b3266537-11dd-4386-
 
 ## Functionalities
 - An interactive globe connects cities (from user input) with bezier curves.
+- Listen to streams on-site.
 - Current stream location propogates rings.
 - Current stream location's local time, and weather conditions are available.
-- Listen to streams on-site.
 
 ## Technologies
 - NodeJS, ExpressJS, HTML, CSS
