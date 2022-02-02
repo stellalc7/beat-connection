@@ -21,17 +21,16 @@ https://user-images.githubusercontent.com/17345270/152177744-b3266537-11dd-4386-
 
 ## Code
 Initially, I opted for the Spotify API to fetch a related artist from an artist a user inputs. The original goal was to discover similar artists to listen to around the world. I quickly realized this idea was not as straightforward as I had imagined.
-artist name (i.e. user input) => artist id
 ```js
-// SPOTIFY API CALL
-// artist => artist id
+// BACKEND SPOTIFY API CALL
+// artist (user input) => artist id
 const urlStart = 'https://api.spotify.com/v1/search';
 const artistName = req.query.artistName;
 const url = `${urlStart}?q=${artistName}&type=artist`;
 const getArtistID = await fetch(url, { method: 'GET', headers: { 'Authorization': 'Bearer ' + token }, json: true })
   .then(apiResponse => apiResponse.json())
   
-// artist id => related artist
+// artist id => related artist (returned to frontend)
 const relatedUrlStart = 'https://api.spotify.com/v1/artists';
 const artistID = getArtistID.artists.items[0].id;
 const relatedUrl = `${relatedUrlStart}/${artistID}/related-artists`;
