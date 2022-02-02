@@ -14,6 +14,7 @@ let currentLocation = document.createElement('h1');
 let localTemp = document.createElement('h3');
 let localTime = document.createElement('h4');
 var iframe = document.createElement('iframe');
+let offset;
 
 // var locIcon = document.createElement('img');
 // locIcon.src = ''
@@ -47,18 +48,20 @@ function getTime(timezone) {
   var hh = d.getUTCHours();
   var mm = d.getUTCMinutes();
   if (hh < 10 && mm < 10) {
-    return (`0${hh}:0${mm}`)
+    return `0${hh}:0${mm}`
+    // body.append(localTime);
   } else if (hh < 10) {
-    return (`0${hh}:${mm}`)
+    return `0${hh}:${mm}`
   } else if (mm < 10) {
-    return (`${hh}:0${mm}`)
+    return `${hh}:0${mm}`
   } else {
-    return (`${hh}:${mm}`)
+    return `${hh}:${mm}`
   }
+};
+
+if (offset) {
+  setInterval(getTime(offset), 1000);
 }
-// setTimeout(() =>
-//   getTime(timezone), 1000
-// );
 
 // locIcon.addEventListener('click', function() {
 currentLocation.addEventListener('click', function() {
@@ -95,7 +98,9 @@ searchCity.addEventListener('submit', async function(e) {
     body.append(currentLocation);
     localTemp.innerText = `${Math.round(data.main.temp)}°, ${data.weather[0].description}`;
     body.append(localTemp);
-    localTime.innerText = getTime(data.timezone);;
+    localTime.innerText = getTime(data.timezone);
+    offset = data.timezone;
+    // localTime.innerText = setInterval(getTime(offset), 1000);
     body.append(localTime);
 
     lons.push(data.coord.lon)
