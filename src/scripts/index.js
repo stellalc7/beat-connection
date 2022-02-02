@@ -21,20 +21,19 @@ let arcsData = [];
 let lons = [];
 let lats = [];
 // const labelsData = [];
-let myGlobe = Globe({ rendererConfig: {
+let myGlobe = new Globe({ rendererConfig: {
                               autoclear: false,
                               powerPreference: "low-power",
-                              // context: this
                             },
                             waitForGlobeReady: false,
-                            animateIn: false })
+                            animateIn: true })
 myGlobe(globeViz)
   .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
   .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
   // .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
   .backgroundColor('black')
   .atmosphereColor('pink')
-  (document.getElementById('globeViz'))
+(document.getElementById('globeViz'))
 
 
 /*   ------------------------- API -------------------------   */
@@ -53,6 +52,10 @@ function getTime(timezone) {
     return (`${hh}:${mm}`)
   }
 }
+
+// setTimeout(() =>
+//   getTime(timezone), 1000
+// );
 
 let error;
 let searchCity = document.getElementById('search-city');
@@ -87,7 +90,6 @@ searchCity.addEventListener('submit', async function(e) {
     lons.push(data.coord.lon)
     lats.push(data.coord.lat)
     
-    // rings only @ current stream loc, i.e. last lat/lon in arr
     let rData = [{
       lat: lats[lats.length-1],
       lng: lons[lats.length-1],
@@ -97,13 +99,12 @@ searchCity.addEventListener('submit', async function(e) {
     }]
 
     if (lons.length === 1) {
-      myGlobe(globeViz)
-        .ringsData(rData)
-        .ringColor(() => '#00ffc8')
-        .ringMaxRadius('maxR')
-        .ringPropagationSpeed('propagationSpeed')
-        .ringRepeatPeriod('repeatPeriod')
-      (document.getElementById('globeViz'))
+      myGlobe.ringsData(rData)
+      myGlobe.ringColor(() => '#00ffc8')
+      myGlobe.ringMaxRadius('maxR')
+      myGlobe.ringPropagationSpeed('propagationSpeed')
+      myGlobe.ringRepeatPeriod('repeatPeriod')
+      myGlobe.pointOfView({lat: lats[0], lng: lons[0], altitude: 2.5}, 3000)
     } else {
       arcsData.push({
         startLat: lats[lats.length-2],
@@ -115,17 +116,15 @@ searchCity.addEventListener('submit', async function(e) {
           ['pink', 'magenta'][Math.round(Math.random())]
         ]
       });
-      // console.log(arcsData);
-      myGlobe(globeViz)
-        .ringsData(rData)
-        .ringColor(() => '#00ffc8')
-        .ringMaxRadius('maxR')
-        .ringPropagationSpeed('propagationSpeed')
-        .ringRepeatPeriod('repeatPeriod')
-        .arcsData(arcsData)
-        .arcColor('color')
-        // .arcDashGap(Math.random())
-        .arcDashAnimateTime(5000)
-      (document.getElementById('globeViz'))
+      myGlobe.ringsData(rData)
+      myGlobe.ringColor(() => '#00ffc8')
+      myGlobe.ringMaxRadius('maxR')
+      myGlobe.ringPropagationSpeed('propagationSpeed')
+      myGlobe.ringRepeatPeriod('repeatPeriod')
+      myGlobe.arcsData(arcsData)
+      myGlobe.arcColor('color')
+      // myGlobe.arcDashGap(Math.random())
+      // myGlobe.arcDashAnimateTime(5000)
+      myGlobe.pointOfView({lat: lats[lats.length-1], lng: lons[lons.length-1], altitude: 2.5}, 3000)
     }
 });
