@@ -14,6 +14,7 @@ https://user-images.githubusercontent.com/17345270/152177744-b3266537-11dd-4386-
 
 ## Goals
 - Seamless interactivity: loading is still kinda choppy, can I get rid of that loader on the bottom left corner
+- Most streams are quite long, like 5h! We should let the local time update by the minute.
 - Less is more: everything on the page has a purpose, and we note design hierarchy
 - My attention span is low, so I aim to make sites that don't reduce them further
 
