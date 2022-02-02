@@ -22,7 +22,7 @@ https://user-images.githubusercontent.com/17345270/152177744-b3266537-11dd-4386-
 ## Code
 Initially, I opted for the Spotify API to fetch a related artist from an artist a user inputs. The original goal was to discover similar artists to listen to around the world. I quickly realized this idea was not as straightforward as I had imagined.
 artist name (i.e. user input) => artist id
-```
+```js
 // SPOTIFY API CALL
 const urlStart = 'https://api.spotify.com/v1/search';
 const artistName = req.query.artistName;
@@ -31,7 +31,7 @@ const getArtistID = await fetch(url, { method: 'GET', headers: { 'Authorization'
   .then(apiResponse => apiResponse.json())
 ```  
 artist id => related artist
-```
+```js
 // SPOTIFY API CALL
 const relatedUrlStart = 'https://api.spotify.com/v1/artists';
 const artistID = getArtistID.artists.items[0].id;
@@ -45,7 +45,7 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
 I learned Spotify removed artist location data a few years ago. So, I thought maybe I could inherently search for countries with a genre through playlists, to get 1 track from playlists, and map the track/artist over the country - i.e. 'Bolivian rap'. This equation would probably require a lot of testing - obscure genres, coupled with specific countries, etc.
 
 I discovered the Mixcloud API, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I modified my concept to 'streams around the world' and allow users to input cities instead.
-```
+```js
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
   let city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
@@ -62,7 +62,7 @@ searchCity.addEventListener('submit', async function(e) {
 }
 ```
 I added the OpenWeatherMap API to display coordinates, local weather conditions, and local time.
-```
+```js
 // FRONTEND
 let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
   .then(res => res.json())
