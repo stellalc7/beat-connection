@@ -1,12 +1,12 @@
 ## Behold - our <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connections</a> (っ˘з(˘⌣˘ ) ♡
 <i>Listen to popular streams around the world.</i>
 
-https://user-images.githubusercontent.com/17345270/152067520-0f1bd4c0-fe3c-40b5-b1d3-b4b7cec8ccd5.mov
+https://user-images.githubusercontent.com/17345270/152087651-21744388-509e-4dc2-8e9c-4aa1664a79a2.mov
 
 ## Functionalities
 - Interactive globe with user input cities connected with bezier curves.
 - Current location has rings propogating from it.
-- Display the local time, and weather conditions.
+- Display local time, and weather conditions.
 - Listen to streams on-site.
 
 ## Technologies
