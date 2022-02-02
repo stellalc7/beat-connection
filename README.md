@@ -1,6 +1,8 @@
 ## <a href="https://beatconnection.herokuapp.com" target="_blank">Beat Connection</a>
-```Behold - our beat connections (っ˘з(˘⌣˘ ) ♡
-Listen to popular streams around the world.```
+```
+Behold - our beat connections (っ˘з(˘⌣˘ ) ♡
+Listen to popular streams around the world.
+```
 
 https://user-images.githubusercontent.com/17345270/152087651-21744388-509e-4dc2-8e9c-4aa1664a79a2.mov
 
