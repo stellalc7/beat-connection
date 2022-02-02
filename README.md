@@ -41,9 +41,9 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
   .then(data => resp.send(data))
   .catch(error => resp.send(error));
 ```
-I realized Spotify made made artist location data obselete a few years ago. I decided to formulate my API call to inherently search for countries with a genre type through playlists, to get 1 track from playlists, and mapping it over the country - i.e. 'Bolivian rap' - would give me a few playlists theortically, and I could map the first track in the most popular playlist. I also expected I'd have tot ake care of a lot of edge cases if I wrote my API call with this formula.
+I realized Spotify made artist location data obselete a few years ago. So, I thought I could inherently search for countries with a genre through playlists, to get 1 track from playlists, and map the track/artist over the country - i.e. 'Bolivian rap'. This equation would probably require a lot of testing - obscure genres, coupled with specific countries, etc.
 
-I played with more APIs and discovered Mixcloud, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I modified my concept to 'streams around the world' and allow users to input cities instead.
+I discovered the Mixcloud API, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I modified my concept to 'streams around the world' and allow users to input cities instead. I added the OpenWeatherMap API to display coordinates, local weather conditions, and local time.
 
 
 ## Sources
