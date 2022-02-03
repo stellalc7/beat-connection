@@ -9,7 +9,7 @@ Listen to popular streams around the world.
 - An interactive globe connects cities (from user input) with bezier curves.
 - Listen to streams on-site.
 - Current stream location propogates rings.
-- Current stream location's local time, and weather conditions are available.
+- Current stream location's local time, and weather conditions are displayed.
 
 ### Technologies
 - NodeJS, ExpressJS, HTML, CSS
