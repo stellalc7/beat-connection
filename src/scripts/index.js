@@ -84,6 +84,7 @@ currentLocation.addEventListener('mouseover', function() {
   coordinates.classList.add('coords');
   coordinates.classList.remove('hide')
   coordinates.innerText = `${coord} \n ${headline}`;
+  // coordinates.innerText = `${coord}`
   body.append(coordinates);
 });
 
@@ -125,8 +126,21 @@ searchCity.addEventListener('submit', async function(e) {
       // .catch(error => { ong return error });
 
     headline = await fetch(`/news?country=${encodeURIComponent(data.sys.country)}`)
-    .then(res => res.json())
-    .then(goodNews => { return goodNews.articles[0].title })
+      .then(res => res.json())
+      .then(goodNews => { return goodNews})
+      // .then(news => console.log(news))
+      // .catch(error => console.log(error))
+
+    // console.log(headline)
+
+    if (headline.articles.length === 0) {
+      headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'
+    } else {
+      headline = headline.articles[0].title;
+      // top news
+    }
+  
+
     
     currentLocation.innerText = `${data.name}`;
     body.append(currentLocation);
