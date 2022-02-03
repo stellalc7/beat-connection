@@ -132,7 +132,7 @@ searchCity.addEventListener('submit', async function(e) {
 
     if (lons.length === 1) {
       myGlobe.ringsData(rData)
-              .ringColor(() => '#00ffc8')
+              .ringColor(() => '#ff0077')
               .ringMaxRadius('maxR')
               .ringPropagationSpeed('propagationSpeed')
               .ringRepeatPeriod('repeatPeriod')
@@ -144,12 +144,12 @@ searchCity.addEventListener('submit', async function(e) {
         endLat: lats[lats.length-1],
         endLng: lons[lons.length-1],
         color: [
-          ['pink', 'magenta'][Math.round(Math.random())],
-          ['pink', 'magenta'][Math.round(Math.random())]
+          ['pink', 'hot pink'][Math.round(Math.random())],
+          ['pink', 'hotpink'][Math.round(Math.random())]
         ]
       });
       myGlobe.ringsData(rData)
-              .ringColor(() => '#00ffc8')
+              .ringColor(() => '#ff0077')
               .ringMaxRadius('maxR')
               .ringPropagationSpeed('propagationSpeed')
               .ringRepeatPeriod('repeatPeriod')
