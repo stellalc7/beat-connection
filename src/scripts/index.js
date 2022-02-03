@@ -150,14 +150,14 @@ searchCity.addEventListener('submit', async function(e) {
       // console.log(coord)
     } else if (currLat < 0) {
       currLat = -currLat
-      coord = `${currLat}°E, ${currLon}°N`
+      coord = `${currLat}°E, ${currLon}°S`
       // console.log(coord)
     } else if (currLon < 0) {
       currLon = -currLon
-      coord = `${currLat}°E, ${currLon}°S`;
+      coord = `${currLat}°W, ${currLon}°N`;
       // console.log(coord)
     } else {
-      coord = `${currLat}°W, ${currLon}°S`;
+      coord = `${currLat}°E, ${currLon}°N`;
       // console.log(coord)
     }
 
