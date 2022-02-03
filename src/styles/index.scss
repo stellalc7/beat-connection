@@ -122,11 +122,17 @@ p {
 }
 
 .coords {
-  font-size: 100px;
-  top: 100px;
-  left: 0px;
-  background-color: transparent;
-  color: $fourth-color;
+  font-size: 70px;
+  background-color: $fourth-color;
+  top: 30%;
+  transform: rotate(-10deg);
+  position: none;
+  right: none;
+  bottom: none;
+  padding: 10px 10px 0 10px;
+  &.hide {
+    display: none;
+  }
 }
 
 a {

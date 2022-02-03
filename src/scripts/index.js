@@ -81,9 +81,15 @@ currentLocation.addEventListener('click', function() {
 });
 
 currentLocation.addEventListener('mouseover', function() {
-  // coordinates.classList.add('coords-show');
+  coordinates.classList.add('coords');
+  coordinates.classList.remove('hide')
   coordinates.innerText = coord;
   body.append(coordinates);
+});
+
+currentLocation.addEventListener('mouseout', function() {
+  coordinates.classList.add('hide');
+  // body.append(coordinates);
 });
 
 let searchCity = document.getElementById('search-city');
