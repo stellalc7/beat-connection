@@ -4,7 +4,7 @@ Behold, our beat connections (っ˘з(˘⌣˘ ) ♡
 Listen to popular streams around the world.
 ```
 
-Play with it <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
+### Play with it <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
 
 <p align='center'>
   <img width="800" alt="Screenshot 2022-02-02 at 21 19 22" src="https://user-images.githubusercontent.com/17345270/152270629-9e3c7f0d-f840-426d-a4cc-3d58a0a6ca3f.png">
@@ -81,7 +81,7 @@ app.get('/api', (request, response) => {
 });
 ```
 
-## Sources
+<!-- ## Sources
 https://globe.gl/<br>
 https://www.mixcloud.com/developers/#connections-lists<br>
 https://www.mixcloud.com/developers/widget/#methods<br>
@@ -92,12 +92,14 @@ https://developer.spotify.com/console/get-artist-related-artists/<br>
 - Smoother loading / setTimeout?
 - Top news locally (meaning in that country)
 - Make local time update automatically
+-->
 
-## Funny bugs
+## Silly not not bugs
 - I tried searching some country names, e.g. Italy. It turns out <a href="https://ci.italy.tx.us/
 https://ci.italy.tx.us/" target="_blank">there's a small town in Texas called Italy</a>. So there isn't an error per se, but I'm fetching Italy, TX local conditions, with a stream from the country Italy (proabably - at least most of the time).
 <img width="600" alt="Screenshot 2022-02-02 at 22 59 56" src="https://user-images.githubusercontent.com/17345270/152279240-f0491aa7-9c9d-4747-9ac0-8e6aa51096b4.png">
-
+- Aaand... Korea is in Europe.
+<img width="600" alt="Screenshot 2022-02-02 at 23 06 18" src="https://user-images.githubusercontent.com/17345270/152279570-608c4e6f-69d7-4a12-ad2c-ce2cd553cfdc.png">
 
 ## Shout outs
 Big hugs to everyone who gave me coding wisdom + inspiration.
