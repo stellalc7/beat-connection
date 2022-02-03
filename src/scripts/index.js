@@ -74,9 +74,9 @@ if (offset) {
 // locIcon.addEventListener('click', function() {
 currentLocation.addEventListener('click', function() {
   if (lats.length === 1) {
-    myGlobe.pointOfView({lat: lats[0], lng: lons[0], altitude: 2.5}, 3000)
+    myGlobe.pointOfView({lat: lats[0], lng: lons[0], altitude: 2.5}, 4000)
   } else {
-    myGlobe.pointOfView({lat: lats[lats.length-1], lng: lons[lons.length-1], altitude: 2.5}, 3000)
+    myGlobe.pointOfView({lat: lats[lats.length-1], lng: lons[lons.length-1], altitude: 2.5}, 4000)
   }
 });
 
@@ -127,7 +127,7 @@ searchCity.addEventListener('submit', async function(e) {
              .ringMaxRadius('maxR')
              .ringPropagationSpeed('propagationSpeed')
              .ringRepeatPeriod('repeatPeriod')
-             .pointOfView({lat: lats[0], lng: lons[0], altitude: 2.5}, 3000)
+             .pointOfView({lat: lats[0], lng: lons[0], altitude: 2.5}, 4000)
     } else {
       arcsData.push({
         startLat: lats[lats.length-2],
@@ -150,6 +150,6 @@ searchCity.addEventListener('submit', async function(e) {
               // myGlobe.arcDashAnimateTime(5000)
               // myGlobe.arcsTransitionDuration(2000)
               .arcStroke(1.05)
-              .pointOfView({lat: lats[lats.length-1], lng: lons[lons.length-1], altitude: 2.5}, 3000)
+              .pointOfView({lat: lats[lats.length-1], lng: lons[lons.length-1], altitude: 2.5}, 4000)
     }
 });
