@@ -11,7 +11,7 @@ description.innerText = "Listen to popular streams around the world."
 body.append(description);
 
 let currentLocation = document.createElement('h1');
-let localTemp = document.createElement('h3');
+let localWx = document.createElement('h3');
 let localTime = document.createElement('h4');
 var iframe = document.createElement('iframe');
 let offset;
@@ -49,8 +49,8 @@ window.addEventListener('resize', (event) => {
   myGlobe.width([event.target.innerWidth])
   myGlobe.height([event.target.innerHeight])
 });
-/*   ------------------------- API -------------------------   */
 
+/*   ------------------------- API -------------------------   */
 function getTime(timezone) {
   var d = new Date(new Date().getTime() + (timezone * 1000));   // convert API offset to ms
   var hh = d.getUTCHours();
@@ -67,9 +67,7 @@ function getTime(timezone) {
   }
 };
 
-if (offset) {
-  setInterval(getTime(offset), 1000);
-}
+if (offset) setInterval(getTime(offset), 1000);
 
 // locIcon.addEventListener('click', function() {
 currentLocation.addEventListener('click', function() {
@@ -100,23 +98,31 @@ searchCity.addEventListener('submit', async function(e) {
     .then(data => { return data })
     .catch(error => console.log(error))
 
-  if (data.message) {
+  if (data.message) {    // denotes errors from openwxmap
     console.log('please enter a valid city.')
+    document.getElementById("search-city-name").classList = 'error';
+    // document.getElementById("searchCity").classList.remove('MyClass');
   } else {
+    document.getElementById("search-city-name").classList.remove('error');
     const urlStart = 'https://api.mixcloud.com/search';
     const url = `${urlStart}/?q=${city}&type=cloudcast`;
     fetch(url)
       .then(response => response.json())
       .then(data =>
         iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
+        // iframe.autoplay = true,
         body.append(iframe)
         )
-      .catch(error => { return error });
+      // MIXCLOUD ERROR returns data.data = []
+      // .catch(error => { return error });
     
     currentLocation.innerText = `${data.name}`;
     body.append(currentLocation);
-    localTemp.innerText = `${Math.round(data.main.temp)}°, ${data.weather[0].description}`;
-    body.append(localTemp);
+
+    let temp = `${Math.round(data.main.temp)}°`
+    let wx = data.weather[0].description
+    localWx.innerText = `${temp}, ${wx}`;
+    body.append(localWx);
     localTime.innerText = getTime(data.timezone);
     offset = data.timezone;
     // localTime.innerText = setInterval(getTime(offset), 1000);
@@ -168,8 +174,6 @@ searchCity.addEventListener('submit', async function(e) {
 
   // let news = await fetch(`/news?searchTerm=${encodeURIComponent(city)}`)
   //   .then(res => res.json())
-  //   .then(goodNews => {
-  //     console.log(goodNews.articles[0])
-  //   })
+  //   .then(goodNews => { console.log(goodNews.articles[0]) })
 
 });

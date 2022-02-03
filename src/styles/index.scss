@@ -25,13 +25,19 @@ input {
   border-radius: 30px;
 }
 
-.search-city-name {
+#search-city-name {
   width: 240px;
   text-align: left;
   padding: 0 15px;
+  &.error {
+    border: dashed 2px rgb(255, 0, 106);
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
-.search-btn {
+#search-btn {
   width: 110px;
   text-align: center;
   color: rgb(223, 223, 223);
