@@ -32,7 +32,7 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
   .catch(error => resp.send(error));
 ```
 
-I refactored to use the `Mixcloud API` for 'streams around the world' - inviting users to input cities.
+I refactored to use the `Mixcloud API` for 'streams around the world' - inviting users to input cities, and fetching a stream connected to that city.
 ```js
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
