@@ -24,9 +24,10 @@ app.get('/', (request, response) => {
 app.get('/api', (request, response) => {
   const apiKey = process.env.API_KEY;
   const geoUrlStart = 'https://api.openweathermap.org/data/2.5/weather?q'
-    // console.log(request)
+  // console.log(request)
   let searchTerm = request.query.searchTerm;
   let geoUrl = `${geoUrlStart}=${searchTerm}&units=metric&appid=${apiKey}`;
+  // console.log(searchTerm)
   fetch(geoUrl) // AJAX request to API
     .then(apiResponse => apiResponse.json())
     .then(data => response.send(data))
@@ -34,17 +35,18 @@ app.get('/api', (request, response) => {
 });
 
 // https://newsapi.org/
-app.get('/news', (request, response) => {
-  const newsApiKey = process.env.NEWS_API_KEY;
-  const newsUrlStart = 'https://newsapi.org/v2/everything?q'
-  let searchTerm = request.query.searchTerm;
-  let newsUrl = `${newsUrlStart}=${searchTerm}&sortBy=popularity&apiKey=${newsApiKey}`;
-  console.log(newsUrl)
-  fetch(newsUrl)
-    .then(apiResponse => apiResponse.json())
-    .then(goodNews => response.send(goodNews))
-    .catch(error => response.send(error));
-});
+// app.get('/news', (request, response) => {
+//   const newsApiKey = process.env.NEWS_API_KEY;
+//   const newsUrlStart = 'https://newsapi.org/v2/top-headlines?country'
+//   // let searchTerm = request.query.searchTerm;
+//   // let country = 2 LETTER COUNTRY CODE
+//   let newsUrl = `${newsUrlStart}=${country}&apiKey=${newsApiKey}`;
+//   console.log(newsUrl)
+//   fetch(newsUrl)
+//     .then(apiResponse => apiResponse.json())
+//     .then(goodNews => response.send(goodNews))
+//     .catch(error => response.send(error));
+// });
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {

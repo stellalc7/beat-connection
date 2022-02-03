@@ -84,29 +84,35 @@ let searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
   let city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
-  const urlStart = 'https://api.mixcloud.com/search';
-  const url = `${urlStart}/?q=${city}&type=cloudcast`;
-  fetch(url)
-    .then(response => response.json())
-    .then(data =>
-      iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
-      body.append(iframe)
-      )
-    // .catch(error => { return error });
-    .catch(error => console.log(error));
+  // const urlStart = 'https://api.mixcloud.com/search';
+  // const url = `${urlStart}/?q=${city}&type=cloudcast`;
+  // fetch(url)
+  //   .then(response => response.json())
+  //   .then(data =>
+  //     iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
+  //     body.append(iframe)
+  //     )
+  //   .catch(error => { return error });
+  //   .catch(error => console.log(error));
 
   let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
     .then(res => res.json())
-    .then(data => {
-      return data
-    })
+    .then(data => { return data })
+    .catch(error => console.log(error))
 
-  let news = await fetch(`/news?searchTerm=${encodeURIComponent(city)}`)
-    .then(res => res.json())
-    .then(goodNews => {
-      console.log(goodNews.articles[0])
-    })
-
+  if (data.message) {
+    console.log('please enter a valid city.')
+  } else {
+    const urlStart = 'https://api.mixcloud.com/search';
+    const url = `${urlStart}/?q=${city}&type=cloudcast`;
+    fetch(url)
+      .then(response => response.json())
+      .then(data =>
+        iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
+        body.append(iframe)
+        )
+      .catch(error => { return error });
+    
     currentLocation.innerText = `${data.name}`;
     body.append(currentLocation);
     localTemp.innerText = `${Math.round(data.main.temp)}°, ${data.weather[0].description}`;
@@ -129,11 +135,11 @@ searchCity.addEventListener('submit', async function(e) {
 
     if (lons.length === 1) {
       myGlobe.ringsData(rData)
-             .ringColor(() => '#00ffc8')
-             .ringMaxRadius('maxR')
-             .ringPropagationSpeed('propagationSpeed')
-             .ringRepeatPeriod('repeatPeriod')
-             .pointOfView({lat: lats[0], lng: lons[0], altitude: 2.5}, 4000)
+              .ringColor(() => '#00ffc8')
+              .ringMaxRadius('maxR')
+              .ringPropagationSpeed('propagationSpeed')
+              .ringRepeatPeriod('repeatPeriod')
+              .pointOfView({lat: lats[0], lng: lons[0], altitude: 2.5}, 4000)
     } else {
       arcsData.push({
         startLat: lats[lats.length-2],
@@ -158,4 +164,12 @@ searchCity.addEventListener('submit', async function(e) {
               .arcStroke(1.05)
               .pointOfView({lat: lats[lats.length-1], lng: lons[lons.length-1], altitude: 2.5}, 4000)
     }
+  }
+
+  // let news = await fetch(`/news?searchTerm=${encodeURIComponent(city)}`)
+  //   .then(res => res.json())
+  //   .then(goodNews => {
+  //     console.log(goodNews.articles[0])
+  //   })
+
 });
