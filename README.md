@@ -5,18 +5,12 @@ Listen to popular streams around the world.
   <img width="800" alt="Screenshot 2022-02-02 at 21 19 22" src="https://user-images.githubusercontent.com/17345270/152270629-9e3c7f0d-f840-426d-a4cc-3d58a0a6ca3f.png">
 </p>
 
-### Functionalities
-- An interactive globe connects cities (from user input) with bezier curves.
-- Listen to streams on-site.
-- Current stream location propogates rings.
-- Current stream location's local time, and weather conditions are displayed.
-
 ### Technologies
 - NodeJS, ExpressJS, HTML, CSS
 - Globe.GL
 - APIs: <s>Spotify</s>, Mixcloud, OpenWeatherMap, (News)
 
-### Code
+### Functionalities
 Initially, I opted for the `Spotify API` to fetch a related artist from an artist the user inputs. The concept was: 'discover similar artists to listen to around the world'. Quickly, I realized implementing this idea would not be as straightforward. Most related artists are from the same region, and Spotify removed artist location data. I considered searching for countries with a genre through playlists, to get 1 artist from a fetched playlist, and plot the artist over the country - i.e. 'Bolivian rap'. This equation would likely require a lot of testing - obscure genres, coupled with specific countries, etc.
 `TLDR: I tried Spotify's API, and it didn't work, but here's my now obselete code.`
 ```js
