@@ -1,5 +1,5 @@
-## <a href="https://beatconnection.herokuapp.com" target="_blank">Behold</a>, our beat connections ♡
-Listen to popular streams around the world. Also find local time, weather, and the top headline.
+## <a href="https://beatconnection.herokuapp.com" target="_blank"></a>, our beat connections ♡
+Beat Connection invites you to search cities, and listen to streams around the world. You'll also find the local time, weather, and top headline wherever you are.
 
 <p align='center'>
   <img width="800" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
