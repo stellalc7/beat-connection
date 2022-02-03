@@ -77,6 +77,7 @@ https://developer.spotify.com/console/get-search-item/<br>
 https://developer.spotify.com/console/get-artist-related-artists/<br>
 -->
 
+<!--
 ### Not not bugs
  <a href="https://ci.italy.tx.us/" target="_blank">Italy, TX, USA</a>.<br>
 <img width="600" alt="Screenshot 2022-02-02 at 22 59 56" src="https://user-images.githubusercontent.com/17345270/152279240-f0491aa7-9c9d-4747-9ac0-8e6aa51096b4.png"><br><br>
@@ -87,6 +88,8 @@ In conclusion, if a city name does not coexist with that of a country's, the cou
 
 ### Future
 - It's a secret.
+-->
+
 <!-- - Click on the globe, instead of search (what if user accidentally clicks)? Both?
 - Globe zoom proportionally adjusts stream volume.
 - Stream autoplay.
