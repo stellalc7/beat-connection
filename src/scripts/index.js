@@ -103,7 +103,7 @@ searchCity.addEventListener('submit', async function(e) {
   let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
     .then(res => res.json())
     .then(data => { return data })
-    // .catch(error => console.log(error))
+    .catch(error => console.log(error))
 
   let cityInput = document.getElementById("search-city-name")
 

@@ -21,6 +21,7 @@ app.get('/', (request, response) => {
 
 
 // https://openweathermap.org
+// should change to async await for lat lon conversion, re: Geneva
 app.get('/api', (request, response) => {
   const apiKey = process.env.API_KEY;
   const geoUrlStart = 'https://api.openweathermap.org/data/2.5/weather?q'
