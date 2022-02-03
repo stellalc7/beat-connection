@@ -4,6 +4,8 @@ Behold, our beat connections (っ˘з(˘⌣˘ ) ♡
 Listen to popular streams around the world.
 ```
 
+Play with it <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
+
 <p align='center'>
   <img width="800" alt="Screenshot 2022-02-02 at 21 19 22" src="https://user-images.githubusercontent.com/17345270/152270629-9e3c7f0d-f840-426d-a4cc-3d58a0a6ca3f.png">
 </p>
@@ -22,7 +24,7 @@ Listen to popular streams around the world.
 - Globe.GL
 
 ## Code
-Initially, I opted for the Spotify API to fetch a related artist from an artist a user inputs. The original goal was to discover similar artists to listen to around the world. I quickly realized this idea was not as straightforward as I had imagined.
+Initially, I opted for the `Spotify API` to fetch a related artist from an artist the user inputs. Originally, the goal was to 'discover similar artists to listen to around the world'. Quickly, I realized this idea was not as straightforward as I had imagined.
 ```js
 // BACKEND SPOTIFY API CALL
 // artist (user input) => artist id
@@ -42,24 +44,23 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
   .catch(error => resp.send(error));
 ```
 
-I learned Spotify removed artist location data a few years ago. So, I thought maybe I could inherently search for countries with a genre through playlists, to get 1 track from playlists, and map the track/artist over the country - i.e. 'Bolivian rap'. This equation would probably require a lot of testing - obscure genres, coupled with specific countries, etc.
-
-I discovered the Mixcloud API, which offers streams posted by users around the world - live shows, DJ sets, rave recordings, etc. I modified my concept to 'streams around the world', and allow users to input cities instead.
+Spotify removed artist location data a few years ago. So, I considered inherently searching for countries with a genre through playlists, to get 1 track from a fetched playlist, and plot the track/artist over the country - i.e. 'Bolivian rap'. This equation would likely require a lot of testing - obscure genres, coupled with specific countries, etc. The `Mixcloud API` offers streams posted by users around the world - DJ sets, rave recordings, etc. I modified my concept to 'streams around the world', and allow users to input cities instead.
 ```js
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
   let city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
   const urlStart = 'https://api.mixcloud.com/search';
   const url = `${urlStart}/?q=${city}&type=cloudcast`;
+  const widgetUrl = `https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=`
   fetch(url)
     .then(response => response.json())
     .then(data =>
-      iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
+      iframe.src = widgetUrl + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
       body.append(iframe)
-      )
+    )   // append the new stream for searched city
 }
 ```
-I added the OpenWeatherMap API to display coordinates, local weather conditions, and local time.
+The `OpenWeatherMap API` provides coordinates, local weather conditions, and local time.
 ```js
 // FRONTEND
 let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
@@ -72,22 +73,19 @@ app.get('/api', (request, response) => {
   const geoUrlStart = 'https://api.openweathermap.org/data/2.5/weather?q'
   let searchTerm = request.query.searchTerm;
   let geoUrl = `${geoUrlStart}=${searchTerm}&units=metric&appid=${apiKey}`;
-  let coords = fetch(geoUrl) // AJAX request to API
+  let coords = fetch(geoUrl)
     .then(apiResponse => apiResponse.json())
-    .then(data => response.send(data))
+    .then(data => response.send(data))       // to the frontend
     .catch(error => response.send(error));
 });
 ```
 
-## Sources
+## Notes + Sources
 https://globe.gl/<br>
-https://gist.github.com/tadast/8827699<br>
-https://www.last.fm/api/show/geo.getTopArtists<br>
 https://www.mixcloud.com/developers/#connections-lists<br>
 https://www.mixcloud.com/developers/widget/#methods<br>
 https://developer.spotify.com/console/get-search-item/<br>
 https://developer.spotify.com/console/get-artist-related-artists/<br>
-https://developer.spotify.com/documentation/general/guides/track-relinking-guide/
 
 
 ## Shout outs
