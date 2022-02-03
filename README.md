@@ -1,14 +1,16 @@
 ## <a href="https://beatconnection.herokuapp.com" target="_blank">Behold</a>, our beat connections (っ˘з(˘⌣˘ ) ♡
-Listen to popular streams around the world.
+Listen to popular streams around the world. Also find local time, weather, and top headline.
 
 <p align='center'>
   <img width="800" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
+  <img width="800" alt="Screenshot 2022-02-03 at 14 12 06" src="https://user-images.githubusercontent.com/17345270/152412549-144c433f-c7a2-4b41-948d-f2ceed5c1fe4.png">
 </p>
+
 
 ### Technologies
 - NodeJS, ExpressJS, HTML, CSS
 - Globe.GL
-- APIs: <s>Spotify</s>, Mixcloud, OpenWeatherMap, (News)
+- APIs: <s>Spotify</s>, Mixcloud, OpenWeatherMap, News
 
 ### Functionalities
 Initially, I opted for the `Spotify API` to fetch a related artist from the user's queried artist. The concept was: 'discover similar artists to listen to around the world'. Quickly, I realized implementing this idea would not be as straightforward. Most related artists are from the same region, and Spotify removed artist location data. I considered searching for countries with a genre through playlists, to get 1 artist from a fetched playlist, and plot the artist over the country - i.e. 'Bolivian rap'. This formula would likely require a lot of testing - obscure genres, coupled with specific countries, etc.
