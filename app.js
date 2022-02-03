@@ -39,7 +39,6 @@ app.get('/news', (request, response) => {
   const newsApiKey = process.env.NEWS_API_KEY;
   const newsUrlStart = 'https://newsapi.org/v2/top-headlines?country'
   let country = request.query.country;
-  // let country = 2 LETTER COUNTRY CODE
   let newsUrl = `${newsUrlStart}=${country}&apiKey=${newsApiKey}`;
   console.log(newsUrl)
   fetch(newsUrl)

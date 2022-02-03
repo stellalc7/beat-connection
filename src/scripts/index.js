@@ -84,13 +84,11 @@ currentLocation.addEventListener('mouseover', function() {
   coordinates.classList.add('coords');
   coordinates.classList.remove('hide')
   coordinates.innerText = `${coord} \n ${headline}`;
-  // coordinates.innerText = `${coord}`
   body.append(coordinates);
 });
 
 currentLocation.addEventListener('mouseout', function() {
   coordinates.classList.add('hide');
-  // body.append(coordinates);
 });
 
 let searchCity = document.getElementById('search-city');
@@ -122,16 +120,11 @@ searchCity.addEventListener('submit', async function(e) {
         cityInput.classList.add('dim'),
         title.classList.add('dim')
         )
-      // MIXCLOUD ERROR returns data.data = []
-      // .catch(error => { ong return error });
 
     headline = await fetch(`/news?country=${encodeURIComponent(data.sys.country)}`)
       .then(res => res.json())
       .then(goodNews => { return goodNews})
-      // .then(news => console.log(news))
       // .catch(error => console.log(error))
-
-    // console.log(headline)
 
     if (headline.articles.length === 0) {
       headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'
