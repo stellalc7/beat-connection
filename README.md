@@ -85,7 +85,6 @@ https://developer.spotify.com/console/get-artist-related-artists/<br>
 In conclusion, if a city name does not coexist with that of a country's, the country will be mapped. Antithetically, if there is a city and a country with the same name, there may be dissonace between the fetched stream and location, as the city will be mapped by default. If there are multiple cities with the same name (e.g. Versailles), the one everyone's probably thinking of will be mapped. If a city simply has an idiosyncratic name, that city will simply be mapped. Even if it's a ghost town. <a href="http://www.texasescapes.com/CentralTexasTownsNorth/Okay-Texas.htm" target="_blank">Okay</a>?<br>
 <img width="600" alt="Screenshot 2022-02-02 at 23 58 24" src="https://user-images.githubusercontent.com/17345270/152283908-9f92e537-dbc1-40ea-a4e6-d05411d61add.png">
 
-
 ### Future
 - Click on the globe, instead of search (what if user accidentally clicks)? Both?
 - Globe zoom proportionally adjusts stream volume.
@@ -95,6 +94,11 @@ In conclusion, if a city name does not coexist with that of a country's, the cou
 - Smoother loading / setTimeout?
 - addEventListener for mouse movement if no mouse activity for X time, hide everything but the globe and local info (for projections).
 - changeLanguage(city) => { }
+
+### My favorite Mixcloud streams
+Future sound of Egypt <a href="https://www.mixcloud.com/alyfila-futuresoundofegypt/future-sound-of-egypt-650-live-from-cairo-with-aly-fila/" target="_blank">Cairo</a>
+DJ Set <a href="https://www.mixcloud.com/FrankMaster/special-dj-set-marrakesh-marocco-by-frank-master-stefano-capasso/" target="_blank">Marrakesh</a>
+Cooking with Palm Trax <a href="https://www.mixcloud.com/BCR_Radio/cooking-with-palms-trax-020/" target="_blank">Berlin</a>
 
 ### Shout outs
 Big hugs to everyone who gave me coding wisdom + inspiration.
