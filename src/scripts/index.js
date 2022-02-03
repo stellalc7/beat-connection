@@ -45,7 +45,10 @@ myGlobe(globeViz)
   myGlobe.controls().autoRotateSpeed = 0.075;
 (document.getElementById('globeViz'))
 
-
+window.addEventListener('resize', (event) => {
+  myGlobe.width([event.target.innerWidth])
+  myGlobe.height([event.target.innerHeight])
+});
 /*   ------------------------- API -------------------------   */
 
 function getTime(timezone) {
