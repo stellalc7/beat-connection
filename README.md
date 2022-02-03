@@ -19,6 +19,7 @@ Listen to popular streams around the world.
 
 ## Code
 Initially, I opted for the `Spotify API` to fetch a related artist from an artist the user inputs. The concept was: 'discover similar artists to listen to around the world'. Quickly, I realized this idea was not as straightforward as I had imagined. Most related artists are from the same region. Also, Spotify removed artist location data. I considered inherently searching for countries with a genre through playlists, to get 1 track from a fetched playlist, and plot the track/artist over the country - i.e. 'Bolivian rap'. This equation would likely require a lot of testing - obscure genres, coupled with specific countries, etc.
+<b>TLDR: I tried Spotify's API, and it didn't work, but here's the code I had written.</b>
 ```js
 // BACKEND SPOTIFY API CALL
 // artist (user input) => artist id
