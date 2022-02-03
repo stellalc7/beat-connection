@@ -16,7 +16,7 @@ let localTime = document.createElement('h4');
 var iframe = document.createElement('iframe');
 let coordinates = document.createElement('h1')
 coordinates.classList.add('coords');
-let offset, coord, headline;
+let offset, coord, headline, headlineTitle;
 
 // var locIcon = document.createElement('img');
 // locIcon.src = ''
@@ -129,8 +129,13 @@ searchCity.addEventListener('submit', async function(e) {
     if (headline.articles.length === 0) {
       headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'
     } else {
-      headline = headline.articles[0].title;
-      // top news
+      headlineTitle = headline.articles[0].title;
+      if (headlineTitle.length > 95) {
+        headline = headlineTitle.slice(0, 95) + `...`
+      } else {
+        headline = headlineTitle;
+      }
+
     }
   
 
