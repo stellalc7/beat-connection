@@ -94,6 +94,7 @@ In conclusion, if a city name does not coexist with that of a country's, the cou
 - Top local news.
 - Smoother loading / setTimeout?
 - addEventListener for mouse movement if no mouse activity for X time, hide everything but the globe and local info (for projections).
+- changeLanguage(city) => { }
 
 ### Shout outs
 Big hugs to everyone who gave me coding wisdom + inspiration.
