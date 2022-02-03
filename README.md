@@ -2,7 +2,7 @@
 Listen to popular streams around the world.
 
 <p align='center'>
-  <img width="800" alt="Screenshot 2022-02-02 at 21 19 22" src="https://user-images.githubusercontent.com/17345270/152270629-9e3c7f0d-f840-426d-a4cc-3d58a0a6ca3f.png">
+  <img width="800" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
 </p>
 
 ### Technologies
@@ -90,6 +90,7 @@ In conclusion, if a city name does not coexist with that of a country's, the cou
 <!-- - Click on the globe, instead of search (what if user accidentally clicks)? Both?
 - Globe zoom proportionally adjusts stream volume.
 - Stream autoplay.
+- themes
 - Local time updates automatically.
 - Top local news.
 - Smoother loading / setTimeout?
