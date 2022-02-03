@@ -25,7 +25,7 @@ Listen to popular streams around the world.
 - Globe.GL
 
 ## Code
-Initially, I opted for the `Spotify API` to fetch a related artist from an artist the user inputs. Originally, the goal was to 'discover similar artists to listen to around the world'. Quickly, I realized this idea was not as straightforward as I had imagined.
+Initially, I opted for the `Spotify API` to fetch a related artist from an artist the user inputs. Originally, the goal was to 'discover similar artists to listen to around the world'. Quickly, I realized this idea was not as straightforward as I had imagined. Frst, I noticed most related artists are from the same region. Also, Spotify removed artist location data a few years ago. I considered inherently searching for countries with a genre through playlists, to get 1 track from a fetched playlist, and plot the track/artist over the country - i.e. 'Bolivian rap'. This equation would likely require a lot of testing - obscure genres, coupled with specific countries, etc.
 ```js
 // BACKEND SPOTIFY API CALL
 // artist (user input) => artist id
@@ -45,7 +45,7 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
   .catch(error => resp.send(error));
 ```
 
-Spotify removed artist location data a few years ago. So, I considered inherently searching for countries with a genre through playlists, to get 1 track from a fetched playlist, and plot the track/artist over the country - i.e. 'Bolivian rap'. This equation would likely require a lot of testing - obscure genres, coupled with specific countries, etc. The `Mixcloud API` offers streams posted by users around the world - DJ sets, rave recordings, etc. I modified my concept to 'streams around the world', and allow users to input cities instead.
+The `Mixcloud API` offers streams posted by users around the world - DJ sets, rave recordings, etc. I modified my concept to 'streams around the world', and allow users to input cities instead.
 ```js
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
