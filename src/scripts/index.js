@@ -82,16 +82,7 @@ let searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
   let city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
-  // const urlStart = 'https://api.mixcloud.com/search';
-  // const url = `${urlStart}/?q=${city}&type=cloudcast`;
-  // fetch(url)
-  //   .then(response => response.json())
-  //   .then(data =>
-  //     iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
-  //     body.append(iframe)
-  //     )
-  //   .catch(error => { return error });
-  //   .catch(error => console.log(error));
+  const mixCloudUrlStart = 'https://api.mixcloud.com/search';
 
   let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
     .then(res => res.json())
@@ -99,13 +90,13 @@ searchCity.addEventListener('submit', async function(e) {
     .catch(error => console.log(error))
 
   if (data.message) {    // denotes errors from openwxmap
-    console.log('please enter a valid city.')
-    document.getElementById("search-city-name").classList = 'error';
-    // document.getElementById("searchCity").classList.remove('MyClass');
+    let cityInput = document.getElementById("search-city-name")
+    cityInput.classList.add('error');
+    cityInput.addEventListener('input', (event) => {
+      cityInput.classList.remove('error');
+    });
   } else {
-    document.getElementById("search-city-name").classList.remove('error');
-    const urlStart = 'https://api.mixcloud.com/search';
-    const url = `${urlStart}/?q=${city}&type=cloudcast`;
+    let url = `${mixCloudUrlStart}/?q=${city}&type=cloudcast`;
     fetch(url)
       .then(response => response.json())
       .then(data =>
