@@ -55,19 +55,22 @@ h2 {
   top: 20px;
   left: 20px;
   font-size: 35px;
-  color: $fourth-color;
+  color: $tertiary-color;
+  background-color: $fourth-color;
+  font-weight: bold;
   // top: 350px;
   // left: -80px;
   // transform: rotate(-90deg);
   &.dim {
     color: $tertiary-color;
+    background-color: transparent;
   }
 }
 
 h3 {
   position: absolute;
   bottom: 70px;
-  font-size: 25px;
+  font-size: 30px;
   right: 20px;
   color: $tertiary-color;
 }
@@ -75,7 +78,7 @@ h3 {
 h4 {
   position: absolute;
   bottom: 100px;
-  font-size: 40px;
+  font-size: 45px;
   right: 20px;
   color: $tertiary-color;
   // background-color: $tertiary-color;

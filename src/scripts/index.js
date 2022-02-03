@@ -147,7 +147,7 @@ searchCity.addEventListener('submit', async function(e) {
         endLat: lats[lats.length-1],
         endLng: lons[lons.length-1],
         color: [
-          ['pink', 'hot pink'][Math.round(Math.random())],
+          ['pink', 'hotpink'][Math.round(Math.random())],
           ['pink', 'hotpink'][Math.round(Math.random())]
         ]
       });
