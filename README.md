@@ -94,7 +94,8 @@ https://developer.spotify.com/console/get-artist-related-artists/<br>
 - Make local time update automatically
 
 ## Funny bugs
-- I tried searching some country names, e.g. Italy. It turns out there's a small town in Texas called Italy. So there isn't an error per se, but I'm fetching Italy, TX local conditions, with a stream from the country Italy (proabably - at least most of the time).
+- I tried searching some country names, e.g. Italy. It turns out <a href="https://ci.italy.tx.us/
+https://ci.italy.tx.us/" target="_blank">there's a small town in Texas called Italy</a>. So there isn't an error per se, but I'm fetching Italy, TX local conditions, with a stream from the country Italy (proabably - at least most of the time).
 <img width="600" alt="Screenshot 2022-02-02 at 22 59 56" src="https://user-images.githubusercontent.com/17345270/152279240-f0491aa7-9c9d-4747-9ac0-8e6aa51096b4.png">
 
 
