@@ -1,18 +1,23 @@
-## <a href="https://beatconnection.herokuapp.com" target="_blank"></a>, our beat connections ♡
-Beat Connection invites you to search cities, and listen to streams around the world. You'll also find the local time, weather, and top headline wherever you are.
+### Overview
+Beat Connection is data exploration. Search cities, and listen to streams around the world. You'll also find the local top headline, weather, and time wherever you are.
+
+Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
 
 <p align='center'>
   <img width="800" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
 </p>
 
-
 ### Technologies
-- NodeJS, ExpressJS, HTML, CSS
+- NodeJS
+- ExpressJS
 - Globe.GL
-- APIs: Mixcloud, OpenWeatherMap, News
+- Mixcloud API
+- OpenWeatherMap API
+- News API
+- HTML / SCSS
 
 ### Functionalities
-Beat Connection invites users to input cities, and utilizes the `Mixcloud API` to fetch a stream connected to that city.
+Users are invited to search a city, and the `Mixcloud API` fetches a stream connected to that city. An iframe is rendered on the page, so users can listen on-site.
 ```js
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -44,6 +49,32 @@ app.get('/api', (request, response) => {
   let coords = fetch(geoUrl)
     .then(apiResponse => apiResponse.json())
     .then(data => response.send(data))       // to the frontend
+    .catch(error => response.send(error));
+});
+```
+The `News API` ingests a 2-letter country code from the `OpenWeatherMap API` to search for top news in the country for the city the user queries. The first headline is taken from the API response, which is sorted by popularity of source.
+```js
+// FRONTEND
+headline = await fetch(`/news?country=${encodeURIComponent(data.sys.country)}`)
+            .then(res => res.json())
+            .then(goodNews => { return goodNews })  // receive good news from backend
+            .catch(error => console.log(error))
+
+    if (headline.articles.length === 0) {
+      headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'
+    } else {
+      // ...
+    }
+
+// BACKEND
+app.get('/news', (request, response) => {
+  const newsApiKey = process.env.NEWS_API_KEY;
+  const newsUrlStart = 'https://newsapi.org/v2/top-headlines?country'
+  let country = request.query.country;
+  let newsUrl = `${newsUrlStart}=${country}&sortBy=popularity&apiKey=${newsApiKey}`;
+  fetch(newsUrl)
+    .then(apiResponse => apiResponse.json())
+    .then(goodNews => response.send(goodNews)) // send good news to frontend
     .catch(error => response.send(error));
 });
 ```
