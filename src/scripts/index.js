@@ -89,8 +89,9 @@ searchCity.addEventListener('submit', async function(e) {
     .then(data => { return data })
     .catch(error => console.log(error))
 
+  let cityInput = document.getElementById("search-city-name")
+
   if (data.message) {    // denotes errors from openwxmap
-    let cityInput = document.getElementById("search-city-name")
     cityInput.classList.add('error');
     cityInput.addEventListener('input', (event) => {
       cityInput.classList.remove('error');
@@ -102,10 +103,12 @@ searchCity.addEventListener('submit', async function(e) {
       .then(data =>
         iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
         // iframe.autoplay = true,
-        body.append(iframe)
+        body.append(iframe),
+        cityInput.classList.add('dim'),
+        title.classList.add('dim')
         )
       // MIXCLOUD ERROR returns data.data = []
-      // .catch(error => { return error });
+      // .catch(error => { ong return error });
     
     currentLocation.innerText = `${data.name}`;
     body.append(currentLocation);
