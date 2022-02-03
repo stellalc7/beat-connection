@@ -1,40 +1,18 @@
-## <a href="https://beatconnection.herokuapp.com" target="_blank">Behold</a>, our beat connections (っ˘з(˘⌣˘ ) ♡
+## <a href="https://beatconnection.herokuapp.com" target="_blank">Behold</a>, our beat connections ♡
 Listen to popular streams around the world. Also find local time, weather, and top headline.
 
 <p align='center'>
   <img width="800" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
-  <img width="800" alt="Screenshot 2022-02-03 at 14 12 06" src="https://user-images.githubusercontent.com/17345270/152412549-144c433f-c7a2-4b41-948d-f2ceed5c1fe4.png">
 </p>
 
 
 ### Technologies
 - NodeJS, ExpressJS, HTML, CSS
 - Globe.GL
-- APIs: <s>Spotify</s>, Mixcloud, OpenWeatherMap, News
+- APIs: Mixcloud, OpenWeatherMap, News
 
 ### Functionalities
-Initially, I opted for the `Spotify API` to fetch a related artist from the user's queried artist. The concept was: 'discover similar artists to listen to around the world'. Quickly, I realized implementing this idea would not be as straightforward. Most related artists are from the same region, and Spotify removed artist location data. I considered searching for countries with a genre through playlists, to get 1 artist from a fetched playlist, and plot the artist over the country - i.e. 'Bolivian rap'. This formula would likely require a lot of testing - obscure genres, coupled with specific countries, etc.
-`TLDR: I tried Spotify's API, and it didn't work, but here's my now obselete code.`
-```js
-// BACKEND SPOTIFY API CALLS
-// artist (user input) => artist id
-const urlStart = 'https://api.spotify.com/v1/search';
-const artistName = req.query.artistName;
-const url = `${urlStart}?q=${artistName}&type=artist`;
-const getArtistID = await fetch(url, { method: 'GET', headers: { 'Authorization': 'Bearer ' + token }, json: true })
-  .then(apiResponse => apiResponse.json())
-  
-// artist id => related artist
-const relatedUrlStart = 'https://api.spotify.com/v1/artists';
-const artistID = getArtistID.artists.items[0].id;
-const relatedUrl = `${relatedUrlStart}/${artistID}/related-artists`;
-const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Authorization': 'Bearer ' + token }, json: true })
-  .then(apiResponse => apiResponse.json())
-  .then(data => resp.send(data))   // returned to frontend
-  .catch(error => resp.send(error));
-```
-
-I refactored to use the `Mixcloud API` for 'streams around the world' - inviting users to input cities, and fetching a stream connected to that city.
+Beat Connection invites users to input cities, and utilizes the `Mixcloud API` to fetch a stream connected to that city.
 ```js
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -79,7 +57,7 @@ https://developer.spotify.com/console/get-search-item/<br>
 https://developer.spotify.com/console/get-artist-related-artists/<br>
 -->
 
-
+<!--
 ### Not not bugs
  <a href="https://ci.italy.tx.us/" target="_blank">Italy, TX, USA</a>.<br>
 <img width="600" alt="Screenshot 2022-02-02 at 22 59 56" src="https://user-images.githubusercontent.com/17345270/152279240-f0491aa7-9c9d-4747-9ac0-8e6aa51096b4.png"><br><br>
@@ -87,6 +65,7 @@ https://developer.spotify.com/console/get-artist-related-artists/<br>
 <img width="600" alt="Screenshot 2022-02-02 at 23 06 18" src="https://user-images.githubusercontent.com/17345270/152279570-608c4e6f-69d7-4a12-ad2c-ce2cd553cfdc.png"><br><br>
 In conclusion, if a city name does not coexist with that of a country's, the country will be mapped. Antithetically, if there is a city and a country with the same name, expect dissonace between the fetched stream and plotted location, as the city will be mapped by default. If there are multiple cities with the same name (e.g. Versailles), the one everyone's probably thinking of will be mapped. If a city simply has an idiosyncratic name, that city will simply be mapped. Even if it's a ghost town. <a href="http://www.texasescapes.com/CentralTexasTownsNorth/Okay-Texas.htm" target="_blank">Okay</a>?<br>
 <img width="600" alt="Screenshot 2022-02-02 at 23 58 24" src="https://user-images.githubusercontent.com/17345270/152283908-9f92e537-dbc1-40ea-a4e6-d05411d61add.png">
+-->
 
 
 <!-- - Click on the globe, instead of search (what if user accidentally clicks)? Both?
@@ -103,6 +82,3 @@ In conclusion, if a city name does not coexist with that of a country's, the cou
 - DJ Set <a href="https://www.mixcloud.com/FrankMaster/special-dj-set-marrakesh-marocco-by-frank-master-stefano-capasso/" target="_blank">Marrakesh</a>
 - Cooking with Palm Trax <a href="https://www.mixcloud.com/BCR_Radio/cooking-with-palms-trax-020/" target="_blank">Berlin</a>
 - Future sound of Egypt <a href="https://www.mixcloud.com/alyfila-futuresoundofegypt/future-sound-of-egypt-650-live-from-cairo-with-aly-fila/" target="_blank">Cairo</a>
-
-### Shout outs
-Big hugs to everyone who gave me coding wisdom + inspiration.
