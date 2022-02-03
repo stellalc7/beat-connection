@@ -19,6 +19,8 @@ app.get('/', (request, response) => {
   response.sendFile(`${__dirname}/dist/index.html`);
 });
 
+
+// https://openweathermap.org
 app.get('/api', (request, response) => {
   const apiKey = process.env.API_KEY;
   const geoUrlStart = 'https://api.openweathermap.org/data/2.5/weather?q'
@@ -32,16 +34,17 @@ app.get('/api', (request, response) => {
 });
 
 // https://newsapi.org/
-// app.get('/news', (request, response) => {
-//   const newsApiKey = process.env.NEWS_API_KEY;
-//   const newsUrlStart = 'https://newsapi.org/v2/everything?q'
-//   let searchTerm = request.query.searchTerm;
-//   let newsUrl = `${newsUrlStart}=${searchTerm}&sortBy=popularity&apiKey=${newsApiKey}`;
-//   fetch(newsUrl) // AJAX request to API
-//     .then(apiResponse => apiResponse.json())
-//     .then(goodNews => response.send(goodNews))
-//     .catch(error => response.send(error));
-// });
+app.get('/news', (request, response) => {
+  const newsApiKey = process.env.NEWS_API_KEY;
+  const newsUrlStart = 'https://newsapi.org/v2/everything?q'
+  let searchTerm = request.query.searchTerm;
+  let newsUrl = `${newsUrlStart}=${searchTerm}&sortBy=popularity&apiKey=${newsApiKey}`;
+  console.log(newsUrl)
+  fetch(newsUrl)
+    .then(apiResponse => apiResponse.json())
+    .then(goodNews => response.send(goodNews))
+    .catch(error => response.send(error));
+});
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {

@@ -101,6 +101,12 @@ searchCity.addEventListener('submit', async function(e) {
       return data
     })
 
+  let news = await fetch(`/news?searchTerm=${encodeURIComponent(city)}`)
+    .then(res => res.json())
+    .then(goodNews => {
+      console.log(goodNews.articles[0])
+    })
+
     currentLocation.innerText = `${data.name}`;
     body.append(currentLocation);
     localTemp.innerText = `${Math.round(data.main.temp)}°, ${data.weather[0].description}`;
