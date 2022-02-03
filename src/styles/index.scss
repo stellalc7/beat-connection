@@ -131,6 +131,8 @@ p {
   right: none;
   bottom: none;
   padding: 10px 10px 0 10px;
+  overflow-wrap: break-word;
+  hyphens: manual;
   &.hide {
     display: none;
   }
