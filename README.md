@@ -93,6 +93,7 @@ In conclusion, if a city name does not coexist with that of a country's, the cou
 - Local time updates automatically.
 - Top local news.
 - Smoother loading / setTimeout?
+- addEventListener for mouse movement if no mouse activity for X time, hide everything but the globe and local info (for projections).
 
 ### Shout outs
 Big hugs to everyone who gave me coding wisdom + inspiration.
