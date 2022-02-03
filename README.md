@@ -21,6 +21,7 @@ Play with it <a href="https://beatconnection.herokuapp.com" target="_blank">here
 - <s>Spotify API</s>
 - Mixcloud API
 - OpenWeatherMap API
+- News API
 - Globe.GL
 
 ## Code
@@ -89,7 +90,7 @@ https://developer.spotify.com/console/get-artist-related-artists/<br>
 
 ## Notes
 - Smoother loading / setTimeout?
-- Local news
+- Top news locally (meaning in that country)
 
 ## Shout outs
 Big hugs to everyone who gave me coding wisdom + inspiration.
