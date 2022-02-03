@@ -121,6 +121,14 @@ p {
   color: rgb(223, 223, 223);
 }
 
+.coords {
+  font-size: 100px;
+  top: 100px;
+  left: 0px;
+  background-color: transparent;
+  color: $fourth-color;
+}
+
 a {
   color: $fourth-color;
   position: absolute;

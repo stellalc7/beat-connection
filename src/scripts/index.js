@@ -14,7 +14,9 @@ let currentLocation = document.createElement('h1');
 let localWx = document.createElement('h3');
 let localTime = document.createElement('h4');
 var iframe = document.createElement('iframe');
-let offset;
+let coordinates = document.createElement('h1')
+coordinates.classList.add('coords');
+let offset, coord;
 
 // var locIcon = document.createElement('img');
 // locIcon.src = ''
@@ -78,6 +80,12 @@ currentLocation.addEventListener('click', function() {
   }
 });
 
+currentLocation.addEventListener('mouseover', function() {
+  // coordinates.classList.add('coords-show');
+  coordinates.innerText = coord;
+  body.append(coordinates);
+});
+
 let searchCity = document.getElementById('search-city');
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -124,6 +132,30 @@ searchCity.addEventListener('submit', async function(e) {
 
     lons.push(data.coord.lon)
     lats.push(data.coord.lat)
+
+    let currLat, currLon;
+    currLat = lats[lats.length-1];
+    currLon = lons[lons.length-1];
+
+    if (currLat < 0 && currLon < 0) {
+      currLon = -currLon;
+      currLat = -currLat;
+      coord = `${currLat}°W, ${currLon}°S`;
+      // console.log(coord)
+    } else if (currLat < 0) {
+      currLat = -currLat
+      coord = `${currLat}°E, ${currLon}°N`
+      // console.log(coord)
+    } else if (currLon < 0) {
+      currLon = -currLon
+      coord = `${currLat}°E, ${currLon}°S`;
+      // console.log(coord)
+    } else {
+      coord = `${currLat}°W, ${currLon}°S`;
+      // console.log(coord)
+    }
+
+    // console.log(lats[lats.length-1], lons[lons.length-1])
     
     let rData = [{
       lat: lats[lats.length-1],
