@@ -17,7 +17,7 @@ Listen to popular streams around the world.
 - APIs: <s>Spotify</s>, Mixcloud, OpenWeatherMap, (News)
 
 ### Code
-Initially, I opted for the `Spotify API` to fetch a related artist from an artist the user inputs. The concept was: 'discover similar artists to listen to around the world'. Quickly, I realized this idea was not as straightforward as I had imagined. Most related artists are from the same region. Also, Spotify removed artist location data. I considered inherently searching for countries with a genre through playlists, to get 1 track from a fetched playlist, and plot the track/artist over the country - i.e. 'Bolivian rap'. This equation would likely require a lot of testing - obscure genres, coupled with specific countries, etc.
+Initially, I opted for the `Spotify API` to fetch a related artist from an artist the user inputs. The concept was: 'discover similar artists to listen to around the world'. Quickly, I realized implementing this idea would not be as straightforward. Most related artists are from the same region, and Spotify removed artist location data. I considered searching for countries with a genre through playlists, to get 1 artist from a fetched playlist, and plot the artist over the country - i.e. 'Bolivian rap'. This equation would likely require a lot of testing - obscure genres, coupled with specific countries, etc.
 `TLDR: I tried Spotify's API, and it didn't work, but here's my now obselete code.`
 ```js
 // BACKEND SPOTIFY API CALLS
@@ -38,7 +38,7 @@ const relatedArtist = await fetch(relatedUrl, { method: 'GET', headers: { 'Autho
   .catch(error => resp.send(error));
 ```
 
-The `Mixcloud API` offers streams posted by users around the world - DJ sets, rave recordings, etc. I modified the concept to 'streams around the world', and invite users to input cities instead.
+I refactored to use the `Mixcloud API` for 'streams around the world' - inviting users to input cities.
 ```js
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
