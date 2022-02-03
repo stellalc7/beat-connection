@@ -3,7 +3,8 @@ Listen to popular streams around the world. Also find local time, weather, and t
 
 <p align='center'>
   <img width="800" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
-</p><img width="800" alt="Screenshot 2022-02-03 at 14 12 06" src="https://user-images.githubusercontent.com/17345270/152412549-144c433f-c7a2-4b41-948d-f2ceed5c1fe4.png">
+  <img width="800" alt="Screenshot 2022-02-03 at 14 12 06" src="https://user-images.githubusercontent.com/17345270/152412549-144c433f-c7a2-4b41-948d-f2ceed5c1fe4.png">
+</p>
 
 
 ### Technologies
