@@ -74,17 +74,13 @@ app.get('/api', (request, response) => {
 });
 ```
 
-<!-- ## Sources
+<!--
+## Sources
 https://globe.gl/<br>
 https://www.mixcloud.com/developers/#connections-lists<br>
 https://www.mixcloud.com/developers/widget/#methods<br>
 https://developer.spotify.com/console/get-search-item/<br>
 https://developer.spotify.com/console/get-artist-related-artists/<br>
-
-## Notes
-- Smoother loading / setTimeout?
-- Top news locally (meaning in that country)
-- Make local time update automatically
 -->
 
 ## Funny not not bugs
@@ -94,6 +90,14 @@ https://ci.italy.tx.us/" target="_blank">there's a small town in Texas called It
 And <a href="https://en.wikipedia.org/wiki/Korea,_Gmina_Telatyn" target="_blank">Korea</a> is in Poland.<br>
 <img width="600" alt="Screenshot 2022-02-02 at 23 06 18" src="https://user-images.githubusercontent.com/17345270/152279570-608c4e6f-69d7-4a12-ad2c-ce2cd553cfdc.png"><br><br>
 In conclusion, if a city name does not coexist with that of a country's, the country will be mapped.
+
+## Future
+- Click on the globe, instead of search? Both?
+- Zoom in on globe proportionally amplifes stream volume.
+- Stream autoplay.
+- Local time updates automatically.
+- Top local news.
+- Smoother loading / setTimeout?
 
 ## Shout outs
 Big hugs to everyone who gave me coding wisdom + inspiration.
