@@ -80,13 +80,16 @@ app.get('/api', (request, response) => {
 });
 ```
 
-## Notes + Sources
+## Sources
 https://globe.gl/<br>
 https://www.mixcloud.com/developers/#connections-lists<br>
 https://www.mixcloud.com/developers/widget/#methods<br>
 https://developer.spotify.com/console/get-search-item/<br>
 https://developer.spotify.com/console/get-artist-related-artists/<br>
 
+## Notes
+- Smoother loading / setTimeout?
+- Local news
 
 ## Shout outs
 Big hugs to everyone who gave me coding wisdom + inspiration.
