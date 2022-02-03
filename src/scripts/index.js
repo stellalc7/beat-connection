@@ -13,8 +13,24 @@ body.append(description);
 let currentLocation = document.createElement('h1');
 let localWx = document.createElement('h3');
 let localTime = document.createElement('h4');
-var iframe = document.createElement('iframe');
 let offset;
+let iframe = document.createElement('iframe');
+iframe.setAttribute('id', 'mixcloud-widget');
+let widget;
+// if (iframe.contentDocument) {
+//   widget = window.Mixcloud.PlayerWidget(document.getElementById("midcloud-widget"));
+// }
+// console.log(widget)
+// console.log(window.contentDocument)
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  // var widget = Mixcloud.PlayerWidget(document.getElementById("midcloud-widget"));
+  // console.log(window.Mixcloud)
+  // console.log(widget)
+  console.log(Mixcloud.PlayerWidget())
+})
+
+// console.log(Mixcloud.PlayerWidget)
 
 // var locIcon = document.createElement('img');
 // locIcon.src = ''
@@ -102,7 +118,9 @@ searchCity.addEventListener('submit', async function(e) {
       .then(response => response.json())
       .then(data =>
         iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
-        // iframe.autoplay = true,
+        iframe.frameborder = 'no',
+        // iframe.allow = 'autoplay',
+        // iframe.setVolume(0.5),
         body.append(iframe),
         cityInput.classList.add('dim'),
         title.classList.add('dim')
