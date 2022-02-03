@@ -19,7 +19,7 @@ Listen to popular streams around the world.
 ### Code
 Initially, I opted for the `Spotify API` to fetch a related artist from an artist the user inputs. The concept was: 'discover similar artists to listen to around the world'. Quickly, I realized this idea was not as straightforward as I had imagined. Most related artists are from the same region. Also, Spotify removed artist location data. I considered inherently searching for countries with a genre through playlists, to get 1 track from a fetched playlist, and plot the track/artist over the country - i.e. 'Bolivian rap'. This equation would likely require a lot of testing - obscure genres, coupled with specific countries, etc.
 `TLDR: I tried Spotify's API, and it didn't work, but here's my now obselete code.`
-```
+```js
 // BACKEND SPOTIFY API CALLS
 // artist (user input) => artist id
 const urlStart = 'https://api.spotify.com/v1/search';
@@ -89,7 +89,10 @@ https://ci.italy.tx.us/" target="_blank">there's a small town in Texas called It
 <img width="600" alt="Screenshot 2022-02-02 at 22 59 56" src="https://user-images.githubusercontent.com/17345270/152279240-f0491aa7-9c9d-4747-9ac0-8e6aa51096b4.png"><br><br>
 And <a href="https://en.wikipedia.org/wiki/Korea,_Gmina_Telatyn" target="_blank">Korea</a> is in Poland.<br>
 <img width="600" alt="Screenshot 2022-02-02 at 23 06 18" src="https://user-images.githubusercontent.com/17345270/152279570-608c4e6f-69d7-4a12-ad2c-ce2cd553cfdc.png"><br><br>
-In conclusion, if a city name does not coexist with that of a country's, the country will be mapped. And I know you're also wondering what if there are multiple cities with the same name (Versailles), the one everyone's probably thinking of will be mapped.
+In conclusion, if a city name does not coexist with that of a country's, the country will be mapped. And I know you're also wondering what if there are multiple cities with the same name (Versailles), the one everyone's probably thinking of will be mapped.<br><br>
+The site doubles as a "does this city name exist" search engine.<br>
+<img width="600" alt="Screenshot 2022-02-02 at 23 58 24" src="https://user-images.githubusercontent.com/17345270/152283908-9f92e537-dbc1-40ea-a4e6-d05411d61add.png">
+
 
 ### Future
 - Click on the globe, instead of search (what if user accidentally clicks)? Both?
