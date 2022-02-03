@@ -61,7 +61,7 @@ headline = await fetch(`/news?country=${encodeURIComponent(data.sys.country)}`)
             .catch(error => console.log(error))
 
     if (headline.articles.length === 0) {
-      headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'
+      headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'   // if there's no news, we still report good news
     } else {
       // ...
     }
