@@ -35,18 +35,18 @@ app.get('/api', (request, response) => {
 });
 
 // https://newsapi.org/
-// app.get('/news', (request, response) => {
-//   const newsApiKey = process.env.NEWS_API_KEY;
-//   const newsUrlStart = 'https://newsapi.org/v2/top-headlines?country'
-//   // let searchTerm = request.query.searchTerm;
-//   // let country = 2 LETTER COUNTRY CODE
-//   let newsUrl = `${newsUrlStart}=${country}&apiKey=${newsApiKey}`;
-//   console.log(newsUrl)
-//   fetch(newsUrl)
-//     .then(apiResponse => apiResponse.json())
-//     .then(goodNews => response.send(goodNews))
-//     .catch(error => response.send(error));
-// });
+app.get('/news', (request, response) => {
+  const newsApiKey = process.env.NEWS_API_KEY;
+  const newsUrlStart = 'https://newsapi.org/v2/top-headlines?country'
+  let country = request.query.country;
+  // let country = 2 LETTER COUNTRY CODE
+  let newsUrl = `${newsUrlStart}=${country}&apiKey=${newsApiKey}`;
+  console.log(newsUrl)
+  fetch(newsUrl)
+    .then(apiResponse => apiResponse.json())
+    .then(goodNews => response.send(goodNews))
+    .catch(error => response.send(error));
+});
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {

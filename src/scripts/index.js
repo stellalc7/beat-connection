@@ -16,7 +16,7 @@ let localTime = document.createElement('h4');
 var iframe = document.createElement('iframe');
 let coordinates = document.createElement('h1')
 coordinates.classList.add('coords');
-let offset, coord;
+let offset, coord, headline;
 
 // var locIcon = document.createElement('img');
 // locIcon.src = ''
@@ -83,7 +83,7 @@ currentLocation.addEventListener('click', function() {
 currentLocation.addEventListener('mouseover', function() {
   coordinates.classList.add('coords');
   coordinates.classList.remove('hide')
-  coordinates.innerText = coord;
+  coordinates.innerText = `${coord} \n ${headline}`;
   body.append(coordinates);
 });
 
@@ -123,6 +123,10 @@ searchCity.addEventListener('submit', async function(e) {
         )
       // MIXCLOUD ERROR returns data.data = []
       // .catch(error => { ong return error });
+
+    headline = await fetch(`/news?country=${encodeURIComponent(data.sys.country)}`)
+    .then(res => res.json())
+    .then(goodNews => { return goodNews.articles[0].title })
     
     currentLocation.innerText = `${data.name}`;
     body.append(currentLocation);
@@ -147,21 +151,15 @@ searchCity.addEventListener('submit', async function(e) {
       currLon = -currLon;
       currLat = -currLat;
       coord = `${currLat}°W, ${currLon}°S`;
-      // console.log(coord)
     } else if (currLat < 0) {
       currLat = -currLat
       coord = `${currLat}°E, ${currLon}°S`
-      // console.log(coord)
     } else if (currLon < 0) {
       currLon = -currLon
       coord = `${currLat}°W, ${currLon}°N`;
-      // console.log(coord)
     } else {
       coord = `${currLat}°E, ${currLon}°N`;
-      // console.log(coord)
     }
-
-    // console.log(lats[lats.length-1], lons[lons.length-1])
     
     let rData = [{
       lat: lats[lats.length-1],
@@ -203,9 +201,4 @@ searchCity.addEventListener('submit', async function(e) {
               .pointOfView({lat: lats[lats.length-1], lng: lons[lons.length-1], altitude: 2.5}, 4000)
     }
   }
-
-  // let news = await fetch(`/news?searchTerm=${encodeURIComponent(city)}`)
-  //   .then(res => res.json())
-  //   .then(goodNews => { console.log(goodNews.articles[0]) })
-
 });
