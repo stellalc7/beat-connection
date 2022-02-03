@@ -84,13 +84,11 @@ https://developer.spotify.com/console/get-artist-related-artists/<br>
 -->
 
 ### Funny not not bugs
-I searched a few country names, e.g. Italy. It turns out <a href="https://ci.italy.tx.us/
-https://ci.italy.tx.us/" target="_blank">there's a small town in Texas called Italy</a>. So there isn't an error per se, but I'm fetching local conditions in Italy, TX with a stream from the country Italy (proabably - most likely).<br>
+ <a href="https://ci.italy.tx.us/" target="_blank">Italy, TX, USA</a>.<br>
 <img width="600" alt="Screenshot 2022-02-02 at 22 59 56" src="https://user-images.githubusercontent.com/17345270/152279240-f0491aa7-9c9d-4747-9ac0-8e6aa51096b4.png"><br><br>
-And <a href="https://en.wikipedia.org/wiki/Korea,_Gmina_Telatyn" target="_blank">Korea</a> is in Poland.<br>
+And <a href="https://en.wikipedia.org/wiki/Korea,_Gmina_Telatyn" target="_blank">Korea, Lublin Voivodeship, Poland</a>.<br>
 <img width="600" alt="Screenshot 2022-02-02 at 23 06 18" src="https://user-images.githubusercontent.com/17345270/152279570-608c4e6f-69d7-4a12-ad2c-ce2cd553cfdc.png"><br><br>
-In conclusion, if a city name does not coexist with that of a country's, the country will be mapped. And I know you're also wondering what if there are multiple cities with the same name (Versailles), the one everyone's probably thinking of will be mapped.<br><br>
-The site doubles as a "does this city name exist" search engine.<br>
+In conclusion, if a city name does not coexist with that of a country's, the country will be mapped. And I know you're also wondering what if there are multiple cities with the same name (Versailles), the one everyone's probably thinking of will be mapped. If a city simply has an idiosyncratic name, that city will be mapped.<br
 <img width="600" alt="Screenshot 2022-02-02 at 23 58 24" src="https://user-images.githubusercontent.com/17345270/152283908-9f92e537-dbc1-40ea-a4e6-d05411d61add.png">
 
 
