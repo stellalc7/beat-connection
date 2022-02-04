@@ -19,7 +19,7 @@ Behold our beat connections <a href="https://beatconnection.herokuapp.com" targe
 - HTML / SCSS
 
 ### Functionalities
-Users are invited to search a city, and the `Mixcloud API` fetches a stream connected to that city. An iframe is rendered on the page, so users can listen on-site.
+Users are invited to search a city, and the `Mixcloud API` fetches a stream connected to that city. An iframe element ingests the stream url that is returned, and a Mixcloud player is rendered on the page, so users can listen on-site.
 ```js
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
