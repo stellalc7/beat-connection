@@ -2,7 +2,7 @@
 BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top national headline, local weather, and time wherever you decide to go.
 
 ### Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
-...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer. - (Gillespie, 2003). This site designed with magic, wonder, surprise, and delight in mind.
+...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer. - (Gillespie, 2003). ✨ This site was created with magic, wonder, surprise, and delight in mind. ✨
 
 <p align='center'>
   <img width="700" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
@@ -11,7 +11,7 @@ BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with Ja
 ### Technologies
 - NodeJS
 - Express
-- Globe.GL
+- Globe.GL✨
 - Mixcloud API
 - OpenWeatherMap API
 - News API
@@ -77,6 +77,7 @@ https://www.mixcloud.com/developers/#connections-lists<br>
 https://www.mixcloud.com/developers/widget/#methods<br>
 https://developer.spotify.com/console/get-search-item/<br>
 https://developer.spotify.com/console/get-artist-related-artists/<br>
+https://services.swpc.noaa.gov/json/ovation_aurora_latest.json<br>
 -->
 
 <!-- - Click on the globe, instead of search (what if user accidentally clicks)? Both?
