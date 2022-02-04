@@ -4,9 +4,9 @@ BEAT C♡NNECTI♡N is an interactive site encouraging (data) exploration built 
 Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
 
 <p align='center'>
-  <img width="700" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
-  <img width="700" alt="Screenshot 2022-02-03 at 14 54 59" src="https://user-images.githubusercontent.com/17345270/152457026-71e8519e-5bf4-4db0-84ea-58210f2e6880.png">
-
+  <!--<img width="700" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
+  <img width="700" alt="Screenshot 2022-02-03 at 14 54 59" src="https://user-images.githubusercontent.com/17345270/152457026-71e8519e-5bf4-4db0-84ea-58210f2e6880.png">-->
+https://user-images.githubusercontent.com/17345270/152577095-cb249772-e8dd-4483-b111-b382348d1675.mov
 </p>
 
 ### Technologies
