@@ -138,11 +138,11 @@ searchCity.addEventListener('submit', async function(e) {
       .then(data =>
         iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
         // iframe.autoplay = true,
-        body.append(iframe),
-        cityInput.classList.add('dim'),
-        title.classList.add('dim'),
+        body.append(iframe)
         )
-
+        cityInput.classList.add('dim'),
+        title.classList.add('dim')
+        description.classList.add('dim')
         portfolio.classList.add('bright')
         github.classList.add('bright')
 
