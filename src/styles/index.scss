@@ -197,3 +197,36 @@ iframe {
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+@media only screen and (max-width: 700px) {
+  h2 {
+    display: none;
+  }
+  h3 {
+    font-size: 17px;
+  }
+  h4 {
+    font-size: 17px;
+    bottom: 90px;
+  }
+  h1 {
+    font-size: 30px;
+    bottom: 115px;
+    font-weight: bold;
+  }
+  #portfolio {
+    display: none;
+  }
+  #github {
+    display: none;
+  }
+  .coords {
+    font-size: 30px;
+    width: 60%;
+  }
+  #search-div {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+  }
+}
