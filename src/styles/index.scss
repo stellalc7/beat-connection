@@ -229,12 +229,16 @@ iframe {
     right: none;
     display: flex;
     justify-content: center;
-    margin: auto;
+    // margin: auto;
   }
   #search-city-name {
     width: 80vw;
     height: 50px;
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 25px;
+  }
+  p {
+    display: none;
   }
 }
