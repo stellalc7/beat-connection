@@ -1,22 +1,21 @@
 ### Overview
-BEAT C♡NNECTI♡N is an interactive site encouraging (data) exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top national headline, local weather, and time wherever you decide to go.
+BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top national headline, local weather, and time wherever you decide to go.
 
-Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
+### Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
+...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer. - (Gillespie, 2003). ✨ I created this site with magic, wonder, surprise, and delight in mind. ✨ The site doubles as passive technology; as such, the UI/UX is intentionally minimal, elements dim depending on the user's interactions reconsidering design hierarchy, and there is a subtle rotation on the canvas.
 
 <p align='center'>
   <img width="700" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
-  <img width="700" alt="Screenshot 2022-02-03 at 14 54 59" src="https://user-images.githubusercontent.com/17345270/152457026-71e8519e-5bf4-4db0-84ea-58210f2e6880.png">
-
 </p>
 
 ### Technologies
 - NodeJS
 - Express
+- HTML / SCSS
 - Globe.GL
 - Mixcloud API
 - OpenWeatherMap API
 - News API
-- HTML / SCSS
 
 ### Functionalities
 Users are invited to search a city, and the `Mixcloud API` fetches a stream connected to that city. An iframe element ingests the stream url that is returned, and a Mixcloud player is rendered on the page, so users can listen on-site.
@@ -37,7 +36,11 @@ searchCity.addEventListener('submit', async function(e) {
 }
 ```
 
-The `News API` ingests a 2-letter country code from the data returned by the `OpenWeatherMap API` to search for top news in the country for the city the user queries. The first headline is taken from the API response, which is sorted by popularity of source.
+<p align='center'>
+<img width="700" alt="Screenshot 2022-02-04 at 14 11 31" src="https://user-images.githubusercontent.com/17345270/152589307-99c4c47d-15c6-4151-9b65-286096ef08c7.png">
+</p>
+
+The `News API` ingests a 2-letter country code from the data returned by the `OpenWeatherMap API` to search for top national headlines for the user-queried city. The first headline is displayed from the API response, which is sorted by popularity of source.
 ```js
 // FRONTEND
 headline = await fetch(`/news?country=${encodeURIComponent(wxData.sys.country)}`)
@@ -74,6 +77,7 @@ https://www.mixcloud.com/developers/#connections-lists<br>
 https://www.mixcloud.com/developers/widget/#methods<br>
 https://developer.spotify.com/console/get-search-item/<br>
 https://developer.spotify.com/console/get-artist-related-artists/<br>
+https://services.swpc.noaa.gov/json/ovation_aurora_latest.json<br>
 -->
 
 <!-- - Click on the globe, instead of search (what if user accidentally clicks)? Both?
@@ -89,3 +93,8 @@ https://developer.spotify.com/console/get-artist-related-artists/<br>
 - DJ Set <a href="https://www.mixcloud.com/FrankMaster/special-dj-set-marrakesh-marocco-by-frank-master-stefano-capasso/" target="_blank">Marrakesh</a>
 - Cooking with Palm Trax <a href="https://www.mixcloud.com/BCR_Radio/cooking-with-palms-trax-020/" target="_blank">Berlin</a>
 - Future sound of Egypt <a href="https://www.mixcloud.com/alyfila-futuresoundofegypt/future-sound-of-egypt-650-live-from-cairo-with-aly-fila/" target="_blank">Cairo</a>
+
+### Future
+- Replace faux pink atmosphere with togglable SWPC aurora data (but still pink)
+- Smoother loading
+- Display current city in local language
