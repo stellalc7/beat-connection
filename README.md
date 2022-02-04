@@ -5,7 +5,6 @@ Behold our beat connections <a href="https://beatconnection.herokuapp.com" targe
 
 <p align='center'>
   <img width="700" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
-  <img width="700" alt="Screenshot 2022-02-04 at 14 14 39" src="https://user-images.githubusercontent.com/17345270/152589285-5528a87d-b89d-4d59-b111-336c1dc5234b.png">
 <img width="700" alt="Screenshot 2022-02-04 at 14 11 31" src="https://user-images.githubusercontent.com/17345270/152589307-99c4c47d-15c6-4151-9b65-286096ef08c7.png">
 </p>
 
