@@ -1,18 +1,23 @@
-## <a href="https://beatconnection.herokuapp.com" target="_blank">Behold</a>, our beat connections ♡
-Listen to popular streams around the world. Also find local time, weather, and the top headline.
+### Overview
+Beat Connection is data exploration. Search cities, and listen to streams around the world. You'll also find the local top headline, weather, and time wherever you are.
+
+Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
 
 <p align='center'>
   <img width="800" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
 </p>
 
-
 ### Technologies
-- NodeJS, ExpressJS, HTML, CSS
+- NodeJS
+- ExpressJS
 - Globe.GL
-- APIs: Mixcloud, OpenWeatherMap, News
+- Mixcloud API
+- OpenWeatherMap API
+- News API
+- HTML / SCSS
 
 ### Functionalities
-Beat Connection invites users to input cities, and utilizes the `Mixcloud API` to fetch a stream connected to that city.
+Users are invited to search a city, and the `Mixcloud API` fetches a stream connected to that city. An iframe is rendered on the page, so users can listen on-site.
 ```js
 searchCity.addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -22,28 +27,40 @@ searchCity.addEventListener('submit', async function(e) {
   const widgetUrl = `https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=`
   fetch(url)
     .then(response => response.json())
-    .then(data =>
-      iframe.src = widgetUrl + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
+    .then(stream =>
+      iframe.src = widgetUrl + stream.stream[Math.floor(Math.random()*stream.stream.length)].url.slice(24),
       body.append(iframe)
-    )   // append the new stream for searched city
+      // refresh the stream for the new city
+    )
 }
 ```
-The `OpenWeatherMap API` provides coordinates, local weather conditions, and local time.
+
+The `News API` ingests a 2-letter country code from the data returned by the `OpenWeatherMap API` to search for top news in the country for the city the user queries. The first headline is taken from the API response, which is sorted by popularity of source.
 ```js
 // FRONTEND
-let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
-  .then(res => res.json())
-  .then(data => { return data })
+headline = await fetch(`/news?country=${encodeURIComponent(wxData.sys.country)}`)
+            .then(res => res.json())
+            .then(goodNews => { return goodNews })
+            // receive good news from backend
+            .catch(error => console.log(error))
+
+if (headline.articles.length === 0) {
+  headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'
+  // if there's no news, we still report good news
+} else {
+  // ...
+}
 
 // BACKEND
-app.get('/api', (request, response) => {
-  const apiKey = process.env.API_KEY;
-  const geoUrlStart = 'https://api.openweathermap.org/data/2.5/weather?q'
-  let searchTerm = request.query.searchTerm;
-  let geoUrl = `${geoUrlStart}=${searchTerm}&units=metric&appid=${apiKey}`;
-  let coords = fetch(geoUrl)
+app.get('/news', (request, response) => {
+  const newsApiKey = process.env.NEWS_API_KEY;
+  const newsUrlStart = 'https://newsapi.org/v2/top-headlines?country'
+  let country = request.query.country;
+  let newsUrl = `${newsUrlStart}=${country}&sortBy=popularity&apiKey=${newsApiKey}`;
+  fetch(newsUrl)
     .then(apiResponse => apiResponse.json())
-    .then(data => response.send(data))       // to the frontend
+    .then(goodNews => response.send(goodNews))
+    // send good news to frontend
     .catch(error => response.send(error));
 });
 ```
@@ -67,7 +84,6 @@ In conclusion, if a city name does not coexist with that of a country's, the cou
 <img width="600" alt="Screenshot 2022-02-02 at 23 58 24" src="https://user-images.githubusercontent.com/17345270/152283908-9f92e537-dbc1-40ea-a4e6-d05411d61add.png">
 -->
 
-
 <!-- - Click on the globe, instead of search (what if user accidentally clicks)? Both?
 - Globe zoom proportionally adjusts stream volume.
 - Stream autoplay.
@@ -76,7 +92,8 @@ In conclusion, if a city name does not coexist with that of a country's, the cou
 - Top local news.
 - Smoother loading / setTimeout?
 - addEventListener for mouse movement if no mouse activity for X time, hide everything but the globe and local info (for projections).
-- changeLanguage(city) => { } -->
+- changeLanguage(city) => { }
+-->
 
 ### My top Mixcloud streams
 - DJ Set <a href="https://www.mixcloud.com/FrankMaster/special-dj-set-marrakesh-marocco-by-frank-master-stefano-capasso/" target="_blank">Marrakesh</a>
