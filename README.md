@@ -1,5 +1,5 @@
 ### Overview
-Beat Connection is an interactive site for data exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the local top headline, weather, and time wherever you decide to go.
+BEAT C♡NNECTI♡N is an interactive site for data exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the local top headline, weather, and time wherever you decide to go.
 
 Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
 
