@@ -144,7 +144,10 @@ searchCity.addEventListener('submit', async function(e) {
       .then(goodNews => { return goodNews})
       // .catch(error => console.log(error))
 
-    if (headline.articles.length === 0) {
+      console.log(headline)
+    if (headline.status === 'error') {
+      headline = 'HIT MY FREE NEWS API DAILY LIMIT NO HEADLINES TO REPORT \n 🙁🙁🙁🙁🙁🙁🙁🙁🙁🙁'
+    } else if (headline.articles.length === 0) {
       headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'
     } else {
       headlineTitle = headline.articles[0].title;
@@ -153,10 +156,7 @@ searchCity.addEventListener('submit', async function(e) {
       } else {
         headline = headlineTitle;
       }
-
     }
-  
-
     
     currentLocation.innerText = `${data.name.toUpperCase()}`;
     body.append(currentLocation);
