@@ -1,4 +1,6 @@
 import Globe from 'globe.gl';
+// import codes from 'iso-lang-codes'
+// console.log(codes.findCountryLanguages('KR'))
 
 /*   ------------------------- DOM ELEMENTS -------------------------   */
 const body = document.body;
@@ -120,7 +122,7 @@ searchCity.addEventListener('submit', async function(e) {
   let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
     .then(res => res.json())
     .then(data => { return data })
-    // .catch(error => console.log(error))
+    .catch(error => { return error })
 
   let cityInput = document.getElementById("search-city-name")
   let portfolio = document.getElementById("portfolio")
@@ -128,7 +130,7 @@ searchCity.addEventListener('submit', async function(e) {
 
   if (data.message) {    // denotes errors from openwxmap
     cityInput.classList.add('error');
-    Haptics.vibrate(200);
+    // Haptics.vibrate(200);
     cityInput.addEventListener('input', (event) => {
       cityInput.classList.remove('error');
     });
@@ -152,7 +154,6 @@ searchCity.addEventListener('submit', async function(e) {
       .then(goodNews => { return goodNews})
       // .catch(error => console.log(error))
 
-      console.log(headline)
     if (headline.status === 'error') {
       headline = 'HIT MY FREE NEWS API DAILY RATE LIMIT NO HEADLINE TO REPORT \n 🙁🙁🙁🙁🙁🙁🙁🙁🙁🙁'
     } else if (headline.articles.length === 0) {

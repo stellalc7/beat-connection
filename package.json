@@ -36,6 +36,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "globe.gl": "^2.23.0",
+    "iso-lang-codes": "^2.1.1",
     "mini-css-extract-plugin": "^2.4.5",
     "node-fetch": "^2.6.6",
     "regenerator-runtime": "^0.13.9",
