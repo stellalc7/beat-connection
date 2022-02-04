@@ -2,20 +2,18 @@
 BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top national headline, local weather, and time wherever you decide to go.
 
 ### Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
-...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer. - (Gillespie, 2003). ✨ This site was created with magic, wonder, surprise, and delight in mind. ✨
+...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer. - (Gillespie, 2003). ✨ I created this site with magic, wonder, surprise, and delight in mind. ✨
 
 <p align='center'>
   <img width="700" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
 </p>
 
 ### Technologies
-- NodeJS
-- Express
-- Globe.GL✨
-- Mixcloud API
-- OpenWeatherMap API
-- News API
-- HTML / SCSS
+👾 NodeJS + Express + HTML + SCSS
+🌍 Globe.GL
+🎵 Mixcloud API
+☁️ OpenWeatherMap API
+📰 News API
 
 ### Functionalities
 Users are invited to search a city, and the `Mixcloud API` fetches a stream connected to that city. An iframe element ingests the stream url that is returned, and a Mixcloud player is rendered on the page, so users can listen on-site.
@@ -93,3 +91,8 @@ https://services.swpc.noaa.gov/json/ovation_aurora_latest.json<br>
 - DJ Set <a href="https://www.mixcloud.com/FrankMaster/special-dj-set-marrakesh-marocco-by-frank-master-stefano-capasso/" target="_blank">Marrakesh</a>
 - Cooking with Palm Trax <a href="https://www.mixcloud.com/BCR_Radio/cooking-with-palms-trax-020/" target="_blank">Berlin</a>
 - Future sound of Egypt <a href="https://www.mixcloud.com/alyfila-futuresoundofegypt/future-sound-of-egypt-650-live-from-cairo-with-aly-fila/" target="_blank">Cairo</a>
+
+### Future
+- Replace faux pink atmosphere with togglable SWPC aurora data (but still pink)
+- Smoother loading
+- Display current city in local language
