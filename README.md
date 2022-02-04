@@ -9,11 +9,13 @@ BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with Ja
 </p>
 
 ### Technologies
-👾 NodeJS + Express + HTML + SCSS<br>
-🌍 Globe.GL<br>
-🎵 Mixcloud API<br>
-☁️ OpenWeatherMap API<br>
-📰 News API
+- NodeJS
+- Express
+- HTML / SCSS
+- Globe.GL
+- Mixcloud API
+- OpenWeatherMap API
+- News API
 
 ### Functionalities
 Users are invited to search a city, and the `Mixcloud API` fetches a stream connected to that city. An iframe element ingests the stream url that is returned, and a Mixcloud player is rendered on the page, so users can listen on-site.
