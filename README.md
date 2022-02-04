@@ -1,17 +1,17 @@
-### Preface
+## Preface
 ...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer. - (Gillespie, 2003).
 
-### Overview
+## Overview
 BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top national headline, local weather, and time wherever you decide to go.<br><br>
 ✨ Created with magic, wonder, surprise, and delight in mind. ✨ The site doubles as passive technology; the UI/UX is minimal, elements dim depending on the user's interactions reconsidering design hierarchy, and there is a subtle rotation on the canvas.
 
-### Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
+## Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
 
 <p align='center'>
   <img width="700" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
 </p>
 
-### Technologies
+## Technologies
 - NodeJS
 - Express
 - HTML / SCSS
@@ -20,7 +20,7 @@ BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with Ja
 - OpenWeatherMap API
 - News API
 
-### Functionalities
+## Functionalities
 Users are invited to search a city, and the `Mixcloud API` fetches a stream connected to that city. An iframe element ingests the stream url that is returned, and a Mixcloud player is rendered on the page, so users can listen on-site.
 ```js
 searchCity.addEventListener('submit', async function(e) {
@@ -92,12 +92,12 @@ https://services.swpc.noaa.gov/json/ovation_aurora_latest.json<br>
 - addEventListener for mouse movement if no mouse activity for X time, hide everything but the globe and local info (for projections).
 -->
 
-### My top Mixcloud streams
+## My top Mixcloud streams
 - DJ Set <a href="https://www.mixcloud.com/FrankMaster/special-dj-set-marrakesh-marocco-by-frank-master-stefano-capasso/" target="_blank">Marrakesh</a>
 - Cooking with Palm Trax <a href="https://www.mixcloud.com/BCR_Radio/cooking-with-palms-trax-020/" target="_blank">Berlin</a>
 - Future sound of Egypt <a href="https://www.mixcloud.com/alyfila-futuresoundofegypt/future-sound-of-egypt-650-live-from-cairo-with-aly-fila/" target="_blank">Cairo</a>
 
-### Future
+## Future
 - Replace faux pink atmosphere with togglable SWPC aurora data (but still pink)
 - Smoother loading
 - Display current city in local language
