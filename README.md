@@ -2,8 +2,6 @@
 BEAT C♡NNECTI♡N is an interactive site encouraging (data) exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top national headline, local weather, and time wherever you decide to go.
 
 Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
-https://user-images.githubusercontent.com/17345270/152579170-32931ab1-e8bf-4769-9a1b-29a5d5a864d4.mov
-
 
 <p align='center'>
   <!--<img width="700" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
