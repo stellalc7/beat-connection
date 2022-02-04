@@ -146,7 +146,7 @@ searchCity.addEventListener('submit', async function(e) {
 
       console.log(headline)
     if (headline.status === 'error') {
-      headline = 'HIT MY FREE NEWS API DAILY LIMIT NO HEADLINES TO REPORT \n 🙁🙁🙁🙁🙁🙁🙁🙁🙁🙁'
+      headline = 'HIT MY FREE NEWS API DAILY RATE LIMIT NO HEADLINES TO REPORT \n 🙁🙁🙁🙁🙁🙁🙁🙁🙁🙁'
     } else if (headline.articles.length === 0) {
       headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'
     } else {
