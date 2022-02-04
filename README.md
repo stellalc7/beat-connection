@@ -27,18 +27,19 @@ searchCity.addEventListener('submit', async function(e) {
   const widgetUrl = `https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=`
   fetch(url)
     .then(response => response.json())
-    .then(data =>
-      iframe.src = widgetUrl + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
+    .then(stream =>
+      iframe.src = widgetUrl + stream.stream[Math.floor(Math.random()*stream.stream.length)].url.slice(24),
       body.append(iframe)
-    )   // append the new stream for searched city
+      // refresh the stream for the new city
+    )
 }
 ```
-The `OpenWeatherMap API` provides coordinates, local weather conditions, and local time.
+The `OpenWeatherMap API` provides the city's coordinates, local time, weather conditions.
 ```js
 // FRONTEND
-let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
+let weather = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
   .then(res => res.json())
-  .then(data => { return data })
+  .then(wx => { return wx })      // receive wx from backend
 
 // BACKEND
 app.get('/api', (request, response) => {
@@ -48,7 +49,8 @@ app.get('/api', (request, response) => {
   let geoUrl = `${geoUrlStart}=${searchTerm}&units=metric&appid=${apiKey}`;
   let coords = fetch(geoUrl)
     .then(apiResponse => apiResponse.json())
-    .then(data => response.send(data))       // to the frontend
+    .then(weather => response.send(weather))
+    // send wx to frontend
     .catch(error => response.send(error));
 });
 ```
@@ -57,14 +59,16 @@ The `News API` ingests a 2-letter country code from the `OpenWeatherMap API` to 
 // FRONTEND
 headline = await fetch(`/news?country=${encodeURIComponent(data.sys.country)}`)
             .then(res => res.json())
-            .then(goodNews => { return goodNews })  // receive good news from backend
+            .then(goodNews => { return goodNews })
+            // receive good news from backend
             .catch(error => console.log(error))
 
-    if (headline.articles.length === 0) {
-      headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'   // if there's no news, we still report good news
-    } else {
-      // ...
-    }
+if (headline.articles.length === 0) {
+  headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'
+  // if there's no news, we still report good news
+} else {
+  // ...
+}
 
 // BACKEND
 app.get('/news', (request, response) => {
@@ -74,7 +78,8 @@ app.get('/news', (request, response) => {
   let newsUrl = `${newsUrlStart}=${country}&sortBy=popularity&apiKey=${newsApiKey}`;
   fetch(newsUrl)
     .then(apiResponse => apiResponse.json())
-    .then(goodNews => response.send(goodNews)) // send good news to frontend
+    .then(goodNews => response.send(goodNews))
+    // send good news to frontend
     .catch(error => response.send(error));
 });
 ```
@@ -98,7 +103,6 @@ In conclusion, if a city name does not coexist with that of a country's, the cou
 <img width="600" alt="Screenshot 2022-02-02 at 23 58 24" src="https://user-images.githubusercontent.com/17345270/152283908-9f92e537-dbc1-40ea-a4e6-d05411d61add.png">
 -->
 
-
 <!-- - Click on the globe, instead of search (what if user accidentally clicks)? Both?
 - Globe zoom proportionally adjusts stream volume.
 - Stream autoplay.
@@ -107,7 +111,8 @@ In conclusion, if a city name does not coexist with that of a country's, the cou
 - Top local news.
 - Smoother loading / setTimeout?
 - addEventListener for mouse movement if no mouse activity for X time, hide everything but the globe and local info (for projections).
-- changeLanguage(city) => { } -->
+- changeLanguage(city) => { }
+-->
 
 ### My top Mixcloud streams
 - DJ Set <a href="https://www.mixcloud.com/FrankMaster/special-dj-set-marrakesh-marocco-by-frank-master-stefano-capasso/" target="_blank">Marrakesh</a>
