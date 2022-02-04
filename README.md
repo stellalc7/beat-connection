@@ -2,7 +2,7 @@
 BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top national headline, local weather, and time wherever you decide to go.
 
 ### Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
-...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer. - (Gillespie, 2003). ✨ I created this site with magic, wonder, surprise, and delight in mind. ✨ It's meant to double as passive technology; thus, the UI/UX is intentionally minimal. However, it also inherently invites participation from the user, e.g. visualizing connections, finding local conditions.
+...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer. - (Gillespie, 2003). ✨ I created this site with magic, wonder, surprise, and delight in mind. ✨ It's meant to double as passive technology; thus, the UI/UX is intentionally minimal. However, it also inherently invites participation from the user: visualizing connections, discovering music, and finding local conditions.
 
 <p align='center'>
   <img width="700" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
