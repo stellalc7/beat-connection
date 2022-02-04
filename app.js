@@ -1,7 +1,7 @@
 const { response } = require('express');
 const express = require('express'); // web framework
 const fetch = require('node-fetch'); // for making AJAX requests
-// const path = require('path'); // do i need to change this
+// const path = require('path');
 var request = require('request');
 
 // put environmental variables defined in .env file on process.env
@@ -20,6 +20,8 @@ app.get('/', (request, response) => {
 });
 
 // https://openweathermap.org
+// change to async, to await lat lon, then fetch weather from coords
+// RE: geneva
 app.get('/api', (request, response) => {
   const apiKey = process.env.API_KEY;
   const geoUrlStart = 'https://api.openweathermap.org/data/2.5/weather?q'

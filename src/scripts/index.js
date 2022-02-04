@@ -14,6 +14,13 @@ let currentLocation = document.createElement('h1');
 let localWx = document.createElement('h3');
 let localTime = document.createElement('h4');
 var iframe = document.createElement('iframe');
+
+// var widget = Mixcloud.PlayerWidget(document.getElementById("my-widget-iframe"));
+//     widget.ready.then(function() {
+//       console.log(Mixcloud)
+//         // Put code that interacts with the widget here
+// });
+
 let coordinates = document.createElement('h1')
 coordinates.classList.add('coords');
 let offset, coord, headline, headlineTitle;
@@ -146,7 +153,7 @@ searchCity.addEventListener('submit', async function(e) {
 
       console.log(headline)
     if (headline.status === 'error') {
-      headline = 'HIT MY FREE NEWS API DAILY RATE LIMIT NO HEADLINES TO REPORT \n 🙁🙁🙁🙁🙁🙁🙁🙁🙁🙁'
+      headline = 'HIT MY FREE NEWS API DAILY RATE LIMIT NO HEADLINE TO REPORT \n 🙁🙁🙁🙁🙁🙁🙁🙁🙁🙁'
     } else if (headline.articles.length === 0) {
       headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'
     } else {
