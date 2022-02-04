@@ -44,7 +44,7 @@ headline = await fetch(`/news?country=${encodeURIComponent(wxData.sys.country)}`
             .then(res => res.json())
             .then(goodNews => { return goodNews })
             // receive good news from backend
-            .catch(error => console.log(error))
+            .catch(error => { return error })
 
 if (headline.articles.length === 0) {
   headline = 'NO NEWS IS GOOD NEWS. \n 🙂🙂🙂🙂🙂🙂🙂🙂🙂🙂'
@@ -76,25 +76,13 @@ https://developer.spotify.com/console/get-search-item/<br>
 https://developer.spotify.com/console/get-artist-related-artists/<br>
 -->
 
-<!--
-### Not not bugs
- <a href="https://ci.italy.tx.us/" target="_blank">Italy, TX, USA</a>.<br>
-<img width="600" alt="Screenshot 2022-02-02 at 22 59 56" src="https://user-images.githubusercontent.com/17345270/152279240-f0491aa7-9c9d-4747-9ac0-8e6aa51096b4.png"><br><br>
-<a href="https://en.wikipedia.org/wiki/Korea,_Gmina_Telatyn" target="_blank">Korea, Lublin Voivodeship, Poland</a>.<br>
-<img width="600" alt="Screenshot 2022-02-02 at 23 06 18" src="https://user-images.githubusercontent.com/17345270/152279570-608c4e6f-69d7-4a12-ad2c-ce2cd553cfdc.png"><br><br>
-In conclusion, if a city name does not coexist with that of a country's, the country will be mapped. Antithetically, if there is a city and a country with the same name, expect dissonace between the fetched stream and plotted location, as the city will be mapped by default. If there are multiple cities with the same name (e.g. Versailles), the one everyone's probably thinking of will be mapped. If a city simply has an idiosyncratic name, that city will simply be mapped. Even if it's a ghost town. <a href="http://www.texasescapes.com/CentralTexasTownsNorth/Okay-Texas.htm" target="_blank">Okay</a>?<br>
-<img width="600" alt="Screenshot 2022-02-02 at 23 58 24" src="https://user-images.githubusercontent.com/17345270/152283908-9f92e537-dbc1-40ea-a4e6-d05411d61add.png">
--->
-
 <!-- - Click on the globe, instead of search (what if user accidentally clicks)? Both?
 - Globe zoom proportionally adjusts stream volume.
 - Stream autoplay.
 - themes
 - Local time updates automatically.
-- Top local news.
 - Smoother loading / setTimeout?
 - addEventListener for mouse movement if no mouse activity for X time, hide everything but the globe and local info (for projections).
-- changeLanguage(city) => { }
 -->
 
 ### My top Mixcloud streams
