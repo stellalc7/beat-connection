@@ -1,5 +1,5 @@
 ### Overview
-BEAT C♡NNECTI♡N is an interactive site encouraging (data) exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top local headline, weather, and time wherever you decide to go.
+BEAT C♡NNECTI♡N is an interactive site encouraging (data) exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top national headline, local weather, and time wherever you decide to go.
 
 Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
 
