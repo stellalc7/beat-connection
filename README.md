@@ -9,10 +9,10 @@ BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with Ja
 </p>
 
 ### Technologies
-👾 NodeJS + Express + HTML + SCSS
-🌍 Globe.GL
-🎵 Mixcloud API
-☁️ OpenWeatherMap API
+👾 NodeJS + Express + HTML + SCSS<br>
+🌍 Globe.GL<br>
+🎵 Mixcloud API<br>
+☁️ OpenWeatherMap API<br>
 📰 News API
 
 ### Functionalities
