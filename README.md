@@ -34,30 +34,11 @@ searchCity.addEventListener('submit', async function(e) {
     )
 }
 ```
-The `OpenWeatherMap API` provides the city's coordinates, local time, weather conditions.
-```js
-// FRONTEND
-let weather = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
-  .then(res => res.json())
-  .then(wx => { return wx })      // receive wx from backend
 
-// BACKEND
-app.get('/api', (request, response) => {
-  const apiKey = process.env.API_KEY;
-  const geoUrlStart = 'https://api.openweathermap.org/data/2.5/weather?q'
-  let searchTerm = request.query.searchTerm;
-  let geoUrl = `${geoUrlStart}=${searchTerm}&units=metric&appid=${apiKey}`;
-  let coords = fetch(geoUrl)
-    .then(apiResponse => apiResponse.json())
-    .then(weather => response.send(weather))
-    // send wx to frontend
-    .catch(error => response.send(error));
-});
-```
-The `News API` ingests a 2-letter country code from the `OpenWeatherMap API` to search for top news in the country for the city the user queries. The first headline is taken from the API response, which is sorted by popularity of source.
+The `News API` ingests a 2-letter country code from the data returned by the `OpenWeatherMap API` to search for top news in the country for the city the user queries. The first headline is taken from the API response, which is sorted by popularity of source.
 ```js
 // FRONTEND
-headline = await fetch(`/news?country=${encodeURIComponent(data.sys.country)}`)
+headline = await fetch(`/news?country=${encodeURIComponent(wxData.sys.country)}`)
             .then(res => res.json())
             .then(goodNews => { return goodNews })
             // receive good news from backend
