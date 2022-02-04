@@ -224,9 +224,17 @@ iframe {
     font-size: 30px;
     width: 60%;
   }
-  #search-div {
+  form {
+    position: none;
+    right: none;
     display: flex;
-    width: 90%;
     justify-content: center;
+    margin: auto;
+  }
+  #search-city-name {
+    width: 83vw;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
