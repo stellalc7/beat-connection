@@ -11,7 +11,7 @@ Behold our beat connections <a href="https://beatconnection.herokuapp.com" targe
 
 ### Technologies
 - NodeJS
-- ExpressJS
+- Express
 - Globe.GL
 - Mixcloud API
 - OpenWeatherMap API
