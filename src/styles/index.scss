@@ -123,14 +123,14 @@ p {
 
 .coords {
   font-size: 60px;
-  width: 55%;
+  width: 60%;
   background-color: $fourth-color;
-  top: 30%;
+  top: 20%;
   transform: rotate(-10deg);
   position: none;
   right: none;
   bottom: none;
-  padding: 10px 10px 0 10px;
+  padding: 5px 5px 0 5px;
   overflow-wrap: break-word;
   hyphens: manual;
   &.hide {

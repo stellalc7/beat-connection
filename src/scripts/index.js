@@ -128,6 +128,7 @@ searchCity.addEventListener('submit', async function(e) {
 
   if (data.message) {    // denotes errors from openwxmap
     cityInput.classList.add('error');
+    Haptics.vibrate(200);
     cityInput.addEventListener('input', (event) => {
       cityInput.classList.remove('error');
     });
