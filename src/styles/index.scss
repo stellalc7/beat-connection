@@ -10,6 +10,7 @@ $background-color: black;
 
 * {
   margin: 0;
+  cursor: crosshair;
 }
 
 body {
@@ -58,9 +59,6 @@ h2 {
   color: $tertiary-color;
   background-color: $fourth-color;
   font-weight: bold;
-  // top: 350px;
-  // left: -80px;
-  // transform: rotate(-90deg);
   &.dim {
     color: $tertiary-color;
     background-color: transparent;
@@ -95,7 +93,6 @@ h1 {
   background-color: $fourth-color;
   &:hover {
     background-color: $tertiary-color;
-    cursor: pointer;
     color: $fourth-color; 
   }
 }
@@ -141,8 +138,41 @@ p {
 a {
   color: $fourth-color;
   position: absolute;
+  font-size: 20px;
+  font-style: italic;
+  text-decoration: none;
+  // padding-bottom: 3px;
+  left: 20px;
+  font-weight: bold;
+  &:hover {
+    color: $tertiary-color;
+    // text-transform: uppercase;
+  }
+}
+
+#portfolio {
+  top: 105px;
+  &.bright {
+    color: $fourth-color;
+    // background-color: $fourth-color;
+  }
+  &:hover {
+    background-color: $fourth-color;
+    color: $tertiary-color;
+  }
+}
+
+#github {
   top: 130px;
-  right: 20px;
+  &.bright {
+    // color: $tertiary-color;
+    // background-color: $fourth-color;
+    color: $fourth-color;
+  }
+  &:hover {
+    background-color: $fourth-color;
+    color: $tertiary-color; 
+  }
 }
 
 iframe {

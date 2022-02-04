@@ -18,6 +18,19 @@ let coordinates = document.createElement('h1')
 coordinates.classList.add('coords');
 let offset, coord, headline, headlineTitle;
 
+let portfolio = document.createElement('a');
+portfolio.setAttribute('id','portfolio');
+portfolio.href = 'http://heystella.io'
+portfolio.text = '> portfolio'
+portfolio.target = '_blank'
+body.append(portfolio);
+let github = document.createElement('a');
+github.setAttribute('id','github');
+github.href = 'https://github.com/stellalc7/beat-connection'
+github.text = '> git'
+github.target = '_blank'
+body.append(github);
+
 // var locIcon = document.createElement('img');
 // locIcon.src = ''
 // body.append(locIcon);
@@ -103,6 +116,8 @@ searchCity.addEventListener('submit', async function(e) {
     // .catch(error => console.log(error))
 
   let cityInput = document.getElementById("search-city-name")
+  let portfolio = document.getElementById("portfolio")
+  let github = document.getElementById("github")
 
   if (data.message) {    // denotes errors from openwxmap
     cityInput.classList.add('error');
@@ -118,8 +133,11 @@ searchCity.addEventListener('submit', async function(e) {
         // iframe.autoplay = true,
         body.append(iframe),
         cityInput.classList.add('dim'),
-        title.classList.add('dim')
+        title.classList.add('dim'),
         )
+
+        portfolio.classList.add('bright')
+        github.classList.add('bright')
 
     headline = await fetch(`/news?country=${encodeURIComponent(data.sys.country)}`)
       .then(res => res.json())
@@ -140,7 +158,7 @@ searchCity.addEventListener('submit', async function(e) {
   
 
     
-    currentLocation.innerText = `${data.name}`;
+    currentLocation.innerText = `${data.name.toUpperCase()}`;
     body.append(currentLocation);
 
     let temp = `${Math.round(data.main.temp)}°`
