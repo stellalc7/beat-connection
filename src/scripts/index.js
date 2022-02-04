@@ -144,6 +144,7 @@ searchCity.addEventListener('submit', async function(e) {
         body.append(iframe)
         )
         cityInput.classList.add('dim'),
+        cityInput.classList.remove('error')
         title.classList.add('dim')
         description.classList.add('dim')
         portfolio.classList.add('bright')
