@@ -5,7 +5,6 @@ Behold our beat connections <a href="https://beatconnection.herokuapp.com" targe
 
 <p align='center'>
   <img width="700" alt="Screenshot 2022-02-03 at 01 41 42" src="https://user-images.githubusercontent.com/17345270/152293814-fe013df6-ab65-4f9f-b51f-3cad8f18b038.png">
-<img width="700" alt="Screenshot 2022-02-04 at 14 11 31" src="https://user-images.githubusercontent.com/17345270/152589307-99c4c47d-15c6-4151-9b65-286096ef08c7.png">
 </p>
 
 ### Technologies
@@ -35,6 +34,10 @@ searchCity.addEventListener('submit', async function(e) {
     )
 }
 ```
+
+<p align='center'>
+<img width="600" alt="Screenshot 2022-02-04 at 14 11 31" src="https://user-images.githubusercontent.com/17345270/152589307-99c4c47d-15c6-4151-9b65-286096ef08c7.png">
+</p>
 
 The `News API` ingests a 2-letter country code from the data returned by the `OpenWeatherMap API` to search for top news in the country for the city the user queries. The first headline is taken from the API response, which is sorted by popularity of source.
 ```js
