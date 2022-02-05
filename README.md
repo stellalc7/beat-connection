@@ -98,6 +98,6 @@ https://services.swpc.noaa.gov/json/ovation_aurora_latest.json<br>
 - Future sound of Egypt <a href="https://www.mixcloud.com/alyfila-futuresoundofegypt/future-sound-of-egypt-650-live-from-cairo-with-aly-fila/" target="_blank">Cairo</a>
 
 ## `Future`
-- Replace faux atmosphere with togglable SWPC aurora data
+- Replace faux atmosphere with togglable SWPC aurora data https://services.swpc.noaa.gov/json/ovation_aurora_latest.json
 - Display current city in local language
-- Render moon, click, diff't music / data: https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=4720
+- Render moon, click, diff't music / NASA moon kit: https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=4720
