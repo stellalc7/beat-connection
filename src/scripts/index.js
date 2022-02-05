@@ -141,7 +141,7 @@ searchCity.addEventListener('submit', async function(e) {
       .then(response => response.json())
       .then(data => { return data })
         
-    iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
+    iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + stream.data[Math.floor(Math.random()*stream.data.length)].url.slice(24),
     // iframe.autoplay = true,
     body.append(iframe)
     cityInput.classList.add('dim');
@@ -152,9 +152,9 @@ searchCity.addEventListener('submit', async function(e) {
     github.classList.add('bright');
 
     headline = await fetch(`/news?country=${encodeURIComponent(data.sys.country)}`)
-      .then(res => res.json())
-      .then(goodNews => { return goodNews})
-      // .catch(error => console.log(error))
+                      .then(res => res.json())
+                      .then(goodNews => { return goodNews})
+                      // .catch(error => console.log(error))
 
     if (headline.status === 'error') {
       headline = 'HIT MY FREE NEWS API DAILY RATE LIMIT NO HEADLINE TO REPORT \n 🙁🙁🙁🙁🙁🙁🙁🙁🙁🙁'
