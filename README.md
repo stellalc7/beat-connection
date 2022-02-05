@@ -3,7 +3,7 @@
 
 ## `Overview`
 BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top national headline, local weather, and time wherever you decide to go.<br><br>
-✨ Created with magic, wonder, surprise, and delight in mind. ✨ The site doubles as passive technology; the UI/UX is minimal (with a essentially one call to action), design hierarchy is reconsidered in response to the user's interactions, and there is a subtle rotation on the canvas.
+✨ Created with magic, wonder, surprise, and delight in mind. ✨ The site doubles as passive technology; the UI/UX is minimal (with essentially one call to action), design hierarchy is reconsidered in response to the user's interactions, and there is a subtle rotation on the canvas.
 
 ## Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
 
@@ -98,6 +98,5 @@ https://services.swpc.noaa.gov/json/ovation_aurora_latest.json<br>
 - Future sound of Egypt <a href="https://www.mixcloud.com/alyfila-futuresoundofegypt/future-sound-of-egypt-650-live-from-cairo-with-aly-fila/" target="_blank">Cairo</a>
 
 ## `Future`
-- Replace faux pink atmosphere with togglable SWPC aurora data (but still pink)
-- Smoother loading
+- Replace faux atmosphere with togglable SWPC aurora data
 - Display current city in local language
