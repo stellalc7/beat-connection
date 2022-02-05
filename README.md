@@ -100,3 +100,4 @@ https://services.swpc.noaa.gov/json/ovation_aurora_latest.json<br>
 ## `Future`
 - Replace faux atmosphere with togglable SWPC aurora data
 - Display current city in local language
+- Render moon, click, diff't music / data: https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=4720
