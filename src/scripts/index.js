@@ -23,7 +23,7 @@ var iframe = document.createElement('iframe');
 //         // Put code that interacts with the widget here
 // });
 
-let coordinates = document.createElement('h1')
+let coordinates = document.createElement('div')
 coordinates.classList.add('coords');
 let offset, coord, headline, headlineTitle;
 
@@ -163,7 +163,7 @@ searchCity.addEventListener('submit', async function(e) {
     } else {
       headlineTitle = headline.articles[0].title;
       if (headlineTitle.length > 95) {
-        headline = headlineTitle.slice(0, 95) + `...`
+        headline = headlineTitle.slice(0, 120) + `...`
       } else {
         headline = headlineTitle;
       }

@@ -122,15 +122,16 @@ p {
 }
 
 .coords {
-  font-size: 60px;
+  font-size: 58px;
   width: 60%;
   background-color: $fourth-color;
   top: 20%;
   transform: rotate(-10deg);
-  position: none;
-  right: none;
-  bottom: none;
+  position: fixed;
+  right: 20px;
+  bottom: 160px;
   padding: 5px 5px 0 5px;
+  // word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: manual;
   &.hide {
@@ -226,6 +227,7 @@ iframe {
   .coords {
     font-size: 30px;
     width: 60%;
+    // bottom: 115px;
   }
   form {
     position: none;
