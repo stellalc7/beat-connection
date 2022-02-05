@@ -97,7 +97,8 @@ https://services.swpc.noaa.gov/json/ovation_aurora_latest.json<br>
 - Cooking with Palm Trax <a href="https://www.mixcloud.com/BCR_Radio/cooking-with-palms-trax-020/" target="_blank">Berlin</a>
 - Future sound of Egypt <a href="https://www.mixcloud.com/alyfila-futuresoundofegypt/future-sound-of-egypt-650-live-from-cairo-with-aly-fila/" target="_blank">Cairo</a>
 
-## `Future`
-- Replace faux atmosphere with togglable SWPC aurora data https://services.swpc.noaa.gov/json/ovation_aurora_latest.json
+## `Future considerations`
+- Replace faux atmosphere with togglable aurora data / SWPC https://services.swpc.noaa.gov/json/ovation_aurora_latest.json
 - Display current city in local language
-- Render moon, click, diff't music / NASA moon kit: https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=4720
+- Moon, click - moon sounds / NASA kit: https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=4720
+- ISS location https://wheretheiss.at/w/developer
