@@ -191,15 +191,15 @@ searchCity.addEventListener('submit', async function(e) {
     if (currLat < 0 && currLon < 0) {
       currLon = -currLon;
       currLat = -currLat;
-      coord = `${currLat}°W, ${currLon}°S`;
+      coord = `${currLat}°S, ${currLon}°W`;
     } else if (currLat < 0) {
       currLat = -currLat
-      coord = `${currLat}°E, ${currLon}°S`
+      coord = `${currLat}°S, ${currLon}°E`
     } else if (currLon < 0) {
       currLon = -currLon
-      coord = `${currLat}°W, ${currLon}°N`;
+      coord = `${currLat}°N, ${currLon}°W`;
     } else {
-      coord = `${currLat}°E, ${currLon}°N`;
+      coord = `${currLat}°N, ${currLon}°E`;
     }
     
     let rData = [{
