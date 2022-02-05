@@ -137,20 +137,19 @@ searchCity.addEventListener('submit', async function(e) {
     });
   } else {
     let url = `${mixCloudUrlStart}/?q=${city}&type=cloudcast`;
-    fetch(url)
+    let stream = await fetch(url)
       .then(response => response.json())
-      .then(data =>
-        iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
-        // iframe.autoplay = true,
-        body.append(iframe)
-        )
+      .then(data => { return data })
         
-        cityInput.classList.add('dim');
-        cityInput.classList.remove('error');
-        title.classList.add('dim');
-        description.classList.add('dim');
-        portfolio.classList.add('bright');
-        github.classList.add('bright');
+    iframe.src = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' + data.data[Math.floor(Math.random()*data.data.length)].url.slice(24),
+    // iframe.autoplay = true,
+    body.append(iframe)
+    cityInput.classList.add('dim');
+    cityInput.classList.remove('error');
+    title.classList.add('dim');
+    description.classList.add('dim');
+    portfolio.classList.add('bright');
+    github.classList.add('bright');
 
     headline = await fetch(`/news?country=${encodeURIComponent(data.sys.country)}`)
       .then(res => res.json())
