@@ -63,7 +63,8 @@ myGlobe(globeViz)
   .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
   .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
   .backgroundColor('black')
-  .atmosphereColor('pink')
+  .atmosphereColor('white')
+  .atmosphereAltitude('0.2')
 
   myGlobe.controls().autoRotate = true;
   myGlobe.controls().autoRotateSpeed = 0.075;
