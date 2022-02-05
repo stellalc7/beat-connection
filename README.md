@@ -3,7 +3,7 @@
 
 ## Overview
 BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top national headline, local weather, and time wherever you decide to go.<br><br>
-✨ Created with magic, wonder, surprise, and delight in mind. ✨ The site doubles as passive technology; the UI/UX is minimal (with a essentially one call to action), elements dim depending on the user's interactions reconsidering design hierarchy, and there is a subtle rotation on the canvas. On the other hand, the site is essentially nothing without the user's 🧚‍ initial participation.
+✨ Created with magic, wonder, surprise, and delight in mind. ✨ The site doubles as passive technology; the UI/UX is minimal (with a essentially one call to action), elements dim depending on the user's interactions reconsidering design hierarchy, and there is a subtle rotation on the canvas.
 
 ## Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
 
