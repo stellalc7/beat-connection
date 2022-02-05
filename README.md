@@ -40,7 +40,7 @@ searchCity.addEventListener('submit', async function(e) {
 ```
 
 <p align='center'>
-<img width="700" alt="Screenshot 2022-02-04 at 14 11 31" src="https://user-images.githubusercontent.com/17345270/152589307-99c4c47d-15c6-4151-9b65-286096ef08c7.png">
+<img width="700" alt="Screenshot 2022-02-04 at 19 23 39" src="https://user-images.githubusercontent.com/17345270/152620234-6f588113-3ace-4239-81c9-7b4465d48cae.png">
 </p>
 
 The `News API` ingests a 2-letter country code from the data returned by the `OpenWeatherMap API` to search for top national headlines for the user-queried city. The first headline is displayed from the API response, which is sorted by popularity of source.
