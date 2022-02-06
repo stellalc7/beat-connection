@@ -101,4 +101,4 @@ https://services.swpc.noaa.gov/json/ovation_aurora_latest.json<br>
 - Replace faux atmosphere with togglable aurora data / SWPC: https://services.swpc.noaa.gov/json/ovation_aurora_latest.json
 - Display current city in local language
 - Moon, click - my fav spacey tracks (Nicolas Jaar stream) / NASA kit: https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=4720
-- ISS location https://wheretheiss.at/w/developer
+- ISS location https://wheretheiss.at/w/developer (potentially beyond scope)
