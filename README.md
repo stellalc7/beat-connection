@@ -1,5 +1,5 @@
-<!-- ## `Preface`
-...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer (Gillespie, 2003).-->
+## `Preface`
+...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer (Gillespie, 2003).
 
 ## `Overview`
 BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with JavaScript. Search cities, and listen to streams around the world. You'll also find the top national headline, local weather, and time wherever you decide to go.<br><br>
