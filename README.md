@@ -2,7 +2,7 @@
 ...once we can see artifacts as crystallized forms of human labor, communication, and value, the importance of how they shape activity becomes clearer (Gillespie, 2003).
 
 ## `Overview`
-BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with JavaScript. Visit, listen, and understand. Discover streams, local headlines, weather and time wherever you decide to go.<br><br>
+BEAT C♡NNECTI♡N is an interactive site encouraging exploration built with JavaScript. Visit, listen, and learn. Discover streams, local headlines, weather and time wherever you decide to go.<br><br>
 ✨ Created with magic, wonder, surprise, and delight in mind. ✨ The site doubles as passive technology; the UI/UX is minimal (with essentially one call to action), design hierarchy is reconsidered in response to the user's interactions, and there is a subtle rotation to the canvas.
 
 ## Behold our beat connections <a href="https://beatconnection.herokuapp.com" target="_blank">here</a>.
