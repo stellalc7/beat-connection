@@ -100,5 +100,4 @@ https://services.swpc.noaa.gov/json/ovation_aurora_latest.json<br>
 ## `Future considerations`
 - Replace faux atmosphere with togglable aurora data / SWPC: https://services.swpc.noaa.gov/json/ovation_aurora_latest.json
 - Render the moon, click - moon tracks / NASA kit: https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=4720
-- News source quality control
 - Change direct city query to async-await with lat/lon for wx
