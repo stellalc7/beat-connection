@@ -17,6 +17,8 @@ let localWx = document.createElement('h3');
 let localTime = document.createElement('h4');
 var iframe = document.createElement('iframe');
 
+// var form = document.getElementById("search-city");
+
 // var widget = Mixcloud.PlayerWidget(document.getElementById("my-widget-iframe"));
 //     widget.ready.then(function() {
 //       console.log(Mixcloud)
@@ -120,7 +122,7 @@ searchCity.addEventListener('submit', async function(e) {
   let city = searchCity.querySelector("input[type='text']").value.split(' ').join('%20');
   const mixCloudUrlStart = 'https://api.mixcloud.com/search';
 
-  let data = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
+  let weatherData = await fetch(`/api?searchTerm=${encodeURIComponent(city)}`)
     .then(res => res.json())
     .then(data => { return data })
     .catch(error => { return error })
@@ -129,13 +131,14 @@ searchCity.addEventListener('submit', async function(e) {
   let portfolio = document.getElementById("portfolio")
   let github = document.getElementById("github")
 
-  if (data.message) {    // denotes errors from openwxmap
+  if (weatherData.message) {    // denotes errors from openwxmap
     cityInput.classList.add('error');
     // Haptics.vibrate(200);
     cityInput.addEventListener('input', (event) => {
       cityInput.classList.remove('error');
     });
   } else {
+    // form.reset();
     let url = `${mixCloudUrlStart}/?q=${city}&type=cloudcast`;
     let stream = await fetch(url)
       .then(response => response.json())
@@ -151,7 +154,7 @@ searchCity.addEventListener('submit', async function(e) {
     portfolio.classList.add('bright');
     github.classList.add('bright');
 
-    headline = await fetch(`/news?country=${encodeURIComponent(data.sys.country)}`)
+    headline = await fetch(`/news?country=${encodeURIComponent(weatherData.sys.country)}`)
                       .then(res => res.json())
                       .then(goodNews => { return goodNews})
                       // .catch(error => console.log(error))
@@ -169,20 +172,20 @@ searchCity.addEventListener('submit', async function(e) {
       }
     }
     
-    currentLocation.innerText = `${data.name.toUpperCase()}`;
+    currentLocation.innerText = `${weatherData.name.toUpperCase()}`;
     body.append(currentLocation);
 
-    let temp = `${Math.round(data.main.temp)}°`
-    let wx = data.weather[0].description
+    let temp = `${Math.round(weatherData.main.temp)}°`
+    let wx = weatherData.weather[0].description
     localWx.innerText = `${temp}, ${wx}`;
     body.append(localWx);
-    localTime.innerText = getTime(data.timezone);
-    offset = data.timezone;
+    localTime.innerText = getTime(weatherData.timezone);
+    offset = weatherData.timezone;
     // localTime.innerText = setInterval(getTime(offset), 1000);
     body.append(localTime);
 
-    lons.push(data.coord.lon)
-    lats.push(data.coord.lat)
+    lons.push(weatherData.coord.lon)
+    lats.push(weatherData.coord.lat)
 
     let currLat, currLon;
     currLat = lats[lats.length-1];
