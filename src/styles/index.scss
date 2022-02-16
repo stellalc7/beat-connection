@@ -26,7 +26,9 @@ input {
   border: solid 2px $fourth-color;
   font: 17px $font-stack;
   border-radius: 30px;
+  text-transform: uppercase;
 }
+
 
 #search-city-name {
   width: 240px;
