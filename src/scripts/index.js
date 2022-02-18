@@ -31,7 +31,7 @@ let offset, coord, headline, headlineTitle;
 
 let portfolio = document.createElement('a');
 portfolio.setAttribute('id','portfolio');
-portfolio.href = 'http://heystella.io'
+portfolio.href = 'http://www.heystella.io'
 portfolio.text = '> portfolio'
 portfolio.target = '_blank'
 body.append(portfolio);
